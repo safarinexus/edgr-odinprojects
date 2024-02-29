@@ -5,3 +5,8 @@ The Odin Project projects
 HTML Foundations Project  
 Project: Recipes  
 A simple website containing some recipes that I like.  
+  
+2. Odin Landing Page  
+CSS & Flexbox Foundations Project  
+Project: Landing Page  
+A simple landing page.  
