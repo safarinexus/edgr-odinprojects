@@ -5,18 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <flex>
-            <div>header logo</div>
-            <a href="/html/">HTML</a> |
-            <a href="/css/">CSS</a> |
-            <a href="/js/">JavaScript</a> |
-            <a href="/python/">Python</a>
-        </flex>
-       
-      </nav>
-    
+    <div class="page">
+        <div class="navbarsection">
+            <div class="navbar">
+                <a href="./index.html" class="headerelement" id="headerlogo">header logo</a>
+                <a href="/html/" class="headerelement" >header one link</a>
+                <a href="/css/" class="headerelement">header two link</a>
+                <a href="/js" class="headerelement">header three link</a>
+            </div>
+            <div class="hero">
+                <div class="signuptext">
+                    <h3 id="awesome">This website is awesome</h3>
+                    <p>This website has some subtext here under the main title</p>
+                    <button class="signupbutton">Sign Up</button>
+                </div>
+                <div class="signupimg">
+                    <img src="" alt="this is a placeholder for an image">
+                </div>
+            </div>
+        </div>
+        <div class="imagesection">
+            <div class="imgsectionheader">
+                <h4>Some random information.</h4>
+            </div>
+            <div class="img1">
+                <img src="" alt="square">
+                <p>this is some subtext under an image</p>
+            </div>
+            <div class="img2">
+                <img src="" alt="square">
+                <p>this is some subtext under an image</p>
+            </div>
+            <div class="img3">
+                <img src="" alt="square">
+                <p>this is some subtext under an image</p>
+            </div>
+            <div class="img4">
+                <img src="" alt="square">
+                <p>this is some subtext under an image</p>
+            </div>
+        </div>
+        <div class="quotesection">
+            <h3>This is some inspiring quote</h3>
+            <h4>- Thor, God of Thunder</h4>
+        </div>
+        <div class="cardsection">
+            <div class="signupcard">
+                <h5>Call to action! it's time!</h5>
+                <small>Sign up for our product by clicking that button right over there!</small>
+                <button>Sign up</button>
+            </div>
+        </div>
+        <div class="footer">
+            <small>Copyright @ The Odin Project 2021</small>
+        </div>
+    </div>
 </body>
 </html>

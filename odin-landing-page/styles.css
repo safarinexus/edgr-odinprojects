@@ -1,0 +1,54 @@
+body {
+    margin: 0; 
+    font-family: "Roboto", sans-serif;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbarsection, .imagesection, .quotesection, .cardsection{
+    padding-left: 50px; 
+    padding-right: 50px;
+}
+
+.navbarsection{
+    background-color: #1F2937;
+}
+
+.navbar {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#headerlogo{
+    margin-left: 0;
+    margin-right: auto;
+    color: #f9faf8;
+    font-size: 24px;
+}
+
+.headerelement:not(#headerlogo){
+    font-size: x-small;
+    margin-left: 10px; 
+}
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#awesome{
+    font-size: 48px;
+    margin-bottom: 0px;
+}
+
+.signup1{
+    display: flex; 
+    flex-direction: column;
+    align-items: start;
+}
+
