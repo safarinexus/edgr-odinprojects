@@ -3,17 +3,21 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .page {
     display: flex;
     flex-direction: column;
 }
 
 .navbarsection, .imagesection, .quotesection, .cardsection{
-    padding-left: 50px; 
-    padding-right: 50px;
+    padding-left: 70px; 
+    padding-right: 70px;
 }
 
-.navbarsection{
+.navbarsection, .footer{
     background-color: #1F2937;
 }
 
@@ -26,8 +30,12 @@ body {
 #headerlogo{
     margin-left: 0;
     margin-right: auto;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#headerlogo, #awesome, .signupbutton{ 
     color: #f9faf8;
-    font-size: 24px;
 }
 
 .headerelement:not(#headerlogo){
@@ -39,16 +47,107 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0px 50px; 
+}
+
+.headerelement:not(#headerlogo), #awesomesub, .footer{
+    font-size: 10px; 
+    color: #E5E7EB;
 }
 
 #awesome{
-    font-size: 48px;
+    font-size: 30px;
+    font-weight: bold;
     margin-bottom: 0px;
 }
+#awesomesub{
+    margin-top: 0px;
+}
 
-.signup1{
+.signuptext{
     display: flex; 
     flex-direction: column;
     align-items: start;
 }
 
+button{
+   display: flex; 
+   flex-direction: column;
+   align-items: center; 
+   border: none; 
+   border-radius: 6px; 
+   padding: 6px 25px; 
+}
+
+.signupbutton, .signupcard{
+    background-color: #3882F6;
+}
+
+.imagesection{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 70px 20px;
+    flex-shrink: 0;
+}
+
+.imgsectionheader{
+    align-self: center;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgntext1, .imgntext2, .imgntext3, .imgntext4{
+    display: flex; 
+    flex-direction: column;
+    margin: 10px;
+}
+
+.img1, .img2, .img3, .img4{
+    border: 2.5px solid #3882F6;
+    border-radius: 6px;
+    height: 100px;
+    width: 100px;
+}
+.text1, .text2, .text3, .text4{
+    color: #E5E7EB
+}
+
+.quotesection{
+    background-color: #E5E7EB;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.quote{
+    font-style: italic;
+    font-weight: 300;
+    color: #1F2937
+}
+.author{
+    align-self: flex-end;
+    padding-right: 10px;
+}
+
+.signupcard{
+    margin-top: 60px; 
+    margin-bottom: 60px;
+    border-radius: 6px;
+    padding: 10px 50px 30px;
+    display: flex; 
+
+    align-items: center;
+}
+
+.footer{
+    display: flex; 
+    justify-content: center;
+    padding: 20px; 
+}
