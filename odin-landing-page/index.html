@@ -3,87 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Odin Landing</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="page">
-        <div class="navbarsection">
-            <div class="navbar">
-                <a href="./index.html" class="headerelement" id="headerlogo">header logo</a>
-                <a href="/html/" class="headerelement" >header one link</a>
-                <a href="/css/" class="headerelement">header two link</a>
-                <a href="/js" class="headerelement">header three link</a>
-            </div>
-            <div class="hero">
-                <div class="signuptext">
-                    <h3 id="awesome">This website is awesome</h3>
-                    <p id="awesomesub">This website has some subtext here under the main title</p>
-                    <button class="signupbutton">Sign Up</button>
-                </div>
-                <div class="signupimg">
-                    <img src="" alt="this is a placeholder for an image">
-                </div>
-            </div>
+    <div class="first">
+        <div class="header">
+            <p id="headerlogo">Header Logo</p>
+            <ul id="headerul">
+                <a href="index.html">header link one</a>
+                <a href="index.html">header link two</a>
+                <a href="index.html">header link three</a>
+            </ul>
         </div>
-        <div class="imagesection">
-            <div class="imgsectionheader">
-                <h4>Some random information.</h4>
+
+        <div class="hero">
+            <div class="herotext">
+                <p id="maintext">This website is awesome</p>
+                <p id="secondarytext">This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
+                <button id="herobutton">Sign up</button>
             </div>
-            <div class="images">
-                <div class="imgntext1">
-                    <div class="img1">
-                        <img src="" alt="square">
-                    </div>
-                    <div class="text1">
-                        <p>this is some subtext under an image</p>
-                    </div>
-                </div>
-                <div class="imgntext2">
-                    <div class="img2">
-                        <img src="" alt="square">
-                    </div>
-                    <div class="text2">
-                        <p>this is some subtext under an image</p>
-                    </div>
-                </div>
-                <div class="imgntext3">
-                    <div class="img3">
-                        <img src="" alt="square">
-                    </div>
-                    <div class="text3">
-                        <p>this is some subtext under an image</p>
-                    </div>
-                </div>
-                <div class="imgntext4">
-                    <div class="img4">
-                        <img src="" alt="square">
-                    </div>
-                    <div class="text4">
-                        <p>this is some subtext under an image</p>
-                    </div>
-                </div>
+            <div class="heroimg">
+                <p>this is a placeholder for an image</p>
             </div>
         </div>
-        <div class="quotesection">
-            <h3 class="quote">This is some inspiring quote, or a testimonial from a customer. Maybe it's just filing up space, or maybe people will actuall read it. Who knows? All I know is that it looks nice</h3>
-            <h4 class="author">- Thor, God of Thunder</h4>
+    </div>
+
+    <div class="second">
+        <div id="secondinfo">
+            <p>Some random information.</p>
         </div>
-        <div class="cardsection">
-            <div class="signupcard">
-                <div class="signupcardtext">
-                    <h5>Call to action! it's time!</h5>
-                    <small>Sign up for our product by clicking that button right over there!</small>
-                </div>
-                <button class="cardbutton">Sign Up</button>
+
+        <div class="framegrid">
+            <div class="framitem">
+                <div class="frame"></div>
+                <p class="caption">this is some subtext under an illustration or image</p>
+            </div>
+
+            <div class="framitem">
+                <div class="frame"></div>
+                <p class="caption">this is some subtext under an illustration or image</p>
+            </div>
+
+            <div class="framitem">
+                <div class="frame"></div>
+                <p class="caption">this is some subtext under an illustration or image</p>
+            </div>
+
+            <div class="framitem">
+                <div class="frame"></div>
+                <p class="caption">this is some subtext under an illustration or image</p>
             </div>
         </div>
-        <div class="footer">
-            <small>Copyright @ The Odin Project 2021</small>
-        </div>
+    </div>
+
+    <div class="third">
+        <p id="quote">This is an inspiring quote, or a testimonial from a costumer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All i know is that it looks nice.</p>
+        <p id="quoted">- Thor, God of Thunder</p>
+    </div>
+
+    <div class="fourth">
+        <div id="blueblock">
+            <div id="bluepart1">
+                <p id="callp">Call to action! It's time!</p>
+                <p>Sign up for out product by clicking that button right over there!</p>
+            </div>
+            <div id="bluepart2">
+                <button>Sign up</button>
+            </div>
+        </div>        
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; The Odin Project 2021</p>
     </div>
 </body>
 </html>
