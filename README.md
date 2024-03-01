@@ -14,3 +14,10 @@ A simple landing page.
 3. Odin Rock Paper Scissors  
 JavaScript Basics Project  
 Project: Rock Paper Scissors  
+Play rock, paper, scissors right in your browser!  
+  
+4. Odin Etch-a-Sketch  
+JavaScript Basics DOM Manipulation Project  
+Project: Etch-a-Sketch  
+An etch-a-sketch built right into your browser!  
+  
