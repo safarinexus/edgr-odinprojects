@@ -9,12 +9,14 @@ for (let i = 0; i < 16; i++){
         let div = document.createElement("div"); 
         div.className = `${i + 1, j + 1}`;
         div.id = "gridsquare";
-        div.style.height = "10px"; 
-        div.style.width = "10px";
-        div.style.border = "1px solid gray";
+        div.style.height = "50px"; 
+        div.style.width = "50px";
+        div.style.backgroundColor = "black";
+        div.style.opacity = "0";
         div.addEventListener("mouseenter", (e) => {
             console.log(e.target); 
-            div.style.backgroundColor = "gray";
+            let opac = Number(div.style.opacity)
+            div.style.opacity = String(opac + 0.1);
         })
         row.appendChild(div);
     }
