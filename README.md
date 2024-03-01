@@ -10,3 +10,7 @@ A simple website containing some recipes that I like.
 CSS & Flexbox Foundations Project  
 Project: Landing Page  
 A simple landing page.  
+  
+3. Odin Rock Paper Scissors
+JavaScript Basics Project 
+Project: Rock Paper Scissors
