@@ -1,7 +1,8 @@
-let number1 = null; 
-let number2 = null; 
+let num1 = null; 
+let num2 = null; 
 let operator = "";
 let result = null;
+let displaynums = "";
 
 function add(num1, num2){
     return num1 + num2;
@@ -32,29 +33,54 @@ function operate(operator, num1, num2){
 }
 
 let body = document.body; 
-let displaytext = body.querySelector(".displaytext");
+let numtext = body.querySelector(".numtext");
+let operatortext = body.querySelector(".operatortext");
 
 //'button to display' functionality 
 let temp = body.querySelectorAll(".numberbutton"); 
 let numbuttons = [...temp]; 
 numbuttons.forEach(button => {
     button.addEventListener("click", () => {
-    displaytext.textContent = displaytext.textContent + button.textContent;
+        displaynums = displaynums + button.textContent;
+        numtext.textContent = displaynums.substring(displaynums.length - 9);
 })})
 
 //clear button functionality 
 let clear = body.querySelector('#clearbutton'); 
 clear.addEventListener("click", () => {
-    displaytext.textContent = "";
-    number1 = null; 
-    number2 = null; 
+    numtext.textContent = "";
+    operatortext.textContent = "";
+    displaynums = "";
+    num1 = null; 
+    num2 = null; 
     operator = "";
-
 })
 
 //plus button functionality 
 let plus = body.querySelector('#plusbutton'); 
 plus.addEventListener("click", () => {
-    displaytext.textContent = "+ ";
-    operator = "+";
+    operator = '+';
+    operatortext.textContent = operator;
+    if (!num1){
+        num1 = Number(displaynums); 
+    } else {
+        num2 = Number(displaynums);
+        result = add(num1, num2);
+        num1 = result; 
+        num2 = null; 
+    }
+    displaynums = ""; 
+    numtext.textContent = "";
+})
+
+//equals button functionality 
+let equals = body.querySelector('#equalsbutton');
+equals.addEventListener("click", () => {
+    if (num1 != null && num2 == null){
+        operatortext.textContent = ""; 
+        operator = ""; 
+        numtext.textContent = num1; 
+    } else if (num1 != null && num2 != null) {
+        operate 
+    }
 })
