@@ -21,8 +21,8 @@ JavaScript Basics DOM Manipulation Project
 Project: Etch-a-Sketch  
 An etch-a-sketch built right into your browser!  
   
-5. Odin Calculator 
-JavaScript Basics Final Project 
+5. Odin Calculator  
+JavaScript Basics Final Project  
 Project: Calculator  
 An on-screen calculator in your browser!  
   
