@@ -43,7 +43,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-items: baseline;
-    box-shadow: 3px 3px #999;
+    box-shadow: 2px 2px #999;
     background-color: whitesmoke;
 }
 
@@ -77,25 +77,15 @@ h1{
     box-shadow: 2px 2px #999;
 }
 
-.numberbutton:hover{
+.numberbutton:hover, .functionbutton:hover{
     background-color: darkgray;
 }
 
-.numberbutton:active {
+.numberbutton:active, .functionbutton:active{
     background-color: darkgray;
     box-shadow: 0 0px;
     transform: translate(2px, 2px); 
   }
-
-.functionbutton:hover{
-    background-color: darkgray;
-}
-
-.functionbutton:active {
-    background-color: darkgray;
-    box-shadow: 0 0px;
-    transform: translate(2px, 2px); 
-}
 
 #clearbutton, #leftbracketbutton, #rightbracketbutton,
 #onebutton, #twobutton, #threebutton,
@@ -105,3 +95,7 @@ h1{
     margin-right: 5px;
 }
 
+.display:active{
+    box-shadow: 0 0px;
+    transform: translate(2px, 2px); 
+}

@@ -1,7 +1,8 @@
 /*
 functionalities to add: 
-1. put button functions into functions to add into keypress 
-2. complete keyboard functionality
+1. pedmas support!
+2. put button functions into functions to add into keypress 
+3. complete keyboard functionality
 */ 
 
 //variables to help with calculations
@@ -68,6 +69,10 @@ function isValidInput(input) {
 
 }
 
+function calculate() {
+
+}
+
 //number buttons functionality 
 NUMBUTTONS.forEach(button => {
     button.addEventListener("click", () => {
@@ -91,7 +96,8 @@ DECIMAL.addEventListener("click", () => {
     if (!decimalFlag){
         inputStore = inputStore + DECIMAL.textContent;
         INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
-        decimalFlag = true;}
+        decimalFlag = true;
+    }
 })
 
 //clear button functionality 
@@ -116,19 +122,22 @@ BACKSPACE.addEventListener("click", () => {
     INPUTTEXT.textContent = inputStore;
 })
 
-
+//remember to reset decimal flag
 //plus button functionality 
 PLUS.addEventListener("click", () => {
 })
 
+//remember to reset decimal flag
 //minus button functionality 
 MINUS.addEventListener("click", () => {
 })
 
+//remember to reset decimal flag
 //multiply button functionality
 MULTIPLY.addEventListener("click", () => {
 })
 
+//remember to reset decimal flag
 //divide button functionality
 DIVIDE.addEventListener("click", () => {
 })
@@ -144,4 +153,10 @@ EQUALS.addEventListener("click", () => {
 //consider wrapping the functionality in functions so the keypress can just call it
 document.addEventListener("keydown", (e) => {
     console.log(e);
+})
+
+//secret!!
+const DISPLAY = BODY.querySelector(".display"); 
+DISPLAY.addEventListener("click", () => {
+    
 })
