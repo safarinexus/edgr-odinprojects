@@ -174,7 +174,7 @@ EQUALS.addEventListener("click", () => {
     decimalFlag = false;
     tempstore = "";
     for (let i = 0; i < inputBuffer.length; i++){
-        if (isNumber(inputBuffer[i])){
+        if (isNumber(inputBuffer[i]) || inputBuffer[i] === "."){
             tempstore = tempstore + inputBuffer[i]; 
         } else {
             operator = inputBuffer[i];
