@@ -4,8 +4,6 @@ functionalities to add:
 2. put button functions into functions to add into keypress 
 3. complete keyboard functionality
 4. add backspace button
-5. add dark mode
-
 */ 
 
 //variables to help with calculations
@@ -84,7 +82,7 @@ document.addEventListener("keydown", (e) => {
     } else if (e.key == "9"){
         displaynums = displaynums + "9";
         NUMTEXT.textContent = displaynums.substring(displaynums.length - 9);
-    } else if (e.key == "0"){
+    } else if (e.key == "0"){3
         displaynums = displaynums + "0";
         NUMTEXT.textContent = displaynums.substring(displaynums.length - 9);
     }

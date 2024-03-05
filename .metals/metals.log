@@ -236,3 +236,6 @@ create table fingerprints(
 2024.03.02 23:52:34 WARN  Build server is not auto-connectable.
 Mar 03, 2024 4:18:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2024.03.04 13:55:26 INFO  Shutting down server
+2024.03.04 13:55:26 INFO  shutting down Metals
+2024.03.04 13:55:26 INFO  Exiting server
