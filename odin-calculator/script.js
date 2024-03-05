@@ -1,8 +1,7 @@
 /*
 functionalities to add: 
-1. fix formatting for display text
-2. put button functions into functions to add into keypress 
-3. complete keyboard functionality
+1. put button functions into functions to add into keypress 
+2. complete keyboard functionality
 */ 
 
 //variables to help with calculations
@@ -10,9 +9,9 @@ let num1 = null;
 let num2 = null; 
 let operator = "";
 let result = null;
-let inputhold = "";
-let outputhold = "";
-let decimalflag = false;
+let inputStore = "";
+let outputStore = "";
+let decimalFlag = false;
 
 //requirement functions
 function add(num1, num2){
@@ -64,26 +63,36 @@ const DIVIDE = BODY.querySelector('#dividebutton');
 const EQUALS = BODY.querySelector('#equalsbutton');
 const DECIMAL = BODY.querySelector('#decimalbutton');
 
+//helper functions
+function isValidInput(input) {
+
+}
 
 //number buttons functionality 
 NUMBUTTONS.forEach(button => {
     button.addEventListener("click", () => {
-        inputhold = inputhold + button.textContent;
-        INPUTTEXT.textContent = inputhold.substring(inputhold.length - 24);
+        inputStore = inputStore + button.textContent;
+        INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
     })
 })
 
-//parentheses functionality 
+//parentheses functionality (leave to last)
+LEFTBRACKET.addEventListener("click", () => {
+    inputStore = inputStore + LEFTBRACKET.textContent;
+    INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+})
+RIGHTBRACKET.addEventListener("click", () => {
+    inputStore = inputStore + RIGHTBRACKET.textContent;
+    INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+})
 
 //decimal functionality
 DECIMAL.addEventListener("click", () => {
-    if (!decimalflag){
-        inputhold = inputhold + DECIMAL.textContent;
-        INPUTTEXT.textContent = inputhold.substring(inputhold.length - 24);
-        decimalflag = true;
-    } 
+    if (!decimalFlag){
+        inputStore = inputStore + DECIMAL.textContent;
+        INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+        decimalFlag = true;}
 })
-
 
 //clear button functionality 
 CLEARBUTTON.addEventListener("click", () => {
@@ -93,116 +102,42 @@ CLEARBUTTON.addEventListener("click", () => {
     num2 = null; 
     operator = "";
     result = null;
-    inputhold = "";
-    outputhold = "";
-    decimalflag = false;
+    inputStore = "";
+    outputStore = "";
+    decimalFlag = false;
 })
 
 //backspace functionality
 BACKSPACE.addEventListener("click", () => {
-
+    if (inputStore.slice(-1) == "."){
+        decimalFlag = false;
+    }
+    inputStore = inputStore.substring(0, inputStore.length - 1);
+    INPUTTEXT.textContent = inputStore;
 })
 
 
 //plus button functionality 
 PLUS.addEventListener("click", () => {
-    if (!num1){
-        num1 = Number(displayhold); 
-        DISPLAY = "";
-        displayhold = ""
-    } else if (num1 && displayhold != "") {
-        num2 = Number(displayhold);
-        operate(num1, num2);
-        num1 = result; 
-        num2 = null; 
-
-    }
-    operator = "+";
 })
 
 //minus button functionality 
 MINUS.addEventListener("click", () => {
-    if (!num1){
-        num1 = Number(displayhold); 
-    } else if (num1 && displayhold != "") {
-        num2 = Number(displayhold);
-        operate(num1, num2);
-        num1 = result; 
-        num2 = null; 
-    }
-    operator = "-";
-    displayhold = ""; 
-    DISPLAY = "";
 })
-
 
 //multiply button functionality
 MULTIPLY.addEventListener("click", () => {
-    if (!num1){
-        num1 = Number(displayhold); 
-    } else if (num1 && displayhold != "") {
-        num2 = Number(displayhold);
-        operate(num1, num2);
-        num1 = result; 
-        num2 = null; 
-    }
-    operator = "×";
-    displayhold = ""; 
-    DISPLAY = "";
 })
 
 //divide button functionality
 DIVIDE.addEventListener("click", () => {
-    if (!num1){
-        num1 = Number(displayhold); 
-        operator = "÷";
-        displayhold = ""; 
-        DISPLAY = ""; 
-    } else if (num1 && displayhold != "") {
-        num2 = Number(displayhold);
-        operate(num1, num2);
-        if (result == "ERROR"){
-            DISPLAY = result;
-            displayhold = ""; 
-            num1 = null; 
-            num2 = null;
-            operator = "";
-            result = null;
-        } else {
-            operator = "÷";
-            num1 = result; 
-            num2 = null; 
-            displayhold = "";
-            DISPLAY = ""; 
-        } 
-    } else {
-        displayhold = ""; 
-        DISPLAY = ""; 
-    }
 })
 
 //equals button functionality 
 //consider putting the equals function into the operator buttons since it 'equals' if there is a second number
 //alternatively, you can consider doing the functionality like a scientific calculator
 EQUALS.addEventListener("click", () => {
-    if (num1 != null) {
-        if (displayhold != ""){
-            num2 = Number(displayhold);
-            operate(operator, num1, num2);  
-                if (result != "ERROR"){
-                    num1 = result;
-                } else {
-                    num1 = null;
-                }
-            DISPLAY = String(result);
-            displayhold = "";
-            num2 = null; 
-            operator = "";
-            result = null; 
-        } else {
-            DISPLAY = String(num1);
-        }
-    }
+    
 })
 
 //keyboard functionality 
