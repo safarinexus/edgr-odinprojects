@@ -5,14 +5,11 @@ functionalities to add:
 3. complete keyboard functionality
 */ 
 
-//variables to help with calculations
+//requirement variables
 let num1 = null; 
 let num2 = null; 
 let operator = "";
 let result = null;
-let inputStore = "";
-let outputStore = "";
-let decimalFlag = false;
 
 //requirement functions
 function add(num1, num2){
@@ -64,38 +61,40 @@ const DIVIDE = BODY.querySelector('#dividebutton');
 const EQUALS = BODY.querySelector('#equalsbutton');
 const DECIMAL = BODY.querySelector('#decimalbutton');
 
+//helper variables
+let inputBuffer = "";
+let outputBuffer = "";
+let decimalFlag = false;
+
 //helper functions
-function isValidInput(input) {
-
-}
-
-function calculate() {
-
+function isNumber(char) {
+    const NUMBERS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; 
+    return NUMBERS.includes(char);
 }
 
 //number buttons functionality 
 NUMBUTTONS.forEach(button => {
     button.addEventListener("click", () => {
-        inputStore = inputStore + button.textContent;
-        INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+        inputBuffer = inputBuffer + button.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
     })
 })
 
 //parentheses functionality (leave to last)
 LEFTBRACKET.addEventListener("click", () => {
-    inputStore = inputStore + LEFTBRACKET.textContent;
-    INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+    inputBuffer = inputBuffer + LEFTBRACKET.textContent;
+    INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
 })
 RIGHTBRACKET.addEventListener("click", () => {
-    inputStore = inputStore + RIGHTBRACKET.textContent;
-    INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+    inputBuffer = inputBuffer + RIGHTBRACKET.textContent;
+    INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
 })
 
 //decimal functionality
 DECIMAL.addEventListener("click", () => {
     if (!decimalFlag){
-        inputStore = inputStore + DECIMAL.textContent;
-        INPUTTEXT.textContent = inputStore.substring(inputStore.length - 24);
+        inputBuffer = inputBuffer + DECIMAL.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
         decimalFlag = true;
     }
 })
@@ -108,45 +107,75 @@ CLEARBUTTON.addEventListener("click", () => {
     num2 = null; 
     operator = "";
     result = null;
-    inputStore = "";
-    outputStore = "";
+    inputBuffer = "";
+    outputBuffer = "";
     decimalFlag = false;
 })
 
 //backspace functionality
 BACKSPACE.addEventListener("click", () => {
-    if (inputStore.slice(-1) == "."){
+    if (inputBuffer.slice(-1) == "."){
         decimalFlag = false;
     }
-    inputStore = inputStore.substring(0, inputStore.length - 1);
-    INPUTTEXT.textContent = inputStore;
+    inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1);
+    INPUTTEXT.textContent = inputBuffer;
 })
 
-//remember to reset decimal flag
 //plus button functionality 
 PLUS.addEventListener("click", () => {
+    if (isNumber(inputBuffer.slice(-1))){
+        decimalFlag = false;
+        inputBuffer = inputBuffer + PLUS.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "÷"){
+        decimalFlag = false; 
+        inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + PLUS.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    }
 })
 
-//remember to reset decimal flag
 //minus button functionality 
 MINUS.addEventListener("click", () => {
+    if (isNumber(inputBuffer.slice(-1))){
+        decimalFlag = false;
+        inputBuffer = inputBuffer + MINUS.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "+" || inputBuffer.slice(-1) == "÷"){
+        decimalFlag = false; 
+        inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + MINUS.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    }
 })
 
-//remember to reset decimal flag
 //multiply button functionality
 MULTIPLY.addEventListener("click", () => {
+    if (isNumber(inputBuffer.slice(-1))){
+        decimalFlag = false;
+        inputBuffer = inputBuffer + MULTIPLY.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    } else if (inputBuffer.slice(-1) == "+" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "÷"){
+        decimalFlag = false; 
+        inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + MULTIPLY.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    }
 })
 
-//remember to reset decimal flag
 //divide button functionality
 DIVIDE.addEventListener("click", () => {
+    if (isNumber(inputBuffer.slice(-1))){
+        decimalFlag = false;
+        inputBuffer = inputBuffer + DIVIDE.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "+"){
+        decimalFlag = false; 
+        inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + DIVIDE.textContent;
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+    }
 })
 
 //equals button functionality 
-//consider putting the equals function into the operator buttons since it 'equals' if there is a second number
-//alternatively, you can consider doing the functionality like a scientific calculator
 EQUALS.addEventListener("click", () => {
-    
+
 })
 
 //keyboard functionality 
@@ -158,5 +187,5 @@ document.addEventListener("keydown", (e) => {
 //secret!!
 const DISPLAY = BODY.querySelector(".display"); 
 DISPLAY.addEventListener("click", () => {
-    
+
 })
