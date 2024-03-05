@@ -22,7 +22,7 @@ h1{
 }
 
 /*calulcator*/
-.row1, .row2, .row3, .row4, .row5{
+.row0, .row1, .row2, .row3, .row4, .row5{
     display: flex; 
     width: 300px;
     margin: 5px;
@@ -31,22 +31,30 @@ h1{
 
 .display{
     width: 100%;
-    height: 50px;
+    height: 60px;
     border : 1px solid black;
     border-radius: 6px;
     display: flex;
+    flex-direction: column;
     align-content: center;
     box-shadow: 3px 3px #999;
     background-color: whitesmoke;
 }
 
-.numtext, .operatortext{
-    font-size: 40px;
+.inputtext{
+    font-size: 20px;
+    align-self: self-start;
+    margin-left: 5px;
+    margin-top: 2px;
 }
 
-.operatortext{
-    width: 10%
+.outputtext{
+    font-size: 30px; 
+    align-self: self-end;
+    margin-right: 5px; 
+    margin-bottom: 2px;
 }
+
 
 /* buttons */
 .numberbutton, .functionbutton{
@@ -54,7 +62,7 @@ h1{
     height: 50px; 
     border : 1px solid black;
     border-radius: 6px;
-    box-shadow: 3px 3px #999;
+    box-shadow: 2px 2px #999;
 }
 
 .numberbutton:hover{
@@ -64,7 +72,7 @@ h1{
 .numberbutton:active {
     background-color: darkgray;
     box-shadow: 0 0px;
-    transform: translateY(2px);
+    transform: translate(2px, 2px); 
   }
 
 .functionbutton:hover{
@@ -74,12 +82,14 @@ h1{
 .functionbutton:active {
     background-color: darkgray;
     box-shadow: 0 0px;
-    transform: translateY(2px);
+    transform: translate(2px, 2px); 
 }
 
-#onebutton, #twobutton, #threebutton, #fourbutton, 
-#fivebutton, #sixbutton, #sevenbutton, #eightbutton, 
-#ninebutton, #multiplybutton, #zerobutton, #dividebutton {
+#clearbutton, #leftbracketbutton, #rightbracketbutton,
+#onebutton, #twobutton, #threebutton,
+#fourbutton, #fivebutton, #sixbutton, 
+#sevenbutton, #eightbutton, #ninebutton, 
+#decimalbutton, #zerobutton, #dividebutton {
     margin-right: 5px;
 }
 
