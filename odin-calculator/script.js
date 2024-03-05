@@ -1,8 +1,6 @@
 /*
 functionalities to add: 
-1. pedmas support!
-2. put button functions into functions to add into keypress 
-3. complete keyboard functionality
+1. pemdas support!
 */ 
 
 //requirement variables
@@ -63,7 +61,6 @@ const DECIMAL = BODY.querySelector('#decimalbutton');
 
 //helper variables
 let inputBuffer = "";
-let outputBuffer = "";
 let decimalFlag = false;
 
 //helper functions
@@ -108,7 +105,6 @@ CLEARBUTTON.addEventListener("click", () => {
     operator = "";
     result = null;
     inputBuffer = "";
-    outputBuffer = "";
     decimalFlag = false;
 })
 
@@ -175,13 +171,177 @@ DIVIDE.addEventListener("click", () => {
 
 //equals button functionality 
 EQUALS.addEventListener("click", () => {
-
+    decimalFlag = false;
+    tempstore = "";
+    for (let i = 0; i < inputBuffer.length; i++){
+        if (isNumber(inputBuffer[i])){
+            tempstore = tempstore + inputBuffer[i]; 
+        } else {
+            operator = inputBuffer[i];
+            if (!num1){
+                num1 = Number(tempstore);
+            } else {
+                num2 = Number(tempstore);
+                operate(operator, num1, num2); 
+                num1 = result;
+                num2 = null;
+            }
+            tempstore = "";
+        }
+    }
+    if (tempstore != ""){
+        if (!num1) {
+            num1 = Number(tempstore)
+        } else {
+            num2 = Number(tempstore);
+            operate(operator, num1, num2); 
+            num1 = result;
+            num2 = null;
+        }
+    }
+    inputBuffer = "";
+    operator = "";
+    OUTPUTTEXT.textContent = String(num1);
+    INPUTTEXT.textContent = "";
+    num1 = null;
 })
 
 //keyboard functionality 
 //consider wrapping the functionality in functions so the keypress can just call it
 document.addEventListener("keydown", (e) => {
     console.log(e);
+    if (e.key === 'Escape') {
+        INPUTTEXT.textContent = "";
+        OUTPUTTEXT.textContent = "";
+        num1 = null; 
+        num2 = null; 
+        operator = "";
+        result = null;
+        inputBuffer = "";
+        decimalFlag = false;
+    } else if (e.key === '(') {
+        inputBuffer = inputBuffer + "(";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === ')') {
+        inputBuffer = inputBuffer + ")";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === 'Backspace') {
+        if (inputBuffer.slice(-1) == "."){
+            decimalFlag = false;
+        }
+        inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1);
+        INPUTTEXT.textContent = inputBuffer;
+    } else if (e.key === '1') {
+        inputBuffer = inputBuffer + "1";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '2') {
+        inputBuffer = inputBuffer + "2";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '3') {
+        inputBuffer = inputBuffer + "3";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '4') {
+        inputBuffer = inputBuffer + "4";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '5') {
+        inputBuffer = inputBuffer + "5";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '6') {
+        inputBuffer = inputBuffer + "6";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '7') {
+        inputBuffer = inputBuffer + "7";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '8') {
+        inputBuffer = inputBuffer + "8";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '9') {
+        inputBuffer = inputBuffer + "9";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '0') {
+        inputBuffer = inputBuffer + "0";
+        INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+    } else if (e.key === '.') {
+        if (!decimalFlag){
+            inputBuffer = inputBuffer + ".";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24);
+            decimalFlag = true;
+        }
+    } else if (e.key === '+') {
+        if (isNumber(inputBuffer.slice(-1))){
+            decimalFlag = false;
+            inputBuffer = inputBuffer + "+";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "÷"){
+            decimalFlag = false; 
+            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + "+";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        }
+    } else if (e.key === '-') {
+        if (isNumber(inputBuffer.slice(-1))){
+            decimalFlag = false;
+            inputBuffer = inputBuffer + "-";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "+" || inputBuffer.slice(-1) == "÷"){
+            decimalFlag = false; 
+            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + "-";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        }
+    } else if (e.key === 'x') {
+        if (isNumber(inputBuffer.slice(-1))){
+            decimalFlag = false;
+            inputBuffer = inputBuffer + "×";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        } else if (inputBuffer.slice(-1) == "+" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "÷"){
+            decimalFlag = false; 
+            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + "×";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        }
+    } else if (e.key === '/') {
+        if (isNumber(inputBuffer.slice(-1))){
+            decimalFlag = false;
+            inputBuffer = inputBuffer + "÷";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        } else if (inputBuffer.slice(-1) == "×" || inputBuffer.slice(-1) == "-" || inputBuffer.slice(-1) == "+"){
+            decimalFlag = false; 
+            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1) + "÷";
+            INPUTTEXT.textContent = inputBuffer.substring(inputBuffer.length - 24)
+        }
+    } else if (e.key === 'Enter') {
+        decimalFlag = false;
+        tempstore = "";
+        for (let i = 0; i < inputBuffer.length; i++){
+            if (isNumber(inputBuffer[i])){
+                tempstore = tempstore + inputBuffer[i]; 
+            } else {
+                operator = inputBuffer[i];
+                if (!num1){
+                    num1 = Number(tempstore);
+                } else {
+                    num2 = Number(tempstore);
+                    operate(operator, num1, num2); 
+                    num1 = result;
+                    num2 = null;
+                }
+                tempstore = "";
+            }
+        }
+        if (tempstore != ""){
+            if (!num1) {
+                num1 = Number(tempstore)
+            } else {
+                num2 = Number(tempstore);
+                operate(operator, num1, num2); 
+                num1 = result;
+                num2 = null;
+            }
+        }
+        inputBuffer = "";
+        operator = "";
+        OUTPUTTEXT.textContent = String(num1);
+        INPUTTEXT.textContent = "";
+        num1 = null;
+    }
 })
 
 //secret!!
