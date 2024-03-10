@@ -24,5 +24,5 @@ An etch-a-sketch built right into your browser!
 5. Odin Calculator  
 JavaScript Basics Final Project  
 Project: Calculator  
-An on-screen SCIENTIFIC calculator in your browser!  
+An on-screen calculator in your browser!  
   
