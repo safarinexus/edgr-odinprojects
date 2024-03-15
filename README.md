@@ -26,9 +26,13 @@ JavaScript Basics Final Project
 Project: Calculator  
 An on-screen calculator in your browser!  
   
-6. Odin Dashboard  
+6. Odin Sign-up Form  
+Intermediate HTML & CSS Form Project  
+Project: Sign-up Form  
+A simple sign-up form  
+  
+7. Odin Dashboard  
 Intermediate HTML & CSS Grid Project  
 Project: Admin Dashboard  
 An admin dashboard landing page using CSS grid!  
-  
   
