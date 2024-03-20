@@ -9,18 +9,19 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
     align-items: center;
 }
 
 h1 {
     color: whitesmoke;
     margin-bottom: 2%;
+    margin-left: 5px;
 }
 
 p {
     color: gray;
     margin-top: 1%;
+    margin-left: 5px;
 }
 
 a {
@@ -29,6 +30,7 @@ a {
     height: 100%;
     text-decoration: none;
     font-weight: 600;
+    margin-left: 5px; 
 }
 
 a:hover {
@@ -38,9 +40,20 @@ a:hover {
 .title, .projects {
     width: 50%; 
     height: 10%;
-    padding: 5px 5px 5px 5px;
+    padding: 8px;
     margin: 5px 5px 5px 5%;
 }
+
+@media only screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+    .title, .projects {
+        width: 100%; /* Snap to full width at specified breakpoint */
+        padding-left: 0; 
+        padding-right: 0;
+        margin-left: 0; 
+        margin-right: 0;
+    }
+  }
+
 
 .recipes, .landing-page, .rockpaperscissors, 
 .etch-a-sketch, .calculator, .signup,
