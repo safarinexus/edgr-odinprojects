@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner-section">
+        <div class="banner">
+            <img src = "./assets/odin-lined.png" alt="odin logo"/>
+            <h1>Your mom</h1>
+        </div>
+        <div class="watermark">
+            <small>Photo by Halie West on Unsplash</small>
+        </div>
+    </div>
+    <div class="signup-section">
+        <div class="text">
+            <h3>
+                This is not a real online service! 
+                You know you need something like this in your life
+                to help you realize your deepest dreams. 
+                <br>
+                Sign up <span>now</span> to get started. 
+                <br>
+                <br>
+                You <span>know</span> you want to. 
+            </h3>
+        </div>
+        <form id="form">
+            <fieldset>
+                <h3>Let's do this!</h3>
+                <div class="inputs">
+                    <div class="firstinputcol">
+                        <label for="firstname"><small>FIRST NAME</small></label>
+                        <input type="text" id="firstname" name="firstname">
+                        <label for="email"><small>EMAIL</small></label>
+                        <input type="email" id="email" name="email">
+                        <label for="password"><small>PASSWORD</small></label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="secondinputcol">
+                        <label for="lastname"><small>LAST NAME</small></label>
+                        <input type="text" id="lastname" name="lastname">
+                        <label for="phonenumber"><small>PHONE NUMBER</small></label>
+                        <input type="tel" id="phonenumber" name="phonenumber">
+                        <label for="confirm"><small>CONFIRM PASSWORD</small></label>
+                        <input type="password" id="confirm" name="confirm">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <button type="submit" form="form">Create Account</button>
+        <div class="already-have">
+            Already have an account?
+            <a href="">Log in</a>
+        </div>
+    </div>
+</body>
+</html>
