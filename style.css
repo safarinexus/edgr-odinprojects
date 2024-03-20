@@ -45,6 +45,10 @@ a:hover {
     margin: 0 5px 0 5%;
 }
 
+.projects {
+    padding-top: 0; 
+}
+
 @media only screen and (max-width: 768px) { /* Adjust breakpoint as needed */
     .title, .projects {
         width: 100%; /* Snap to full width at specified breakpoint */
