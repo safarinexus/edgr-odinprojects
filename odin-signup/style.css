@@ -3,8 +3,8 @@
 }
 
 body {
-    height: 100vh; 
-    width: 100vw; 
+    height: max(100vh, 840px); 
+    width: max(100vw, 768px); 
     margin: 0;
     padding: 0;
     display: flex; 
@@ -154,6 +154,8 @@ button {
     position: relative;
     bottom: 70px;
     left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 button:hover {
