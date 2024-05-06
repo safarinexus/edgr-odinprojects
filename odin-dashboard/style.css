@@ -1,50 +1,415 @@
 :root {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    padding: 0; 
+    margin: 0; 
+    height: max(100vh, 832px); 
+    width: max(100vw, 800px); 
+    display: grid; 
+    grid-template-columns: 260px auto;
+    grid-template-rows: 15% 85%;
+}
+
+* {
+    margin: 0; 
     padding: 0;
 }
 
 a {
-    color: blue;
-    text-decoration: none; /* no underline */
+    text-decoration: none;
+    color: white;
 }
 
-.grid {
-    height: 100vh;
-    width: 100vw;
-    display: grid; 
-    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "sidebar header header header"
-        "sidebar main-content main-content main-content"
-        "sidebar main-content main-content main-content"
-        "sidebar main-content main-content main-content";
+@media only screen and (max-width: 768px) {
 }
 
-.header {
-    grid-area: header;
+/*=====================SIDEBAR-DESKTOP=======================*/
+
+div.sidebar {
+    display: grid;
+    height: 100%; 
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: #1992d4; 
+    grid-template-columns: subgrid;
+    grid-template-rows: 6% 30% 25% 39%;
+    grid-row-gap: 0.5px;
 }
 
-.sidebar {
-    background-color: #4199DC; 
-    grid-area: sidebar;
-}
-
-.main-content {
-    background-color: aliceblue; 
-    grid-area: main-content;
-}
-
-.branding {
+/*need to make the sidebar min width not beyond 
+the child elements*/
+div.sidebar a{
+    width: 100%;
+    padding-top: 12px; 
+    padding-bottom: 12px;
     display: flex; 
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.dashboard-icon {
-    height: 50px;
-    width: 50px;
+div.sidebar>a.sidebarlogo {
+    padding: 0; 
+}
+
+div.sidebar>a.sidebarlogo>img {
+    height: 40px; 
+    width: 40px;
+    padding: 10px;
+}
+
+div.sidebar img{
+    height: 20px;
+    width: 20px;
+    padding-left: 20px; 
+    padding-right: 20px;
+    filter: invert(100%) sepia(0%) 
+            saturate(7500%) hue-rotate(338deg) 
+            brightness(111%) contrast(101%);
+}
+
+div.sidebar h2 {
+    margin: 0; 
+    font-size: 24px;
+}
+
+div.sidebar h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+div.sidebar>a.sidebarlogo {
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+div.sidebar>div.main-nav{
+    display: grid;
+    grid-row-start: 2; 
+    grid-row-end: 2;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: subgrid;
+}
+
+div.sidebar>div.extra-nav{
+    display: grid;
+    grid-row-start: 3; 
+    grid-row-end: 3; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: subgrid;
+    align-self: end;
+}
+
+div.extra-nav a {
+    margin-top: 2px; 
+    margin-bottom: 2px;
+}
+
+/*======================HEADER-DESKTOP========================*/
+
+div.header {
+    display: grid;
+    height: 100%; 
+    width: max(100%, 800px);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 35% 65%;
+}
+
+div.searchbar {
+    grid-column-start: 1; 
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex; 
+    align-items: center;
+    margin-left: 20px;
+    justify-self: start;
+    width: 100%;
+}
+
+div.searchbar>input{
+    border-radius: 15px;
+    border: 0;
+    background: #e2e8f0; 
+    width: 80%;
+    height: 45%;
+}
+
+div.searchbar>button {
+    background-image: url("assets/search.svg"); 
+    background-color: white;
+    border: 0; 
+    border-radius: 6px;
+    width: 20px; 
+    height: 20px;
+    margin: 5px; 
+}
+
+div.searchbar>button:hover {
+    background-color: lightgrey;
+    box-shadow: 2px 2px #999;
+}
+
+div.searchbar>button:active{
+    background-color: lightgrey;
+    box-shadow: 0 0px;
+    transform: translate(2px, 2px); 
+}
+
+div.user-info {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    box-sizing: border-box;
+    padding-right: 50px; 
+}
+
+a.user{
+    color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+a.user>img {
+    border-radius: 30px;
+    height: 40px; 
+    width: 40px;
+}
+
+a.user>h4 {
+    margin-left: 20px; 
+}
+
+a.notif-bell>img {
+    height: 20px; 
+    width: 20px;
+    margin-right: 20px;
+}
+
+div.user-intro, div.tuser1, div.tuser2, div.tuser3, div.tuser4 {
+    grid-column-start: 1; 
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: grid; 
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+}
+
+div.user-intro {
+    justify-self: start;
+    width: 500px;
+}
+
+div.user-intro>a, div.trending a{
+    grid-column-start: 1; 
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+    align-self: center;
+}
+
+div.user-intro img{
+    border-radius: 50px;
+    height: 60px; 
+    width: 60px;
+}
+
+div.user-intro>h5, div.trending h5 {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    align-self: end;
+    margin: 0;
+}
+
+div.user-intro>h3 {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    justify-content: start;
+    align-self: start;
+    margin: 0;
+}
+
+div.header-buttons {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-self: end;
+    box-sizing: border-box;
+    padding-right: 35px; 
+}
+
+div.header-buttons a {
+    border-radius: 30px;
+    border: 0; 
+    height: 30px; 
+    width: 80px;
+    margin: 15px; 
+}
+
+div.header-buttons button {
+    border-radius: 30px;
+    border: 0; 
+    height: 30px; 
+    width: 80px;
+    color: white;
+    background-color: #1992d4;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*========================MAIN-DESKTOP========================*/
+
+div.main {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%; 
+    width: max(100%, 800px);
+    background-color: #e2e8f0;
+    display: grid;
+    grid-template-columns: 2fr 2fr 200px; 
+    grid-template-rows: 30px 220px 65px 50px 65px 220px 30px;
+    grid-gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+div.main h4 {
+    font-weight: 550;
+    padding-top: 10px;
+}
+
+div.main img {
+    height: 25px; 
+    width: 25px; 
+}
+
+div.projectheader {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+div.projectheader>h4, div.announcementheader>h4 {
+    position: absolute;
+    top: 5px; 
+}
+
+div.trendingheader>h4 {
+    position: absolute; 
+    top: 30px; 
+}
+
+div.announcementheader {
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+div.announcements {
+    grid-row: 2 / span 2;
+    grid-column: 3;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+div.trendingheader {
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+div.trending {
+    grid-row: 5 / span 2;
+    grid-column: 3;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.project {
+    border-radius: 5px;
+    border-left: 5px solid #f0b429;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+
+div.projbuttons {
+    position: absolute;
+    bottom: 20px; 
+    right: 30px;
+}
+
+div.projbuttons>a {
+    margin-left: 18px;
+}
+
+#p3 {
+    grid-row: 3 / span 3;
+    grid-column: 1;
+}
+
+#p4 {
+    grid-row: 3 / span 3;
+    grid-column: 2;
+}
+
+#p5 {
+    grid-row: 6;
+    grid-column: 1;
+}
+
+#p6 {
+    grid-row: 6;
+    grid-column: 2;
+}
+
+div.trending p , div.announcements p{
+    font-size: small;
 }
