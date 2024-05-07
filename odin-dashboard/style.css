@@ -30,7 +30,7 @@ a {
 
 div.sidebar {
     display: grid;
-    height: max(100vh, 915px); 
+    height: 100%; 
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -114,8 +114,8 @@ div.extra-nav a {
 
 div.header {
     display: grid;
-    height: 125px;
-    width: max(100%, 850px);
+    height: 100%; 
+    width: max(100%, 800px);
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -291,7 +291,7 @@ div.main {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-    height: max(100%, 790px); 
+    height: 100%; 
     width: max(100%, 800px);
     background-color: #e2e8f0;
     display: grid;
