@@ -287,6 +287,3 @@ INFO: Unsupported notification method: $/setTrace
 14:39:35.299 [pool-1-thread-4] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 82 of 125M
 2024.03.20 14:39:35 WARN  no build tool detected in workspace '/Users/edgr/Desktop/X/computeration/odin_projects'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2024.03.20 14:39:35 WARN  Build server is not auto-connectable.
-2024.03.21 15:05:42 INFO  Shutting down server
-2024.03.21 15:05:42 INFO  shutting down Metals
-2024.03.21 15:05:42 INFO  Exiting server
