@@ -110,6 +110,11 @@ div.extra-nav a {
     margin-bottom: 2px;
 }
 
+div.main-nav>a:hover, div.extra-nav>a:hover {
+    opacity: 50%;
+    background-color: #86b5cf;
+}
+
 /*======================HEADER-DESKTOP========================*/
 
 div.header {
@@ -282,6 +287,12 @@ div.header-buttons button {
     background-color: #1992d4;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.5s ease;
+    transform: scale(1);
+}
+
+div.header-buttons button:hover {
+    transform: scale(1.2) perspective(1px); 
 }
 
 /*========================MAIN-DESKTOP========================*/
@@ -390,6 +401,15 @@ div.projbuttons {
 
 div.projbuttons>a {
     margin-left: 18px;
+}
+
+div.projbuttons img {
+    transition: all 0.5s ease;
+    transform: scale(1);
+}
+
+div.projbuttons img:hover {
+    transform: scale(1.2) perspective(1px); 
 }
 
 #p3 {
