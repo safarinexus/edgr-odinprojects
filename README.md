@@ -35,5 +35,9 @@ A simple sign-up form
 Intermediate HTML & CSS Grid Project  
 Project: Admin Dashboard  
 An admin dashboard landing page using CSS grid!  
-
   
+8. Odin Library  
+Intermediate JavaScript & JS Objects Project  
+Project: Library  
+A library website of books with basic functionality to add new books implemented with Dialogs and JS Objects  
+
