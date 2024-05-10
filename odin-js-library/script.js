@@ -21,7 +21,11 @@ function addBookToLibrary(title, author, pages, read=false) {
 }
 
 function displayBooks() {
-    myLibrary.map((element) => console.log(element));
+    if (READ.value === "") {
+        LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + TITLE.value + '</h5><p>Author:</p><h5>' + AUTHOR.value + '</h5><p>Pages:</p><h5>' + PAGES.value + '</h5><p>Read?</p><h5>&#x2717;</h5><button>Read</button><button>Remove</button></div>';
+    } else {
+        LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + TITLE.value + '</h5><p>Author:</p><h5>' + AUTHOR.value + '</h5><p>Pages:</p><h5>' + PAGES.value + '</h5><p>Read?</p><h5>&#x2713;</h5><button>Read</button><button>Remove</button></div>';
+    }
 }
 
 const DIALOG = document.querySelector("dialog");
@@ -46,12 +50,11 @@ ADD.addEventListener("click", (e) => {
     if (TITLE.value !== "") {
         e.preventDefault(); 
         addBookToLibrary(TITLE.value, AUTHOR.value, PAGES.value, READ.value);
+        displayBooks();
         TITLE.value = ""; 
         AUTHOR.value = "";
         PAGES.value = "";
         READ.value = "";
-        displayBooks();
         DIALOG.close();
     }
-}); 
-
+});
