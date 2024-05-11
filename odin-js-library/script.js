@@ -49,9 +49,9 @@ function displayBooks() {
     clear();
     myLibrary.forEach(function(book) {
         if (book.read) {
-            LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + book.title + '</h5><p>Author:</p><h5>' + book.author + '</h5><p>Pages:</p><h5>' + book.pages + '</h5><p>Read?</p><h5>&#x2713;</h5><button id="change' + count + '">Read</button><button id="remove' + count + '">Remove</button></div>';
+            LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + book.title + '</h5><p>Author:</p><h5>' + book.author + '</h5><p>Pages:</p><h5>' + book.pages + '</h5><p>Read?:</p><h5>&#x2713;</h5><button id="change' + count + '">Read</button><button id="remove' + count + '">Remove</button></div>';
         } else {
-            LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + book.title + '</h5><p>Author:</p><h5>' + book.author + '</h5><p>Pages:</p><h5>' + book.pages + '</h5><p>Read?</p><h5>&#x2717;</h5><button id="change' + count + '">Read</button><button id="remove' + count + '">Remove</button></div>';
+            LIBRARY.innerHTML += '<div class="book"><p>Book Title:</p><h5>' + book.title + '</h5><p>Author:</p><h5>' + book.author + '</h5><p>Pages:</p><h5>' + book.pages + '</h5><p>Read?:</p><h5>&#x2717;</h5><button id="change' + count + '">Read</button><button id="remove' + count + '">Remove</button></div>';
         }
         count++;
     })
