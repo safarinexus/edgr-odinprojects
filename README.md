@@ -39,5 +39,9 @@ An admin dashboard landing page using CSS grid!
 8. Odin Library  
 Intermediate JavaScript & JS Objects Project  
 Project: Library  
-A library website of books with basic functionality to add new books implemented with Dialogs and JS Objects  
-
+A library website of books with basic functionality to add new books implemented with Dialogs and JS Objects.  
+  
+9. Odin Tic-Tac-Toe  
+Intermediate JavaScript IIFE & Factory Functions Project  
+Project: Tic-Tac-Toe  
+A simple game of Tic-Tac-Toe played from your browser!  
