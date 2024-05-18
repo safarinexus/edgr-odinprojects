@@ -1,145 +1,145 @@
-//leave logic for legal character ("x" or "o") within the ui selection  
-//need to think about where to include logic for whether something is a valid move (i.e. if the space is empty or not)
-//how to implement rotating turns is another one 
-//check for winning condition 
-//your game controller should probably include a restart for when the game ends
-
 //gameBoard IIFE for returning a board object
 const gameBoard = (function() {
-    let board = [
-        [0, 0, 0], 
-        [0, 0, 0],
-        [0, 0, 0]
-    ];
+    const rows = 3; 
+    const columns = 3; 
+    const board = []
 
-    const available = () => {
+    for (let i = 0; i < rows; i++) {
+        board[i] = [];
+        for (let j = 0; j < columns; j++) {
+          board[i][j] = 0;
+        }
+    }
+
+    const getBoard = () => board;
+
+    const printBoard = () => {
+        for (let i = 0; i < rows; i++) {
+            console.log(board[i]);
+        }
+    }
+
+    const getAvailable = () => {
         let check = false; 
         for (let i = 0; i < 3; i++ ) {
-            for (let j = 0; j < 3; j++ ) {
-                if (board[i][j] === 0) {
-                    check = true;
-                }
+            if(board[i].includes(0)) {
+                check = true;
             }
         }
         return check;
     }
 
-    const print = () => {
-        for (let i = 0; i < 3; i++)  {
-                console.log(board[i]);
-            } 
-    }
-
-    const edit = (row, col, character) => {
-        if (row >= 0 && row < 3 && col >= 0 && row < 3 && board[row][col] === 0){
-            board[row][col] = character;
-        } else {
-            return "Error!";
+    const resetBoard = () => {
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
+              board[i][j] = 0;
+            }
         }
     }
-
-    const reset = () => board = [
-        [0, 0, 0],
-        [0, 0, 0], 
-        [0, 0, 0]
-    ]
     
     return {
-        available, 
-        print, 
-        edit, 
-        reset, 
-        view: () => [...board]
+        getBoard, 
+        getAvailable, 
+        resetBoard, 
+        printBoard
     }
 })();
 
+
+
 //Player factory function to create player objects
 function player(name, character) {
-
     return {
         getName: () => name, 
         getCharacter: () => character
     }
 }
 
+
+
 //Game Controller IIFE to create an instance of a controller for the game
-const gameController = (function(gameBoard) {
+const gameEngine = (function() {
+
+    const board = gameBoard.getBoard();
 
     const playerInit = () => {
-        const player1name = prompt("Player 1: "); 
-        let player1char = ""; 
-        while (player1char != "x" && player1char != "o") {
-            player1char = prompt("Choose X or O: "); 
-        }
-        const player2name = prompt("Player 2: "); 
-        let player2char = ""; 
-        if (player1char === "x") {
-            player2char = "o"; 
+        const p1name = prompt("Player 1 (X): "); 
+        const p2name = prompt("Player 2 (O): "); 
+        return [player(p1name, "x"), player(p2name, "o")];
+    }
+
+    const players = playerInit(); 
+    console.log("Welcome, " + players[0].getName() + ". You are X."); 
+    console.log("Welcome, " + players[1].getName() + ". You are O.");
+    const playerCount = 2;
+    const turns = 5; 
+
+    const validMove = (row, col) => {
+        if (row < 0 || row > 2 || col < 0 || col > 2) {
+            return false;
         } else {
-            player2char = "x"; 
-        }
-        return {
-            p1: player(player1name, player1char), 
-            p2: player(player2name, player2char)
+            if (board[row][col] !== 0) {
+                return false; 
+            } else {
+                return true;
+            }
         }
     }
-
-    const isWin = (p1, p2) => {
-        board = gameBoard.view();
-        if ((board[0][1] === p1.getCharacter() && board[0][2] === p1.getCharacter() && board[0][3] === p1.getCharacter())||
-        (board[1][1] === p1.getCharacter() && board[1][2] === p1.getCharacter() && board[1][3] === p1.getCharacter())||
-        (board[2][1] === p1.getCharacter() && board[2][2] === p1.getCharacter() && board[2][3] === p1.getCharacter())||
-        (board[0][0] === p1.getCharacter() && board[1][0] === p1.getCharacter() && board[2][0] === p1.getCharacter())||
-        (board[0][1] === p1.getCharacter() && board[1][1] === p1.getCharacter() && board[2][1] === p1.getCharacter())||
-        (board[0][2] === p1.getCharacter() && board[1][2] === p1.getCharacter() && board[2][2] === p1.getCharacter())||
-        (board[0][0] === p1.getCharacter() && board[1][1] === p1.getCharacter() && board[2][2] === p1.getCharacter())||
-        (board[0][2] === p1.getCharacter() && board[1][1] === p1.getCharacter() && board[2][0] === p1.getCharacter())
+    
+    const isWin = () => {  
+        if ((board[0][1] === "x" && board[0][2] === "x" && board[0][3] === "x")||
+        (board[1][1] === "x" && board[1][2] === "x" && board[1][3] === "x")||
+        (board[2][1] === "x" && board[2][2] === "x" && board[2][3] === "x")||
+        (board[0][0] === "x" && board[1][0] === "x" && board[2][0] === "x")||
+        (board[0][1] === "x" && board[1][1] === "x" && board[2][1] === "x")||
+        (board[0][2] === "x" && board[1][2] === "x" && board[2][2] === "x")||
+        (board[0][0] === "x" && board[1][1] === "x" && board[2][2] === "x")||
+        (board[0][2] === "x" && board[1][1] === "x" && board[2][0] === "x")
         ){
-            return `${p1.getName()} wins!`;
-        } else if ((board[0][1] === p2.getCharacter() && board[0][2] === p2.getCharacter() && board[0][3] === p2.getCharacter())||
-        (board[1][1] === p2.getCharacter() && board[1][2] === p2.getCharacter() && board[1][3] === p2.getCharacter())||
-        (board[2][1] === p2.getCharacter() && board[2][2] === p2.getCharacter() && board[2][3] === p2.getCharacter())||
-        (board[0][0] === p2.getCharacter() && board[1][0] === p2.getCharacter() && board[2][0] === p2.getCharacter())||
-        (board[0][1] === p2.getCharacter() && board[1][1] === p2.getCharacter() && board[2][1] === p2.getCharacter())||
-        (board[0][2] === p2.getCharacter() && board[1][2] === p2.getCharacter() && board[2][2] === p2.getCharacter())||
-        (board[0][0] === p2.getCharacter() && board[1][1] === p2.getCharacter() && board[2][2] === p2.getCharacter())||
-        (board[0][2] === p2.getCharacter() && board[1][1] === p2.getCharacter() && board[2][0] === p2.getCharacter())
+            return `${players[0].getName()} wins!`;
+        } else if ((board[0][1] === "o" && board[0][2] === "o" && board[0][3] === "o")||
+        (board[1][1] === "o" && board[1][2] === "o" && board[1][3] === "o")||
+        (board[2][1] === "o" && board[2][2] === "o" && board[2][3] === "o")||
+        (board[0][0] === "o" && board[1][0] === "o" && board[2][0] === "o")||
+        (board[0][1] === "o" && board[1][1] === "o" && board[2][1] === "o")||
+        (board[0][2] === "o" && board[1][2] === "o" && board[2][2] === "o")||
+        (board[0][0] === "o" && board[1][1] === "o" && board[2][2] === "o")||
+        (board[0][2] === "o" && board[1][1] === "o" && board[2][0] === "o")
         ){
-            return `${p2.getName()} wins!`;
-        } else if (!gameBoard.available()) {
-            return "Draw!"; 
+            return `${players[1].getName()} wins!`;
+        } else if (!gameBoard.getAvailable()) {
+            return "Draw!";
         } else {
-            return "Nope";
+            return "Next Turn";
         }
     }
 
-    const turn = (p1, p2) => {
-        console.log(`${p1.getName()}'s turn}`); 
-        let row1 = prompt("Which row?"); 
-        let col1 = prompt("which col?"); 
-        gameBoard.edit(row1, col1, p1.getCharacter()); 
-        if (isWin(p1, p2) !== "Nope"){
-            console.log(isWin());
-            return
-        } 
+    for (let i = 0; i < turns; i++) {
+        for (let j = 0; j < playerCount; j++) {
+            console.log(players[j].getName() + ", your turn.");
 
+            let row = -1;
+            let column = -1;
+            
+            while (validMove(row, column) === false) {
+                row = prompt("Which row? (1 - 3): ") - 1; 
+                column = prompt("Which column? (1 - 3): ") - 1; 
+                if (validMove(row, column) === false) {
+                    console.log("Please enter a valid move!");
+                }
+            }
+
+            board[row][column] = players[j].getCharacter();
+            gameBoard.printBoard();
+            console.log(isWin()); 
+            if (isWin() !== "Next Turn") {
+                return;
+            }
+        }
     }
-
-    const engine = () => {
-        console.log("Welcome to Console Tic-Tac-Toe!");
-        const players = playerInit(); 
+})(); 
 
 
-        console.log(players.p1.getName()); 
-        console.log(players.p1.getCharacter()); 
-        console.log(players.p2.getName());
-        console.log(players.p2.getCharacter()); 
-    }
-
-    return {
-        engine
-    }
-})(gameBoard); 
-
-
-gameController.engine();
+const displayController = (function() {
+    return;
+})(); 
