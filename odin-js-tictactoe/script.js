@@ -87,9 +87,9 @@ const gameEngine = (function() {
     }
     
     const isWin = () => {  
-        if ((board[0][1] === "x" && board[0][2] === "x" && board[0][3] === "x")||
-        (board[1][1] === "x" && board[1][2] === "x" && board[1][3] === "x")||
-        (board[2][1] === "x" && board[2][2] === "x" && board[2][3] === "x")||
+        if ((board[0][0] === "x" && board[0][1] === "x" && board[0][2] === "x")||
+        (board[1][0]=== "x" && board[1][1] === "x" && board[1][2] === "x")||
+        (board[2][0] === "x" && board[2][1] === "x" && board[2][2] === "x")||
         (board[0][0] === "x" && board[1][0] === "x" && board[2][0] === "x")||
         (board[0][1] === "x" && board[1][1] === "x" && board[2][1] === "x")||
         (board[0][2] === "x" && board[1][2] === "x" && board[2][2] === "x")||
@@ -97,9 +97,9 @@ const gameEngine = (function() {
         (board[0][2] === "x" && board[1][1] === "x" && board[2][0] === "x")
         ){
             return `${players[0].getName()} wins!`;
-        } else if ((board[0][1] === "o" && board[0][2] === "o" && board[0][3] === "o")||
-        (board[1][1] === "o" && board[1][2] === "o" && board[1][3] === "o")||
-        (board[2][1] === "o" && board[2][2] === "o" && board[2][3] === "o")||
+        } else if ((board[0][0] === "o" && board[0][1] === "o" && board[0][2] === "o")||
+        (board[1][0]=== "o" && board[1][1] === "o" && board[1][2] === "o")||
+        (board[2][0] === "o" && board[2][1] === "o" && board[2][2] === "o")||
         (board[0][0] === "o" && board[1][0] === "o" && board[2][0] === "o")||
         (board[0][1] === "o" && board[1][1] === "o" && board[2][1] === "o")||
         (board[0][2] === "o" && board[1][2] === "o" && board[2][2] === "o")||
