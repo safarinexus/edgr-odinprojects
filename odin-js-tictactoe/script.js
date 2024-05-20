@@ -1,5 +1,3 @@
-const cell1 = document.querySelector("#cell1");
-
 
 //gameBoard IIFE for returning a board object
 const gameBoard = (function() {

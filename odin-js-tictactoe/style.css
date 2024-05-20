@@ -8,7 +8,20 @@ body {
     height: 100vh; 
     width: 100vw;
     display: grid; 
-    grid-template-rows: 70px 70px auto 20px;
+    grid-template-rows: 70px 70px 40px auto 20px;
+}
+
+.header-section {
+    display: flex; 
+    justify-content: start;
+    align-items: center;
+    grid-row: 0; 
+}
+
+.header-section>img {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
 }
 
 .playercard-section {
@@ -41,30 +54,29 @@ body {
     margin-bottom: 5px;
 }
 
-.header-section {
-    display: flex; 
-    justify-content: start;
-    align-items: center;
-    grid-row: 0; 
+.turn-section {
+    justify-self: center;
+    align-self: center;
 }
 
-.header-section>img {
-    height: 70px;
-    width: 70px;
-    margin-right: 20px;
+.turn-section>p {
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
 }
 
 .game-section {
-    grid-row: 3;
+    grid-row: 4;
     justify-self: center;
     align-self: center;
 }
 
 .tictactoegrid {
     box-sizing: border-box;
-    width: 500px; 
-    height: 500px;
-    
+    width: 550px; 
+    height: 550px;
     display: grid; 
     grid-gap: 10px; 
     grid-template-columns: 33% 33% 33%;
@@ -85,7 +97,7 @@ body {
 
 .footer-section {
     color: white; 
-    grid-row: 4;
+    grid-row: 5;
     display: flex; 
     justify-content: center;
 }
