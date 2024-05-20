@@ -63,8 +63,8 @@ const gameEngine = (function() {
     const board = gameBoard.getBoard();
 
     const playerInit = () => {
-        const p1name = prompt("Player 1 (X): "); 
-        const p2name = prompt("Player 2 (O): "); 
+        const p1name = "input1";
+        const p2name = "input2";
         return [player(p1name, "x"), player(p2name, "o")];
     }
 
@@ -114,6 +114,7 @@ const gameEngine = (function() {
         }
     }
 
+    /*
     for (let i = 0; i < turns; i++) {
         for (let j = 0; j < playerCount; j++) {
             console.log(players[j].getName() + ", your turn.");
@@ -137,6 +138,7 @@ const gameEngine = (function() {
             }
         }
     }
+    */
 })(); 
 
 
