@@ -1,21 +1,24 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #1e2d44;
+    background: #1e272e;
     box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    padding-bottom: 0px; 
+    padding: 0;
     height: 100vh; 
     width: 100vw;
     display: grid; 
-    grid-template-rows: 70px 70px 40px auto 20px;
+    grid-template-rows: 100px 70px 40px auto 20px;
 }
 
 .header-section {
+    background-color: #171e24;
     display: flex; 
     justify-content: start;
     align-items: center;
-    grid-row: 0; 
+    grid-row: 1; 
+    color: white;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 .header-section>img {
@@ -25,7 +28,7 @@ body {
 }
 
 .playercard-section {
-    grid-row: 2; 
+    grid-row: 2;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -36,12 +39,15 @@ body {
     border: black solid 2px; 
     background-color: greenyellow;
     height: 50px; 
-    width: 200px;
+    width: max(15%, 200px);
     display: flex; 
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+}
+
+#player2 {
+    margin-left: 12%;
 }
 
 .playercard>p {
@@ -55,16 +61,16 @@ body {
 }
 
 .turn-section {
+    grid-row: 3;
     justify-self: center;
     align-self: center;
 }
 
-.turn-section>p {
+.announcer {
     color: white;
     font-size: x-large;
     font-weight: bold;
     font-style: italic;
-    margin: 0;
 }
 
 .game-section {
@@ -75,8 +81,8 @@ body {
 
 .tictactoegrid {
     box-sizing: border-box;
-    width: 550px; 
-    height: 550px;
+    width: 520px; 
+    height: 520px;
     display: grid; 
     grid-gap: 10px; 
     grid-template-columns: 33% 33% 33%;
@@ -85,10 +91,12 @@ body {
     align-content: center;
     justify-content: center;
     border: 0;
+    margin-bottom: 80px;
+    margin-top: 20px;
 }
 
 .tictactoecell {
-    background-color: #1e2d44;
+    background-color: #1e272e;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -100,8 +108,4 @@ body {
     grid-row: 5;
     display: flex; 
     justify-content: center;
-}
-
-.footer-section>small {
-    color: black;
 }
