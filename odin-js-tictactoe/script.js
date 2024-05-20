@@ -1,4 +1,3 @@
-
 //gameBoard IIFE for returning a board object
 const gameBoard = (function() {
     const rows = 3; 
@@ -144,5 +143,22 @@ const gameEngine = (function() {
 
 
 const displayController = (function() {
+    const cell1 = document.querySelector("#cell1");
+    const cell2 = document.querySelector("#cell2");
+    const cell3 = document.querySelector("#cell3");
+    const cell4 = document.querySelector("#cell4");
+    const cell5 = document.querySelector("#cell5");
+    const cell6 = document.querySelector("#cell6");
+    const cell7 = document.querySelector("#cell7");
+    const cell8 = document.querySelector("#cell8");
+    const cell9 = document.querySelector("#cell9");
+
+    cell8.addEventListener("click", () => {
+        cell8.innerHTML = "<svg width='100' height='100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-width='10' /><line x1='100' y1='0' x2='0' y2='100' stroke='black' stroke-width='10' /></svg>"; 
+    })
+    cell9.addEventListener("click", () => {
+        cell9.innerHTML = "<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='50' r='40' stroke='black' stroke-width='10' fill='transparent'/></svg>"; 
+    })
+    
     return;
 })(); 
