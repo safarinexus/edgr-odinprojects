@@ -60,6 +60,17 @@ body {
     margin-bottom: 5px;
 }
 
+dialog {
+    height: max(20%, 400px); 
+    width: max(20%, 300px);
+    border-radius: 10px;
+    background-color: #cfcaca;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+}
+
 .turn-section {
     grid-row: 3;
     justify-self: center;

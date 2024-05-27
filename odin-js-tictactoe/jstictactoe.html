@@ -13,19 +13,19 @@
         <h1>Tic-Tac-Toe!</h1>
     </div>
     <div class="playercard-section">
-        <div class="playercard">
-            <p>Player 1: John</p>
-            <svg width="20" height="20">
-                <line x1="0" y1="0" x2="20" y2="20" stroke="black" stroke-width="4" />
-                <line x1="20" y1="0" x2="0" y2="20" stroke="black" stroke-width="4" />
-            </svg>
-        </div>
-        <div class="playercard" id="player2">
-            <p>Player 2: James</p>
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="10" r="8" stroke="black" stroke-width="4" fill="transparent"/>
-            </svg>
-        </div>
+        <dialog id="nameprompt">
+            <form>
+                <h1>Please enter Player 1 Name (X): </h1>
+                <label for="xname">Player Name: </label>
+                <input type="text" id="xname" required>
+                <hr>
+                <h1>Please enter Player 2 Name (O): </h1>
+                <label for="oname">Player Name: </label>
+                <input type="text" id="oname" required>
+                <hr>
+                <button id="enter">Enter</button>
+            </form>
+        </dialog>
     </div>
     <div class="turn-section">
         <div class="announcer">Player 1's turn...</div>
