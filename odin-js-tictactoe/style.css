@@ -61,14 +61,13 @@ body {
 }
 
 dialog {
-    height: max(20%, 250px); 
-    width: max(20%, 300px);
+    height: 250px; 
+    width: 300px;
     border-radius: 10px;
     background-color: #cfcaca;
     position: relative;
     padding-left: 20px;
 }
-
 
 form>h1 {
     font-size: x-large;
