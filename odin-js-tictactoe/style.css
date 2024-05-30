@@ -61,10 +61,33 @@ body {
 }
 
 dialog {
-    height: max(20%, 400px); 
+    height: max(20%, 250px); 
     width: max(20%, 300px);
     border-radius: 10px;
     background-color: #cfcaca;
+    position: relative;
+    padding-left: 20px;
+}
+
+
+form>h1 {
+    font-size: x-large;
+}
+
+#enter {
+    border-radius: 10px;
+    background-color: greenyellow;
+    width: 150px; 
+    height: 50px;
+    border: 0;
+    font-weight: 700;
+    position: absolute;
+    bottom: 15px;
+    left: 27%; 
+}
+
+#enter:hover {
+    background: rgb(65, 97, 17);
 }
 
 dialog::backdrop {
