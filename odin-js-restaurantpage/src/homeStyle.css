@@ -1,7 +1,7 @@
 #hometab {
     border-radius: 10px;
     background-color: rgb(220, 220, 220, 0.2);
-    width: max(75%, 420px);
+    width: max(45%, 420px);
     height: max(100%, 700px);
     padding: 20px; 
     margin-bottom: 20px;
