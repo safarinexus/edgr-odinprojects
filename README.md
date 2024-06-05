@@ -1,6 +1,7 @@
 # odin_projects
 The Odin Project projects  
-
+by Edgar @safarinexus  
+  
 1. Odin Recipes  
 HTML Foundations Project  
 Project: Recipes  
@@ -44,4 +45,9 @@ A library website of books with basic functionality to add new books implemented
 9. Odin Tic-Tac-Toe  
 Intermediate JavaScript IIFE & Factory Functions Project  
 Project: Tic-Tac-Toe  
-A simple game of Tic-Tac-Toe played from your browser! 
+A simple game of Tic-Tac-Toe played from your browser!  
+  
+10. Odin Restaurant Page  
+Intermediate JavaScript Webpack Project  
+Project: Restaurant Page  
+A simple "tabbed" restaurant homepage using Webpack bundler.  

@@ -1,0 +1,7 @@
+import './homeStyle.css';
+
+export default function homeTab(homeElement) {
+    homeElement.innerHTML = '<div id="hometab"><div class="homecard" id="homecard1"><h1 id="hometitle">Welcome to <br><span id="restaurantname">TARE</span></h1></div><div class="homecard" id="homecard2"><h1>Our Hours</h1><div id="openinghours"><p>Sunday..........</p><p class="closed">Closed</p><p>Monday.........</p><p class="closed">Closed</p><p>Tuesday........</p><p class="closed">Closed</p><p>Wednesday...</p><p class="closed">Closed</p><p>Thursday.......</p><p class="closed">Closed</p><p>Friday............</p><p class="closed">Closed</p><p>Saturday........</p><p class="closed">Closed</p></div></div><div class="homecard" id="homecard3"><h1>Do Drop by!</h1><p id="address">341 Woodgrove Avenue, 105923, CA, San Francisco</p></div></div>'; 
+}
+
+//<div id="hometab"><div class="homecard" id="homecard1"><h1 id="hometitle">Welcome to <br><span id="restaurantname">TARE</span></h1></div><div class="homecard" id="homecard2"><h1>Our Hours</h1><div id="openinghours"><p>Sunday..........</p><p class="closed">Closed</p><p>Monday.........</p><p class="closed">Closed</p><p>Tuesday........</p><p class="closed">Closed</p><p>Wednesday...</p><p class="closed">Closed</p><p>Thursday.......</p><p class="closed">Closed</p><p>Friday............</p><p class="closed">Closed</p><p>Saturday........</p><p class="closed">Closed</p></div></div><div class="homecard" id="homecard3"><h1>Do Drop by!</h1><p id="address">341 Woodgrove Avenue, 105923, CA, San Francisco</p></div></div>

@@ -1,0 +1,46 @@
+#menutab {
+    width: max(75%, 420px);
+    background-color: rgb(220, 220, 220, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    padding: 20px; 
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menucard {
+    margin-bottom: 20px;
+    background-color: rgba(233, 233, 233, 0.8);
+    border-radius: 10px;
+    width: max(70%, 300px); 
+    padding: 10px;
+    box-sizing: border-box;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 80%;
+}
+
+.menucat-container {
+    width: max(70%, 300px); 
+    margin-bottom: 5px; 
+    color: white;
+}
+
+.menuname {
+    margin: 0;
+}
+
+.menuprice {
+    text-align: end;
+}
+
+.menutext {
+    font-size: small;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: 10px;
+    grid-column: span 2; 
+}
