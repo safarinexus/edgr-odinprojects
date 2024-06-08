@@ -10,8 +10,9 @@
 <script defer src="main.js"></script></head>
 <body>
     <header>
-        <h1>Odin Todo</h1>
+        <a href="./index.html" id="toplogo"><h1>Odin Todo</h1></a>
         <!--You can add a search function up here if you want-->
+        <h6>&#40;User Profiles... <br>Coming Soon!&#41;</h6>
     </header>
     <div id="sidebar">
         <div id="fixeditems">
@@ -30,13 +31,42 @@
         </div>
     </div>
     <div id="main">
-
+        <!--
+        <dialog id="taskinterface">
+            <form>
+                <h1>Player 1 Name (X): </h1>
+                <label for="xname">Enter Name: </label>
+                <input type="text" id="xname" required>
+                <hr>
+                <h1>Player 2 Name (O): </h1>
+                <label for="oname">Enter Name: </label>
+                <input type="text" id="oname" required>
+                <hr>
+                <button id="enter">Done</button>
+            </form>
+        </dialog>
+        -->
+        <div class="task" id="task1">
+            <input type="radio" class="taskdone">
+            <h5 class="tasktitle">Get Milk</h5>
+            <small class="taskdesc">Description</small>
+            <small class="taskduedate">Due: 29 September 2024</small>
+            <small class="taskpriority">***</small>
+        </div>
+        <div class="task" id="task2">
+            <input type="radio" class="taskdone">
+            <h5 class="tasktitle">Eat Shit</h5>
+            <small class="taskdesc">Description</small>
+            <small class="taskduedate">Due: 31 July 2024</small>
+            <small class="taskpriority">*</small>
+        </div>
     </div>
     <div id="pseudofooter">
         <button id="projadd"></button>
     </div>
     <footer>
         <button id="taskadd"></button>
+        <!--sort button (priority/alphabet/time)-->
     </footer>
 </body>
 </html>
