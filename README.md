@@ -51,3 +51,8 @@ A simple game of Tic-Tac-Toe played from your browser! Made using JS IIFEs and F
 Intermediate JavaScript Webpack Project  
 Project: Restaurant Page  
 A simple "tabbed" restaurant homepage using Webpack bundler.  
+  
+11. Odin Todo List  
+Intermediate JavaScript Project  
+Project: Todo List  
+My version of a Todo List Web App.  

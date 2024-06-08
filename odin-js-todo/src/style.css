@@ -1,0 +1,162 @@
+:root { 
+    font-family: 'Space Mono';
+    color: white;
+}
+
+
+body {
+    background-color: #111;
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    display: grid; 
+    grid-gap: 0.4px;
+    height: 100vh; 
+    width: 100vw;
+    grid-template-columns: min(max(30%, 180px), 360px) auto; 
+    grid-template-rows: 80px auto 4%;
+    position: relative;
+}
+
+/*============================HEADER============================*/
+
+header {
+    background-color: #111;
+    grid-column: span 2; 
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 0.1px 3px 0.5px black;
+}
+
+header>h1 {
+    margin: 0;
+    position: absolute;
+    bottom: 20px;
+}
+
+/*============================SIDEBAR============================*/
+
+#sidebar {
+    background-color: #333;
+    grid-row: 2;
+    display: grid; 
+    grid-template-rows: 90px auto;
+    padding: 20px;
+    align-items: center;
+}
+
+#fixeditems {
+    height: 100%; 
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+}
+
+#projectlist {
+    height: 100%; 
+    width: 100%;
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column;
+    justify-content: baseline;
+    padding-top: 20px;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.sidebaritem {
+    border-radius: 5px;
+    height: 25px;
+    padding: 5px;
+    display: flex; 
+    align-items: center;
+    position: relative;
+}
+
+.sidebaritem:hover {
+    background-color: rgb(200, 200, 200, 0.4);
+    cursor: pointer;
+}
+
+.sidebaritem>img {
+    height: 20px; 
+    width: 20px;
+    filter: invert(100%);
+    margin-right: 5px;
+}
+
+#deleteproj {
+    background-image: url(./icons/close.svg);
+    height: 20px; 
+    width: 20px;
+    position: absolute; 
+    right: 0;
+    border: 0;
+    filter: invert(100%);
+    background-color: rgb(0,0,0,0);
+    opacity: 0;
+}
+
+#deleteproj:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+#deleteproj:active {
+
+}
+
+/*============================MAINAREA============================*/
+
+#main {
+    width: max(100%, 400px);
+    background-color: #222;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, 240px); 
+    grid-template-rows: repeat(auto-fit, 270px);
+}
+
+/*=============================FOOTER=============================*/
+
+#pseudofooter {
+    background-color: #333;
+    display: flex; 
+    justify-content: center;
+}
+
+footer { 
+    width: max(100%, 400px);
+    background-color: #222;
+    display: flex; 
+    justify-content: center;
+}
+
+#projadd { 
+    background-image: url(./icons/folder-plus-outline.svg);
+}
+
+#taskadd {
+    background-image: url(./icons/plus.svg);
+}
+
+#projadd, #taskadd { 
+    height: 30px; 
+    width: 30px;
+    border: 0;
+    filter: invert(100%);
+    background-color: rgb(0,0,0,0);
+}
+
+#projadd:hover, #taskadd:hover { 
+    cursor: pointer;
+    opacity: 40%;
+}
+
+
+
+
