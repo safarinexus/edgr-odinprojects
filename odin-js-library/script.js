@@ -1,7 +1,7 @@
 function Book(title, author, pages, read) {
         this.title = title; 
         this.author = author;  
-        this.pages = pages;
+        this.pages = pages;f
         this.read = read;
         this.info = function() {
             if (this.read) {

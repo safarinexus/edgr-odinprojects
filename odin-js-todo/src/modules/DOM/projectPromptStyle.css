@@ -1,0 +1,13 @@
+#projectPromptText { 
+    background-color: rgb(0,0,0,0);
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    width: 100%; 
+}
+
+#projectPromptText:focus {
+    outline: none;
+}
