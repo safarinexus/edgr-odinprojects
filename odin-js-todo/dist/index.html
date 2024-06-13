@@ -28,8 +28,7 @@
         </div>
     </div>
     <div id="main">
-        <!--
-        <dialog id="taskinterface">
+        <dialog id="taskdialog">
             <form>
                 <h1>Player 1 Name (X): </h1>
                 <label for="xname">Enter Name: </label>
@@ -42,24 +41,26 @@
                 <button id="enter">Done</button>
             </form>
         </dialog>
-        -->
         <div class="task" id="task1">
             <button class="taskcheck"></button>
-            <h5 class="tasktitle">Get Milk</h5>
-            <small class="taskdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</small>
-            <p class="taskduedate">Due: 29 September 2024</>
+            <div class="tasktitle"><h5>Get Milk</h5></div>
+            <div class="taskdesc">Lorem ipsum dolor</div>
+            <div class="taskduedate">Due: 29 September 2024</div>
             <div class="taskpriority">
                 <button id="highprio" class="prio">***</button>
                 <button id="medprio" class="prio">**</button>
                 <button id="lowprio" class="prio">*</button>
             </div>
         </div>
-        <div class="task" id="task2">
-            <button class="taskcheck"></button>
-            <h5 class="tasktitle">Eat Shit</h5>
-            <small class="taskdesc">Lorem ipsum dolor sit amet</small>
-            <p class="taskduedate">Due: 29 September 2024</>
-            <div class="taskpriority">
+        <div class="task" id="taskprompt">
+            <button id="addtask"></button>
+            <input class="prompttext" type="text" id="tasktitleprompt" placeholder="Task Name">
+            <input class="prompttext" type="text" id="taskdescprompt" placeholder="Task Description">
+            <div id="duedateprompt">
+                <label for="dateprompt">Due: </label>
+                <input class="prompttext" type="date" id="dateprompt">
+            </div>
+            <div class="taskpriority" id="taskprioprompt">
                 <button id="highprio" class="prio">***</button>
                 <button id="medprio" class="prio">**</button>
                 <button id="lowprio" class="prio">*</button>

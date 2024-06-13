@@ -22,7 +22,10 @@ console.log(localStorage);
 let projects = getProjects();
 console.log(projects);
 renderProjects(projects);
-console.log("active: " + projects.filter((proj) => proj.id === localStorage.getItem('active'))[0].name);
+if (localStorage.getItem('active') !== null) {
+    console.log("active: " + projects.filter((proj) => proj.id === localStorage.getItem('active'))[0].name);
+}
+
 
 //Home Page Buttons
 const NEWPROJECT = document.querySelector('#projadd');
@@ -37,9 +40,21 @@ NEWPROJECT.addEventListener("click", () => {
     }
 });
 
+import checkActive from './modules/storage/checkActive';
+import taskPrompt from './modules/DOM/taskPrompt';
+
 NEWTASK.addEventListener("click", () => {
-    let active = localStorage.getItem("active");
-    
+    if (checkActive()) {
+        let project = null;
+        for (let i = 0; i < projects.length; i++) {
+            if (projects[i].id === checkActive()) {
+                project = projects[i];
+            }
+        }
+        taskPrompt(project);
+    } else {
+        alert("Please select a project to add task into!");
+    }
 });
 
 //crud for project

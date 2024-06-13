@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import storeProject from '../storage/storeProject';
 import renderProjects from './renderProjects';
 import getProjects from '../storage/getProjects';
-
+import updateActive from '../storage/updateActive';
+ 
 export default function projectPrompt(projects) {
     
     const PROJECTLIST = document.querySelector('#projectlist');
@@ -37,7 +38,7 @@ export default function projectPrompt(projects) {
                 } else {
                     const id = uuidv4(); 
                     storeProject(projName, id);
-                    localStorage.setItem("active", id)
+                    updateActive(id); 
                     renderProjects(getProjects());
                     document.removeEventListener('click', myClick);
                     console.log(id + " => " + projName + " added!");

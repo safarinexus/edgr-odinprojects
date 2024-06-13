@@ -1,24 +1,10 @@
-export default function todo(id, project, title, created, description, dueDate, priority, done=false) {
-    if (title !== '') {
-        const taskDone = () => {
-            if (!done) { 
-                done = true; 
-            } else {
-                done = false;
-            }
-            console.log(done);
-        }
+export default function todo(title, description, dueDate, priority, done=false) {
 
         return {
-            id, 
-            project,
             title, 
-            created,
             description, 
             dueDate, 
             priority, 
-            done, 
-            taskDone
+            done
         }
     }
-}
