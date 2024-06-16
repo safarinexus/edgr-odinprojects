@@ -4,21 +4,15 @@ import './style.css';
 
 //Icon Renders
 import mainLogo from './modules/DOM/IconRenders/mainLogo'; 
-import todayIcon from './modules/DOM/IconRenders/todayIcon'; 
-import upcomingIcon from './modules/DOM/IconRenders/upcomingIcon';
 mainLogo();
-todayIcon();
-upcomingIcon();
 
 //Initial retrive and render Projects and Tasks
 import getProjects from './modules/storage/getProjects';
 import renderProjects from './modules/DOM/renderProjects';
 import renderTasks from './modules/DOM/renderTasks';
 
-/*
-localStorage.clear(); 
-console.log(localStorage);
-*/
+//localStorage.clear(); 
+//console.log(localStorage);
 
 let projects = getProjects();
 console.log(projects);
@@ -62,11 +56,3 @@ NEWTASK.addEventListener("click", () => {
         taskPrompt(projectid);
     }
 });
-
-//crud for project
-//crud for todos
-//dom functions for project
-//dom functions for tasks
-//function to sort by today
-//function to sort by upcoming
-

@@ -36,7 +36,6 @@ export default function projectPrompt(projects) {
             }
 
             if (projName.length === 0) {
-                //to 'cancel'
                 renderProjects(getProjects());
                 renderTasks(checkActive()); 
                 document.removeEventListener('click', myClick);

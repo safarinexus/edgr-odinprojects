@@ -2,6 +2,7 @@ import './taskPromptStyle.css';
 import storeTask from '../storage/storeTask';
 import renderTasks from '../DOM/renderTasks';
 import checkActive from '../storage/checkActive';
+import { isBefore, format } from 'date-fns';
 
 export default function taskPrompt(projectid) {
     const prompt = () => {
@@ -34,6 +35,8 @@ export default function taskPrompt(projectid) {
     const TITLE = document.querySelector('#tasktitleprompt');
     const DESC = document.querySelector('#taskdescprompt');
     const DATE = document.querySelector('#dateprompt');
+    const currentDate = new Date();
+    const TODAY = format(currentDate, 'yyyy-MM-dd');
 
     function exitOnce(event) {
         if (!document.querySelector('#taskPrompt').contains(event.target) && !document.querySelector('#taskadd').contains(event.target)) {
@@ -43,13 +46,16 @@ export default function taskPrompt(projectid) {
         }
     }
 
+    
+
     document.querySelector('#addtask').addEventListener("click", () => {
         const PRIO = document.querySelector('input[name="prio"]:checked');
         if (TITLE.value === "") {
             alert("Please enter a valid task name!");
         } else if (DATE.value === "") { //format: 2024-07-01
-            //need to check for current date here
             alert("Please select a due date for your task!");
+        } else if (isBefore(DATE.value, TODAY)) {
+            alert("Please select a future date!");
         } else if (PRIO === null) {
             alert("Please select a priority for this task!");
         } else if (DESC.value.length > 30) {
