@@ -241,33 +241,33 @@ header>h6:hover {
     transition: all 0.2s ease-in-out;
 }
 
-#highprio {
+button[id*='high'] {
     color: red; 
     border: red solid 1px; 
 }
 
-#highprio:hover {
+button[id*='high']:hover {
     background-color: red;
     color: white;
 }  
 
-#medprio {
+button[id*='med'] {
     color: orange; 
     border: orange solid 1px; 
 }
 
-#medprio:hover {
+button[id*='med']:hover {
     background-color: orange;
     color: white;
 }  
 
-#lowprio {
+button[id*='low'] {
     color: green; 
     border: green solid 1px; 
     margin-right: 0;
 }
 
-#lowprio:hover {
+button[id*='low']:hover {
     background-color: green;
     color: white;
 }  
@@ -314,73 +314,5 @@ footer {
 }
 
 /*===============================*/
-#addtask {
-    grid-row: 1 / span 2; 
-    grid-column: 1;
-    margin: 0;
-    height: 18px; 
-    width: 18px;
-    border: 0;
-    border-radius: 2px;
-    justify-self: center;
-    align-self: center;
-    position: relative;
-    background-image: url(./icons/plus.svg);
-    filter: invert(100%);
-    background-color: rgb(255, 0, 180);
-}
-
-#addtask:hover {
-    transform: scale(1.2);
-    transition: all 0.2s ease-out;
-}
-
-#addtask:active {
-    opacity: 10%;
-}
-
-#taskprompt{
-    display: block grid;
-    background-color: rgb(210, 210, 210, 0.1);
-    grid-template-columns: 7% auto max(23%, 105px);
-    grid-template-rows: 1fr 1fr;
-}
-
-#tasktitleprompt {
-    grid-column: 2; 
-    grid-row: 1; 
-    align-self: center;
-    text-overflow: hidden;
-    font-weight: 500;
-    margin: 0;
-}
-
-#taskdescprompt {
-    grid-column: 2; 
-    grid-row: 2; 
-    margin: 0; 
-    margin-right: 5px;
-    font-size: x-small;
-}
-
-.prompttext {
-    background-color: rgb(0,0,0,0);
-    border: 0;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-.prompttext:focus {
-    outline:none;
-}
-
-#duedateprompt {
-    font-size: x-small;
-}
-#dateprompt {
-    color-scheme: dark;
-}
 
 

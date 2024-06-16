@@ -1,6 +1,7 @@
 import newProjIcon from '../../icons/newproject.svg';
 import getProjects from '../storage/getProjects';
 import removeActive from '../storage/removeActive';
+import renderTasks from './renderTasks';
 
 export default function renderProjects(arr) { 
     const PROJECTLIST = document.querySelector('#projectlist');
@@ -20,6 +21,7 @@ export default function renderProjects(arr) {
             localStorage.removeItem(arr[i].id);
             console.log(arr[i].id + " => " + arr[i].name + " removed!");
             renderProjects(getProjects()); 
+            document.querySelector('#main').innerHTML = '';
         })
 
         element.appendChild(deleteButton);  
@@ -37,7 +39,7 @@ export default function renderProjects(arr) {
                 localStorage.setItem("active", arr[i].id);
                 console.log("active project: " + arr[i].name); 
                 renderProjects(getProjects()); 
-                //add render for tasks well 
+                renderTasks(arr[i].id);
             }
         })
 

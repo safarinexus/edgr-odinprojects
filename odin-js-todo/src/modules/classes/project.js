@@ -1,5 +1,5 @@
 export default function project(id, name) {
-    const store = new Map(); 
+    const store = [];
     
     return {
         id, 

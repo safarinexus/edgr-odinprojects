@@ -4,6 +4,8 @@ import storeProject from '../storage/storeProject';
 import renderProjects from './renderProjects';
 import getProjects from '../storage/getProjects';
 import updateActive from '../storage/updateActive';
+import renderTasks from './renderTasks';
+import checkActive from '../storage/checkActive';
  
 export default function projectPrompt(projects) {
     
@@ -14,7 +16,7 @@ export default function projectPrompt(projects) {
         element.classList.add("sidebaritem");
         element.setAttribute('id', 'projectPrompt');
         element.innerHTML = '<input type="text" id="projectPromptText">';
-        element.style.backgroundColor = 'rgb(200, 200, 200, 0.4)';
+        element.style.backgroundColor = 'rgb(200, 200, 200, 0.1)';
 
         return element;
     }
@@ -26,23 +28,27 @@ export default function projectPrompt(projects) {
         if (!document.querySelector('#projectPromptText').contains(event.target) && !document.querySelector('#projadd').contains(event.target)) {
             const projName = document.querySelector('#projectPromptText').value;
 
-                for (let i = 0; i < projects.length; i++) {
-                    if (projects[i].name === projName) {
-                        alert('Project already exists. Please enter another name.');
-                        return;
-                    }
+            for (let i = 0; i < projects.length; i++) {
+                if (projects[i].name === projName) {
+                    alert('Project already exists. Please enter another name.');
+                    return;
                 }
+            }
 
-                if (projName.length === 0) {
-                    alert("Please enter a name within 25 letters.");
-                } else {
-                    const id = uuidv4(); 
-                    storeProject(projName, id);
-                    updateActive(id); 
-                    renderProjects(getProjects());
-                    document.removeEventListener('click', myClick);
-                    console.log(id + " => " + projName + " added!");
-                }
+            if (projName.length === 0) {
+                //to 'cancel'
+                renderProjects(getProjects());
+                renderTasks(checkActive()); 
+                document.removeEventListener('click', myClick);
+            } else {
+                const id = uuidv4(); 
+                storeProject(projName, id);
+                updateActive(id); 
+                renderProjects(getProjects());
+                renderTasks(id);
+                document.removeEventListener('click', myClick);
+                console.log(id + " => " + projName + " added!");
+            }
         }
     }
     

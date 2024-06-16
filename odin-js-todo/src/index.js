@@ -10,9 +10,10 @@ mainLogo();
 todayIcon();
 upcomingIcon();
 
-//Initial retrive and render Projects
+//Initial retrive and render Projects and Tasks
 import getProjects from './modules/storage/getProjects';
 import renderProjects from './modules/DOM/renderProjects';
+import renderTasks from './modules/DOM/renderTasks';
 
 /*
 localStorage.clear(); 
@@ -23,7 +24,9 @@ let projects = getProjects();
 console.log(projects);
 renderProjects(projects);
 if (localStorage.getItem('active') !== null) {
-    console.log("active: " + projects.filter((proj) => proj.id === localStorage.getItem('active'))[0].name);
+    const active = projects.filter((proj) => proj.id === localStorage.getItem('active'))[0]
+    console.log("active: " + active.name);
+    renderTasks(active.id);
 }
 
 
@@ -44,16 +47,19 @@ import checkActive from './modules/storage/checkActive';
 import taskPrompt from './modules/DOM/taskPrompt';
 
 NEWTASK.addEventListener("click", () => {
-    if (checkActive()) {
-        let project = null;
+    const active = checkActive();
+    if (!active) {
+        alert("Please select a project to add task into!");
+    } else if (document.querySelector('#taskPrompt') === null) {
+        let projectid = null;
+        projects = getProjects();
         for (let i = 0; i < projects.length; i++) {
-            if (projects[i].id === checkActive()) {
-                project = projects[i];
+            if (projects[i].id === active) {
+                console.log("task adding into: " + projects[i].name); 
+                projectid = projects[i].id;
             }
         }
-        taskPrompt(project);
-    } else {
-        alert("Please select a project to add task into!");
+        taskPrompt(projectid);
     }
 });
 
