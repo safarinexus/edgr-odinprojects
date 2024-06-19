@@ -12,19 +12,5 @@ FORM.addEventListener("submit", (e) => {
     console.log('submitted!');
 })
 
-EMAIL.addEventListener("input", () => {
-    if (EMAIL.validity.valueMissing) {
-        EMAIL.setCustomValidity("OI, EMAIL WHERE??!?");
-    } else if (EMAIL.validity.typeMismatch) {
-      EMAIL.setCustomValidity("I am expecting an EMAIL ADDRESS!!!");
-    }
-});
 
-POSTAL.addEventListener("input", (event) => {
-    if (POSTAL.validity.typeMismatch) {
-      POSTAL.setCustomValidity("WHERE'S YOUR BLOODY POSTAL COOOOODDEEEE!!!");
-    } else {
-      POSTAL.setCustomValidity("");
-    }
-});
 
