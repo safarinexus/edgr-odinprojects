@@ -15,7 +15,7 @@
 
 body {
     margin: 0;
-    background-color: #161618;
+    background-color: #111;
     height: 100%; 
     width: 100%;
     display: flex;
@@ -28,12 +28,13 @@ h1 {
     margin-bottom: 0;
     margin-left: 10px;
     margin-right:10px;
-    font-weight: bold;
 }
 
 p {
     color: gray;
     margin: 5px 0 0 0;
+    font-family: sans-serif;
+    font-weight: 300;
 }
 
 a {
