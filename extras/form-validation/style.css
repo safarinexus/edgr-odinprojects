@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url(../../assets/SpaceMono-Regular.ttf); 
+}
+
+:root{
+    font-family: 'Space Mono'; 
+    background-color: #222;
+    color: white; 
+}
+
+body {
+    height: 100vh; 
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border-radius: 6px;
+    border: white 2px solid; 
+    height: 450px; 
+    width: 400px; 
+    display: grid; 
+    grid-template-columns: 24% auto;
+    grid-gap: 20px; 
+    grid-template-rows: repeat(6, 53px);
+}
+
+input {
+    background-color: rgb(0, 0, 0, 0);
+    font-family: 'Space Mono';
+    font-size: medium;
+    border: 0; 
+    color: white; 
+    caret-color: white;
+    transition: ease-in-out 0.1s;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none; 
+    border: 0; 
+    background-color: rgb(255, 255, 255, 0.05);
+}
+
+label {
+    text-align: end;
+    padding-top: 12px; 
+    padding-bottom: 10px;
+    justify-self: end;
+}
+
+#confirm {
+    position: relative; 
+    left: -37px;
+}
+
+label[for="passwordconfirm"] {
+    padding-top: 0; 
+}
+
+select {
+    background-color: rgb(0, 0, 0, 0);
+    font-family: 'Space Mono';
+    border-radius: 4px; 
+    border: 1px solid white;
+    color: white;
+    transition: ease-in-out 0.3s; 
+}
+
+select:focus {
+    outline: none;  
+    background-color: rgb(255, 255, 255, 0.05);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+button { 
+    justify-self: center;
+    width: 130px;
+    grid-column: span 2;
+    background-color: rgb(255, 255, 255, 0);
+    border: 1px solid white; 
+    font-family: 'Space Mono';
+    border-radius: 7px;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+button:active {
+    opacity: 30%;
+    transform: translateY(3px);
+}
+
+input:hover {
+    box-shadow: 0px 0px 30px -10px white;
+    border: 0; 
+}
+
+select:hover {
+    box-shadow: 0px 0px 30px -10px white;
+    border: 1px solid white;
+}

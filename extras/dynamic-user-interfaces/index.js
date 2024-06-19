@@ -89,16 +89,16 @@ function fifthButton() {
 
 
 NEXT.addEventListener("click", () => {
-    if (position !== -2000) {
-        if (position === 0) {
-            secondButton();
-        } else if (position === -500) {
-            thirdButton();
-        } else if (position === -1000) {
-            fourthButton(); 
-        } else if (position === -1500) {
-            fifthButton(); 
-        }
+    if (position === 0) {
+        secondButton();
+    } else if (position === -500) {
+        thirdButton();
+    } else if (position === -1000) {
+        fourthButton(); 
+    } else if (position === -1500) {
+        fifthButton(); 
+    } else if (position === -2000) {
+        firstButton(); 
     }
 })
 
@@ -112,6 +112,8 @@ PREV.addEventListener("click", () => {
             secondButton(); 
         } else if (position === -500) {
             firstButton();
+        } else if (position === 0) {
+            fifthButton();
         }
     }
 })  
