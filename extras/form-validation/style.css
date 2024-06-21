@@ -35,11 +35,11 @@ input {
     background-color: rgb(0, 0, 0, 0);
     font-family: 'Space Mono';
     font-size: medium;
-    border: 0; 
+    border-radius: 4px; 
+    border: 1px solid white;
     color: white; 
     caret-color: white;
     transition: ease-in-out 0.1s;
-    border-radius: 3px;
 }
 
 input:focus {
