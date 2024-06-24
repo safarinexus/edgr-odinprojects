@@ -60,4 +60,4 @@ My version of a Todo List Web App.
 12. Odin Weather App  
 Intermediate JavaScript Project  
 Project: Weather App  
-A functioning weather app, built using WeatherAPI's Free API, as well as JavaScript Promises.  
+A functioning weather app, built using WeatherAPI's free API, as well as JavaScript Promises.  

@@ -111,3 +111,12 @@ SEARCHBUTTON.addEventListener("click", getQuery);
 function test() {
     MAIN.innerHTML = '<img alt="current weather" src="https:' + current.condition.icon + '">';
 }
+
+/*========================EXTRAS=======================*/
+
+const SNOWMAN = document.getElementById('snowman'); 
+let counter = 0;
+SNOWMAN.addEventListener('mouseenter', () => {
+    counter += 180;
+    SNOWMAN.style.transform = 'rotateY(' + counter + 'deg)';
+})

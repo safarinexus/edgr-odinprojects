@@ -152,10 +152,6 @@ header .rightsideheader {
     filter: invert(100%);
 }
 
-.main-waiting img:hover {
-    transform: rotateY(180deg);
-}
-
 footer {
     grid-row: 3;
     display: flex; 
