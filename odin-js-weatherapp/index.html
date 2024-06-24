@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <h1>Odin Weather</h1>
+        <div class="rightsideheader">
+            <div class="citysearch">
+                <input type="text" id="city" placeholder="Enter a City..."><button id="search">Search</button>
+            </div>
+            <div class="corf">
+                <button id="celsius">&deg;C</button><button id="farenheit">&deg;F</button>
+            </div>
+        </div>
+    </header>
+    <!--
+    <div id="main" class="main-info">
+        <div id="location-info">
+
+        </div>
+        <div id="current-info">
+
+        </div>
+        <div id="stats-info">
+
+        </div>
+        <div id="week-info">
+
+        </div>
+    </div>
+    --> 
+    <div id="main" class='main-waiting'>
+        <img src="./assets/snowman.svg" alt="waiting">
+        <h2>Waiting for a city...</h2>
+    </div>
+    <footer>
+        <small>Copyright&#169 SafariNexus & Yourmom Industries</small>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
