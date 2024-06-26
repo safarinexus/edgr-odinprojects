@@ -62,11 +62,26 @@ function epochToNamedDay(epoch) {
     return dayName;
   }
 
+function epochToDateTime(epoch) {
+    // Create a new Date object with the epoch time
+    const date = new Date(epoch * 1000); // Multiply by 1000 to convert from seconds to milliseconds
+
+    // Get the full named date (e.g., "Monday, June 21, 2021")
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const namedDate = date.toLocaleDateString('en-US', dateOptions);
+
+    // Get the time (e.g., "3:45 PM")
+    const timeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const time = date.toLocaleTimeString('en-US', timeOptions);
+
+    return `${namedDate} | ${time}`;
+}
+
 function displayResult(current, forecast, locationInfo) {
     MAIN.className = 'main-info'
     MAIN.innerHTML = '<div id="location-time-info">\
                         <h1 id="location">' + locationInfo.name + ', ' + locationInfo.country + '</h1>\
-                        <span id="time-updated">' + locationInfo.localtime + '</span>\
+                        <span id="time-updated">' + epochToDateTime(current.last_updated_epoch) + '</span>\
                     </div>\
                     <div id="current-info">\
                         <div id="current">\
