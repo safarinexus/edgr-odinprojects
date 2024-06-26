@@ -77,7 +77,7 @@ function displayResult(current, forecast, locationInfo) {
                             <br>\
                             <p>Feels like <span id="feels-like">' + Math.round(current.feelslike_c) + '&deg;C</p>\
                             <br>\
-                            <p id="high-low">H:' + Math.round(forecast[0].day.maxtemp_c) + '&deg; L:' + Math.round(forecast[0].day.mintemp_c) + '&deg;</p>\
+                            <p id="high-low">H: ' + Math.round(forecast[0].day.maxtemp_c) + '&deg; L: ' + Math.round(forecast[0].day.mintemp_c) + '&deg;</p>\
                         </div>\
                         <div class="stat" id="rain">\
                             <span>Rain</span>\
@@ -129,7 +129,7 @@ function displayResult(current, forecast, locationInfo) {
                             <span id="row-item2" class="row-item"><img src="https:' + forecast[1].day.condition.icon + '" alt="curr-weather-icon" id="curr-weather-icon"></span>\
                             <span id="row-item3" class="row-item">' + forecast[1].day.daily_chance_of_rain +  '%</span>\
                             <span id="row-item4" class="row-item">' + forecast[1].day.avghumidity + '%</span>\
-                            <span id="forecast-high-low1" class="row-item">H:' + Math.round(forecast[1].day.maxtemp_c) + '&deg; L:' + Math.round(forecast[1].day.mintemp_c) + '&deg;</span>\
+                            <span id="forecast-high-low1" class="row-item">H: ' + Math.round(forecast[1].day.maxtemp_c) + '&deg; L: ' + Math.round(forecast[1].day.mintemp_c) + '&deg;</span>\
                         </div>\
                         <hr style="width:100%">\
                         <div id="day1" class="weekly-item">\
@@ -137,7 +137,7 @@ function displayResult(current, forecast, locationInfo) {
                             <span id="row-item2" class="row-item"><img src="https:' + forecast[2].day.condition.icon + '" alt="curr-weather-icon" id="curr-weather-icon"></span>\
                             <span id="row-item3" class="row-item">' + forecast[2].day.daily_chance_of_rain +  '%</span>\
                             <span id="row-item4" class="row-item">' + forecast[2].day.avghumidity + '%</span>\
-                            <span id="forecast-high-low2" class="row-item">H:' +  Math.round(forecast[2].day.maxtemp_c) + '&deg; L:' +  Math.round(forecast[2].day.mintemp_c) + '&deg;</span>\
+                            <span id="forecast-high-low2" class="row-item">H: ' +  Math.round(forecast[2].day.maxtemp_c) + '&deg; L: ' +  Math.round(forecast[2].day.mintemp_c) + '&deg;</span>\
                         </div>\
                     </div>';
 }
