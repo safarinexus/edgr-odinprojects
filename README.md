@@ -61,3 +61,8 @@ My version of a Todo List Web App.
 Intermediate JavaScript Project  
 Project: Weather App  
 A functioning weather app, built using WeatherAPI's free API, as well as JavaScript Promises.  
+  
+13. Odin Battleship   
+Intermediate JavaScript Project  
+Project: Battleship  
+The final project for JavaScript, the game of Battleship.   
