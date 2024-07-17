@@ -1,21 +1,34 @@
-const board = require('../gameboard/gameboard'); 
+const gameboard = require('../gameboard/gameboard'); 
 
 const player = (real=true) => {
-    const playerBoard = board(); 
+    const board = gameboard(); 
+
     if (real) {
         const type = "real";
-
-        return { playerBoard, type };
+        
+        return { 
+            getBoard: () => board,
+            type 
+        };
     } else if (!real) {
         const type = "cpu";
+        const visited = []; 
 
-        const cpuTurn = () => {
-            const x = Math.floor(Math.random() * 10); 
+        const cpuMove = () => {
+            const x = Math.floor(Math.random() * 10);
             const y = Math.floor(Math.random() * 10);
-            return "row: " + x + ", column: " + y;
+
+            return {
+                x, 
+                y,
+            }
         }
 
-        return { playerBoard, cpuTurn, type };
+        return { 
+            getBoard: () => board, 
+            cpuMove, 
+            type,
+        };
     }
 }
 
