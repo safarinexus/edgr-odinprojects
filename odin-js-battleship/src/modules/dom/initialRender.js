@@ -72,8 +72,6 @@ const initialRender = (p1, p2) => {
         renderPlayer(true, p1);
         renderCPU(false, p2, p1);
         //engine.gameStart(p1, p2);
-
-        //hehe
     })
 
 }

@@ -197,7 +197,9 @@ const gameboard = () => {
         if (grid[x][y] === 0) {
             console.log('miss! at ' + x + " " + y);
             grid[x][y] = -1;
-        } else if (grid[x][y] !== -1 && grid[x][y] !== 1) {
+        } else if (grid[x][y] === -1 || grid[x][y] === 1 ) {
+            console.log('invalid target');
+        } else {
             console.log('hit! at ' + x + " " + y);
             grid[x][y].hit();
             grid[x][y] = 1;
@@ -205,11 +207,11 @@ const gameboard = () => {
     }
 
     const validAttack = (x, y) => {
-        if (grid[x][y] !== -1 && grid[x][y] !== 1) {
-            return false; 
-        } else {
-            return true;
-        }
+        if (grid[x][y] === -1 || grid[x][y] === 1 ) {
+            return false;
+        } 
+
+        return true;
     }
 
     const endCondition = () => {
@@ -230,7 +232,7 @@ const gameboard = () => {
         receiveAttack, 
         endCondition,
         randomiseShips,
-        validAttack,
+        validAttack
     }
 }
 

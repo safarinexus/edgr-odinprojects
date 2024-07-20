@@ -9,11 +9,6 @@ const ship = (length) => {
 
     const hit = () => {
         hitCount++;
-        if (isSunk()) {
-            return isSunk(); 
-        } else {
-            return hitCount;
-        }
     }
 
     return {

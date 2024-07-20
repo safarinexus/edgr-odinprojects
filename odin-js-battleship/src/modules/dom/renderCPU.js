@@ -27,11 +27,15 @@ const renderCPU = (isTurn, player, otherPlayer) => {
         P2BOARD.appendChild(OOF);
         ANNOUNCER.innerHTML = "CPU's turn...";
         setTimeout(() => {
-            //need to fix cpu making only valid moves
             let cpuMove = player.cpuMove(); 
-            otherPlayer.getBoard().receiveAttack(cpuMove.x, cpuMove.y);
+            let check = otherPlayer.getBoard().validAttack(cpuMove.getX(), cpuMove.getY());
+            while (!check) { 
+                cpuMove = player.cpuMove(); 
+                check = otherPlayer.getBoard().validAttack(cpuMove.getX(), cpuMove.getY());
+            }
+            otherPlayer.getBoard().receiveAttack(cpuMove.getX(), cpuMove.getY());
             if (otherPlayer.getBoard().endCondition()) {
-                renderEnd(player, otherPlayer, "CPU"); 
+                renderEnd(otherPlayer, player, "CPU"); 
                 alert('CPU Wins!'); 
             } else {
                 renderPlayer(true, otherPlayer, player);
