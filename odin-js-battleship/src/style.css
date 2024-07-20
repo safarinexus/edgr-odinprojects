@@ -124,6 +124,10 @@ header>h1 {
     top: -1%;
 }
 
+.row-label, .col-label {
+    font-size: 75%;
+}
+
 .outoffocus {
     position: absolute;
     width: 101%;
@@ -162,7 +166,10 @@ header>h1 {
 */
 
 .ships {
-
+    width: 100%; 
+    display: grid; 
+    grid-template-columns: 10% 90%;
+    grid-template-rows: repeat(10, 1fr);
 }
 
 /*=================================FOOTER===================================*/

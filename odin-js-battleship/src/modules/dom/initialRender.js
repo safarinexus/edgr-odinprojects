@@ -66,12 +66,10 @@ const initialRender = (p1, p2) => {
     }
 
     STARTBUTTON.addEventListener("click", () => {
-        //temporarily random place ships 
-        p1.getBoard().randomiseShips();
+        
         p2.getBoard().randomiseShips();
         renderPlayer(true, p1);
         renderCPU(false, p2, p1);
-        //engine.gameStart(p1, p2);
     })
 
 }
