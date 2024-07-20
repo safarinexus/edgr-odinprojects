@@ -16,7 +16,7 @@ body {
     height: 100svh; 
     width: 100svw;
     display: grid; 
-    grid-template-columns: max(100%, 500px);
+    grid-template-columns: max(100%, 400px);
     grid-template-rows: 100px 80px auto 30px;
 }
 
@@ -113,10 +113,11 @@ header>h1 {
 .gameboard {
     margin-top: 20px;
     aspect-ratio: 1/1;
-    width: min(100%, 500px);
+    width: 100%;
+    max-width: 400px;
     display: grid; 
-    grid-template-columns: 30px repeat(10, 1fr);
-    grid-template-rows: 30px repeat(10, 1fr);
+    grid-template-columns: max(30px) repeat(10, 1fr);
+    grid-template-rows: max(30px) repeat(10, 1fr);
     grid-gap: 1px; 
     position: relative; 
     left: -1%; 

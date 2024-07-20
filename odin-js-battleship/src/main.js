@@ -25,7 +25,7 @@ const players = (function () {
 initialRender(players.p1(), players.p2());
 
 
-//hehe
+//a lil cheat
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space") {
         if (document.querySelector('.startButton') === null) {
