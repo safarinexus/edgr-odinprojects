@@ -11,10 +11,10 @@ const renderCPU = (isTurn, player, otherPlayer) => {
         for (let column = 0; column < 10; column++) { 
             if (grid[row][column] === 1) {
                 const square = document.querySelector('#p2-' + (row + 1) + '-' + (column + 1));
-                square.style.boxShadow = '0px 0px 3px 5px red inset'; 
+                square.className = 'hit';
             } else if (grid[row][column] === -1) {
                 const square = document.querySelector('#p2-' + (row + 1) + '-' + (column + 1));
-                square.style.boxShadow = '0px 0px 3px 5px white inset'; 
+                square.className = 'miss';
             } else {
                 continue;
             }

@@ -10,6 +10,7 @@ const gameboard = () => {
     }
 
     const playerShips = [ship(5), ship(4), ship(3), ship(3), ship(2)]
+    const shipCoordinates = [];
 
     const checkFree = (shipLength, startX, startY, orientation) => {
         if (orientation === "horizontal") {
@@ -49,15 +50,20 @@ const gameboard = () => {
 
     const placeShip = (ship, x, y, orientation="horizontal") => {
         if (checkFree(ship.length, x, y, orientation)) {
+            const temp = [];
             if (orientation === "horizontal") {
                 for (let i = y; i < y + ship.length; i++) {
                     grid[x][i] = ship; 
+                    temp.push([x, i]);
                 }
+                shipCoordinates.push(temp);
                 return true;
             } else {
                 for (let i = x; i < x + ship.length; i++) {
                     grid[i][y] = ship; 
+                    temp.push([i, y]);
                 }
+                shipCoordinates.push(temp);
                 return true;
             }
         } else {
@@ -227,6 +233,7 @@ const gameboard = () => {
     return {
         getGrid: () => grid, 
         getShips: () => playerShips, 
+        getCoords: () => shipCoordinates,
         placeShip, 
         checkAllShipsPlaced,
         receiveAttack, 

@@ -9,6 +9,8 @@ import createPlayer from './modules/player/player';
 //DOM modules 
 import initialRender from './modules/DOM/initialRender';
 import renderEnd from './modules/DOM/renderEnd';
+import startButton from './startButton';
+import renderShipStatus from './modules/DOM/renderShipStatus';
 
 //create players object
 const players = (function () {
@@ -21,8 +23,18 @@ const players = (function () {
     }
 })();
 
+const p1Ships = [[], [], [], [], []];
+
 //initial board render 
-initialRender(players.p1(), players.p2());
+initialRender();
+
+//render ships display 
+renderShipStatus();
+
+//startButton functionality
+startButton(players.p1(), players.p2(), p1Ships);
+
+
 
 
 //a lil cheat

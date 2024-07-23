@@ -1,10 +1,6 @@
-const renderPlayer = require('./renderPlayer');
-const renderCPU = require("./renderCPU");
-
-const initialRender = (p1, p2) => {
+const initialRender = () => {
     const P1BOARD = document.querySelector('#p1'); 
     const P2BOARD = document.querySelector('#p2'); 
-    const STARTBUTTON = document.querySelector('.startButton'); 
 
     for (let player = 1; player < 3; player++) { 
         for (let row = 0; row < 11; row++) { 
@@ -54,6 +50,9 @@ const initialRender = (p1, p2) => {
                         label.style.width = '100%';
                         if (player === 1) { 
                             label.id = "p1-" + row + "-" + column;
+                            label.addEventListener("click", () => {
+
+                            })
                             P1BOARD.appendChild(label);
                         } else { 
                             label.id = "p2-" + row + "-" + column;
@@ -64,14 +63,6 @@ const initialRender = (p1, p2) => {
             }
         }
     }
-
-    STARTBUTTON.addEventListener("click", () => {
-        
-        p2.getBoard().randomiseShips();
-        renderPlayer(true, p1);
-        renderCPU(false, p2, p1);
-    })
-
 }
 
 module.exports = initialRender;

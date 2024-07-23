@@ -11,28 +11,36 @@
         <h1>Odin Battleship</h1>
     </header>
     <div class="announcer">
-        <button class="startButton">Start Game</button>
+        <button class="startButton">Start</button>
     </div>
     <div class="main">
         <div class="column" id="column1">
-            <div id="p1-card" class="playercard">Player 1</div>
+            <div class="above-board-rand">
+                <button class="randomise"></button>
+                <div id="p1-card" class="playercard">Player 1</div>
+                <div class="phantom"></div>
+            </div>
             <div id="p1" class="gameboard"></div>
             <div id="p1-ships" class="ships">
-                <div class="ship-label" id="ship1-label"></div>
-                <div class="ship" id="ship1"></div>
-                <div class="ship-label" id="ship2-label"></div>
-                <div class="ship" id="ship2"></div>
-                <div class="ship-label" id="ship3-label"></div>
-                <div class="ship" id="ship3"></div>
-                <div class="ship-label" id="ship4-label"></div>
-                <div class="ship" id="ship4"></div>
-                <div class="ship-label" id="ship5-label"></div>
-                <div class="ship" id="ship5"></div>
+                <div class="label">Destroyer</div><div id="p1-ship1" class="p1-ship"></div>
+                <div class="label">Carrier</div><div id="p1-ship2" class="p1-ship"></div>
+                <div class="label">Battleship</div><div id="p1-ship3" class="p1-ship"></div>
+                <div class="label">Warship</div><div id="p1-ship4" class="p1-ship"></div>
+                <div class="label">Cruiser</div><div id="p1-ship5" class="p1-ship"></div>
             </div>
         </div>
         <div class="column" id="column2">
-            <div id="p2-card" class="playercard">CPU</div>
+            <div class="above-board">
+                <div id="p2-card" class="playercard">CPU</div>
+            </div>
             <div id="p2" class="gameboard"></div>
+            <div id="p2-ships" class="ships">
+                <div class="label">Destroyer</div><div id="p2-ship1" class="p2-ship"></div>
+                <div class="label">Carrier</div><div id="p2-ship2" class="p2-ship"></div>
+                <div class="label">Battleship</div><div id="p2-ship3" class="p2-ship"></div>
+                <div class="label">Warship</div><div id="p2-ship4" class="p2-ship"></div>
+                <div class="label">Cruiser</div><div id="p2-ship5" class="p2-ship"></div>
+            </div>
         </div>
     </div>
     <div class="footer">
