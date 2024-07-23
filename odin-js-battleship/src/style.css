@@ -171,7 +171,10 @@ header>h1 {
 }
 
 .miss {
-    content: url('./assets/miss.svg');
+    background-image: url('./assets/miss.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     filter: invert(100%);
     box-shadow: 0px 0px 3px 1px black inset;
 }
@@ -179,7 +182,7 @@ header>h1 {
 .hit {
     background-image: url('./assets/hit.svg'); 
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: contain;
     background-position: center;
     filter: invert(100%);
     box-shadow: 0px 0px 3px 2px #01c3c3fb inset;
