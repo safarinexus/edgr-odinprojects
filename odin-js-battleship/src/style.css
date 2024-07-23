@@ -182,7 +182,7 @@ header>h1 {
 .hit {
     background-image: url('./assets/hit.svg'); 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 50%;
     background-position: center;
     filter: invert(100%);
     box-shadow: 0px 0px 3px 2px #01c3c3fb inset;
