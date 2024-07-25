@@ -14,6 +14,7 @@ const gameboard = () => {
 
     const clearBoard = () => {
         shipCoords = []; 
+        console.log("board cleared!");
         for (let row = 0; row < 10; row++) { 
             for (let column = 0; column < 10; column++) { 
                 grid[row][column] = 0;
@@ -47,9 +48,13 @@ const gameboard = () => {
             }
         }
     }
-
     const checkAllShipsPlaced = () => {
-        
+        const countShips = grid.flat().filter(element => element !== 0).length;
+        if (countShips === 17) {
+            return true; 
+        } else {
+            return false;
+        }
     }
 
     const removeShip = (x, y, orientation="horizontal") => {
@@ -65,17 +70,13 @@ const gameboard = () => {
                     temp.push([x, i]); 
                 }
                 shipCoords.push(temp);
-                return true;
             } else {
                 for (let i = x; i < x + ship.length; i++) {
                     grid[i][y] = ship; 
                     temp.push([i, y]); 
                 }
                 shipCoords.push(temp);
-                return true;
             }
-        } else {
-            return false; 
         }
     }
 
@@ -244,6 +245,7 @@ const gameboard = () => {
         getGrid: () => grid, 
         getShips: () => playerShips, 
         getShipCoords: () => shipCoords,
+        checkAllShipsPlaced,
         clearBoard,
         placeShip, 
         receiveAttack, 

@@ -4,8 +4,6 @@ const shipSelector = (player) => {
     const shipCoords = player.getBoard().getShipCoords();
     let counter = 0;
 
-    console.log(shipCoords);
-
     setTimeout(() => {
         const width = document.querySelector('.square').offsetWidth; 
 
