@@ -4,7 +4,14 @@ const shipSelector = (player) => {
     const shipCoords = player.getBoard().getShipCoords();
     let counter = 0;
 
+    for (let row = 0; row < 10; row++) { 
+        for (let column = 0; column < 10; column++) { 
+            document.querySelector('#p1-' + (row + 1) + "-" + (column + 1)).innerHTML = '';
+        }
+    }
+
     setTimeout(() => {
+        
         const width = document.querySelector('.square').offsetWidth; 
 
         ships.forEach(ship => {
