@@ -12,7 +12,6 @@ const renderShipStatus = () => {
 
         setTimeout(() => {
             const width = document.querySelector('.square').offsetWidth;
-            console.log(width);
     
             ships.forEach(ship => {
                 for (let i = 0; i < guide[counter]; i++) { 

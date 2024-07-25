@@ -1,5 +1,6 @@
 const renderPlayer = require('./renderPlayer');
 const renderEnd = require("./renderEnd");
+const shipUpdater = require("../../shipUpdater");
 
 const renderCPU = (isTurn, player, otherPlayer) => {
     const P2BOARD = document.querySelector('#p2'); 
@@ -34,6 +35,8 @@ const renderCPU = (isTurn, player, otherPlayer) => {
                 check = otherPlayer.getBoard().validAttack(cpuMove.getX(), cpuMove.getY());
             }
             otherPlayer.getBoard().receiveAttack(cpuMove.getX(), cpuMove.getY());
+            //otherPlayer.cpuMemory(prevMove);  
+            shipUpdater(otherPlayer, 1);
             if (otherPlayer.getBoard().endCondition()) {
                 renderEnd(otherPlayer, player, "CPU"); 
                 alert('CPU Wins!'); 
@@ -54,6 +57,7 @@ const renderCPU = (isTurn, player, otherPlayer) => {
                     square.style.cursor = 'pointer';
                     square.addEventListener("click", () => {
                         board.receiveAttack(row, column); 
+                        shipUpdater(player, 2);
                         if (board.endCondition()) {
                             renderEnd(player, otherPlayer, "Player 1"); 
                             setTimeout(alert('Player 1 Wins!'), 500); 

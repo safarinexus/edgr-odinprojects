@@ -48,12 +48,31 @@ const initialRender = () => {
                         label.style.border = '1px solid #999';
                         label.style.height = '100%'; 
                         label.style.width = '100%';
+                        label.style.position = "relative"; 
                         if (player === 1) { 
                             label.id = "p1-" + row + "-" + column;
-                            label.addEventListener("click", () => {
-
-                            })
                             P1BOARD.appendChild(label);
+                            label.addEventListener('dragover', (e) => {
+                                e.preventDefault();
+                                label.style.boxShadow = "0px 0px 1px 1px lightblue"; 
+                                e.dataTransfer.dropEffect = 'move';
+                            });
+
+                            label.addEventListener('dragleave', (e) => {
+                                e.preventDefault();
+                                label.style.boxShadow = ""; 
+                            });
+                        
+                            label.addEventListener('drop', (e) => {
+                                e.preventDefault();
+                                label.style.boxShadow = "";
+                                const id = e.dataTransfer.getData('text/plain');
+                                const draggableElement = document.getElementById(id);
+                                draggableElement.setAttribute("x", row - 1); 
+                                draggableElement.setAttribute("y", column - 1);
+                                label.appendChild(draggableElement);
+                                e.dataTransfer.clearData();
+                            });
                         } else { 
                             label.id = "p2-" + row + "-" + column;
                             P2BOARD.appendChild(label);

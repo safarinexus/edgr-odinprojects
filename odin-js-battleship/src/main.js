@@ -11,6 +11,7 @@ import initialRender from './modules/DOM/initialRender';
 import renderEnd from './modules/DOM/renderEnd';
 import startButton from './startButton';
 import renderShipStatus from './modules/DOM/renderShipStatus';
+import shipSelector from './shipSelector';
 
 //create players object
 const players = (function () {
@@ -31,9 +32,15 @@ initialRender();
 //render ships display 
 renderShipStatus();
 
-//startButton functionality
-startButton(players.p1(), players.p2(), p1Ships);
+//render random p1 ship selector; 
+shipSelector(players.p1());
+document.querySelector('.randomise').addEventListener("click", () => {
+    players.p1().getBoard().clearBoard();
+    shipSelector(players.p1());
+})
 
+//startButton functionality
+startButton(players.p1(), players.p2());
 
 
 

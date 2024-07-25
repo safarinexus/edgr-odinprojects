@@ -13,15 +13,11 @@ const renderPlayer = (isTurn, player) => {
         for (let column = 0; column < 10; column++) { 
             if (grid[row][column] === 1) {
                 const square = document.querySelector('#p1-' + (row + 1) + '-' + (column + 1));
+                square.style.boxShadow = '';
                 square.className = 'hit';
             } else if (grid[row][column] === -1) {
                 const square = document.querySelector('#p1-' + (row + 1) + '-' + (column + 1));
                 square.className = 'miss';
-            } else if (grid[row][column] === 0) {
-                continue;
-            } else {
-                const square = document.querySelector('#p1-' + (row + 1) + '-'+ (column + 1));
-                square.style.boxShadow = '0px 0px 3px 5px blue inset'; 
             }
         }
     }

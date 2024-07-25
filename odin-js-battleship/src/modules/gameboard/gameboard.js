@@ -9,8 +9,17 @@ const gameboard = () => {
         }
     }
 
-    const playerShips = [ship(5), ship(4), ship(3), ship(3), ship(2)]
-    const shipCoordinates = [];
+    const playerShips = [ship("Destroyer"), ship("Carrier"), ship("Battleship"), ship("Warship"), ship("Cruiser")];
+    let shipCoords = [];
+
+    const clearBoard = () => {
+        shipCoords = []; 
+        for (let row = 0; row < 10; row++) { 
+            for (let column = 0; column < 10; column++) { 
+                grid[row][column] = 0;
+            }
+        }
+    }
 
     const checkFree = (shipLength, startX, startY, orientation) => {
         if (orientation === "horizontal") {
@@ -40,12 +49,11 @@ const gameboard = () => {
     }
 
     const checkAllShipsPlaced = () => {
-        const countShips = grid.flat().filter(element => element !== 0).length;
-        if (countShips === 17) {
-            return true; 
-        } else {
-            return false;
-        }
+        
+    }
+
+    const removeShip = (x, y, orientation="horizontal") => {
+
     }
 
     const placeShip = (ship, x, y, orientation="horizontal") => {
@@ -54,16 +62,16 @@ const gameboard = () => {
             if (orientation === "horizontal") {
                 for (let i = y; i < y + ship.length; i++) {
                     grid[x][i] = ship; 
-                    temp.push([x, i]);
+                    temp.push([x, i]); 
                 }
-                shipCoordinates.push(temp);
+                shipCoords.push(temp);
                 return true;
             } else {
                 for (let i = x; i < x + ship.length; i++) {
                     grid[i][y] = ship; 
-                    temp.push([i, y]);
+                    temp.push([i, y]); 
                 }
-                shipCoordinates.push(temp);
+                shipCoords.push(temp);
                 return true;
             }
         } else {
@@ -203,12 +211,14 @@ const gameboard = () => {
         if (grid[x][y] === 0) {
             console.log('miss! at ' + x + " " + y);
             grid[x][y] = -1;
+            return false;
         } else if (grid[x][y] === -1 || grid[x][y] === 1 ) {
             console.log('invalid target');
         } else {
             console.log('hit! at ' + x + " " + y);
             grid[x][y].hit();
             grid[x][y] = 1;
+            return true;
         }
     }
 
@@ -233,9 +243,9 @@ const gameboard = () => {
     return {
         getGrid: () => grid, 
         getShips: () => playerShips, 
-        getCoords: () => shipCoordinates,
+        getShipCoords: () => shipCoords,
+        clearBoard,
         placeShip, 
-        checkAllShipsPlaced,
         receiveAttack, 
         endCondition,
         randomiseShips,
