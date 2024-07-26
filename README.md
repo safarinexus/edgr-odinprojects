@@ -66,3 +66,8 @@ A functioning weather app, built using WeatherAPI's free API, as well as JavaScr
 Intermediate JavaScript Project  
 Project: Battleship  
 The final project for JavaScript, the game of Battleship.   
+  
+14. Odin Homepage  
+Advanced HTML & CSS Project  
+Project: Homepage  
+A CV homepage meant to practice advanced HTML & CSS skills.  
