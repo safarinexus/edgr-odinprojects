@@ -200,8 +200,12 @@ a:visited {
     font-weight: 200;
 }
 
-#Signup-Page-Template  .project-name, #Image-Carousel-and-Drop-down-Menu .project-name{
+#Signup-Page-Template  .project-name {
     font-size: 0.9rem;
+}
+
+#Image-Carousel-and-Drop-down-Menu .project-name {
+    font-size: 0.7rem;
 }
 
 #Etch-A-Sketch .project-description, #Form-Validation .project-description, #Image-Carousel-and-Drop-down-Menu .project-description{
