@@ -121,9 +121,10 @@ a:visited {
 /*==========================PROJECTS SECTION==========================*/
 .projects-section {
     box-sizing: border-box;
-    height: 100svh; 
     margin: 0; 
     padding: 40px;
+    padding-bottom: 80px;
+    min-height: 100svh;
     width: 100%;
     display: flex; 
     flex-direction: column;
@@ -146,6 +147,8 @@ a:visited {
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fit, 240px); 
     grid-template-rows: repeat(auto-fit, 300px);
+    justify-content: center;
+    align-content: center;
     width: 100%;
 }
 
@@ -197,9 +200,48 @@ a:visited {
     font-weight: 200;
 }
 
+#Signup-Page-Template  .project-name, #Image-Carousel-and-Drop-down-Menu .project-name{
+    font-size: 0.9rem;
+}
+
+#Etch-A-Sketch .project-description, #Form-Validation .project-description, #Image-Carousel-and-Drop-down-Menu .project-description{
+    font-size: 0.6rem;
+}
+ 
 /*==========================CONTACT ME SECTION==========================*/
+.contact-me-section {
+    background-color: #9198e5;
+    height: 40svh;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
+.contact-me-section h1 {
+    font-size: 5rem;
+    height: 50%;
+    font-weight: 100;
+    user-select: none;
+}
 
+.links-container {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: flex-start; 
+    width: 70%;
+    height: 50%;
+}
+
+.links-container * {
+    height: 80px; 
+    width: 80px;
+}
+
+.contactlogo {
+    filter: invert(100%);
+}
 
 /*==========================MEDIA-QUERIES==========================*/
 @media only screen and (max-width: 1366px) {
