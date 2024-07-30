@@ -60,9 +60,9 @@ a:visited {
 .about-me-container {
     color: black;
     background-color: antiquewhite;
-    max-width: 75%; 
+    max-width: 60%; 
     min-width: 700px;
-    max-height: 65%;
+    max-height: 40%;
     min-height: 400px;
     display: grid; 
     grid-template-columns: 300px auto;
