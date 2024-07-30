@@ -309,9 +309,9 @@ a:visited {
         background-color: rgb(0, 0, 0, 0);
         min-width: 100%; 
         max-width: 100%;
-        max-height: 100svh;
+        max-height: 100dvh;
         min-height: 600px;
-        height: 100svh;
+        height: 100dvh;
         padding: 0;
         position: static;
     }
