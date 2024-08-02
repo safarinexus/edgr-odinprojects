@@ -56,7 +56,7 @@ addProject("Restaurant Page", 'A simple "tabbed" restaurant homepage using Webpa
 addProject("Tic-Tac-Toe", "A simple game of Tic-Tac-Toe played from your browser! Made Using JS IIFEs and Factory Functions.", "https://github.com/safarinexus/odin_projects/tree/main/odin-js-tictactoe", "./odin-js-tictactoe/jstictactoe.html");
 
 //library app project
-addProject("Library App", ">A library website of books with basic functionality to add new books implemented with Dialogs and JS Objects", "https://github.com/safarinexus/odin_projects/tree/main/odin-js-library", "./odin-js-library/jslibrary.html");
+addProject("Library App", "A library website of books with basic functionality to add new books implemented with Dialogs and JS Objects", "https://github.com/safarinexus/odin_projects/tree/main/odin-js-library", "./odin-js-library/jslibrary.html");
 
 //dashboard project 
 addProject("Dashboard Template", "A simple dashboard website template built with CSS Grid.", "https://github.com/safarinexus/odin_projects/tree/main/odin-dashboard", "./odin-dashboard/dashboard.html");
