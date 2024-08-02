@@ -1,7 +1,7 @@
 .education-fieldset {
     border-radius: 6px;
     border: white 2px solid;  
-    min-width: 400px; 
+    min-width: 300px; 
     height: fit-content; 
     display: grid; 
     grid-template-columns: 24% auto;

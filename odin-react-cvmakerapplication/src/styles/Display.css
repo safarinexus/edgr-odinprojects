@@ -1,7 +1,7 @@
 .display-container {
     height: calc(100svh - 150px);
     min-height: 700px; 
-    min-width: 400px;
+    min-width: 350px;
     margin: 20px; 
     display: flex; 
     justify-content: center;
@@ -10,7 +10,7 @@
 
 .display {
     aspect-ratio: 1/1.414;
-    min-width: 100px; 
+    height: 90%; 
     border: 1px solid white; 
     background-color: white;
     color: black; 
