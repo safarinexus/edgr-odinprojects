@@ -2,7 +2,7 @@
     height: calc(100svh - 150px);
     min-height: 700px; 
     min-width: 300px;
-    max-width: 100%;
+    max-width: 100svw;
     margin: 20px; 
     display: flex; 
     justify-content: center;
