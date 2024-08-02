@@ -7,6 +7,7 @@
     grid-template-columns: 24% auto;
     grid-gap: 20px; 
     padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .personal-info-fieldset label {
