@@ -198,6 +198,17 @@ a:visited {
     font-weight: 300;
 }
 
+.project-name-wip {
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;   
+    font-size: 0.9rem;
+}
+
+.project-name-wip span {
+    font-style: italic;
+    font-size: 0.6rem;
+}
+
 .projlogo {
     width: 20px;
 }

@@ -1,6 +1,6 @@
 console.log('initiated');
 
-function addProject(name, description, github, link, image=true,) {
+function addProject(name, description, github, link, image=true, wip=false) {
     const newName = (function replaceWhitespaceWithDash(str) {
         return str.replace(/\s+/g, '-');
     })(name);
@@ -11,7 +11,7 @@ function addProject(name, description, github, link, image=true,) {
     PROJCARD.classList.add('project-card'); 
     PROJCARD.innerHTML = '<div class="project-ss" id="' + newName + '-ss"></div>\
                         <div class="project-bottomhalf">\
-                    <div class="project-name">' + name + '</div>\
+                    <div class="project-name" id="' + newName + '">' + name + '</div>\
                     <div class="project-links">\
                         <a href="' + github +  '" target="_blank">\
                             <img class="projlogo" src="./assets/github.svg" alt="github logo">\
@@ -30,12 +30,16 @@ function addProject(name, description, github, link, image=true,) {
         PROJCARD.querySelector('#' + newName + '-ss').className = "project-ss-placeholder";
     }
     
+    if (wip) { 
+        PROJCARD.querySelector('#' + newName ).innerHTML += '<br><span>(Work in Progress)</span>'; 
+        PROJCARD.querySelector('#' + newName ).className = 'project-name-wip';
+    } 
 
     CONTAINER.appendChild(PROJCARD);
 }
 
 //react cv maker application project 
-addProject("React CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/", false); 
+addProject("React CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/", false, true); 
 
 //homepage project
 addProject("Homepage", "A CV homepage meant to practice advanced HTML & CSS skills.", "https://github.com/safarinexus/odin_projects/tree/main/odin-homepage", "./odin-homepage/index.html");
