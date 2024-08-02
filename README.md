@@ -71,3 +71,9 @@ The final project for JavaScript, the game of Battleship.
 Advanced HTML & CSS Project  
 Project: Homepage  
 A CV homepage meant to practice advanced HTML & CSS skills.  
+  
+15. Odin React CV Maker Application  
+React Project  
+Project: CV Application  
+My first ever React project, an application that helps build a CV/Resume  
+  

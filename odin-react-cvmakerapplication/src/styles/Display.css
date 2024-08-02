@@ -12,9 +12,10 @@
 .display {
     aspect-ratio: 1/1.414;
     height: 90%; 
-    border: 1px solid white; 
     background-color: white;
     color: black; 
+    display: grid; 
+    grid-template-rows: 1fr 2fr 2fr;
 }
 
 .display-buttons {
@@ -24,6 +25,49 @@
     align-items: center;
     margin-left: 10px; 
 }
+
+.cv-header, .cv-education, .cv-workexperience {
+    width: 100%;
+}
+
+.cv-header * {
+    margin: 0;
+}
+
+.cv-header hr {
+    margin-top: 5%;
+    width: 90%;
+}
+
+.cv-header {
+    color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(40, 40, 50);
+}
+
+.cv-workexperience {
+    grid-row: 2;
+    box-sizing: border-box;
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 20% 80%;
+    padding: 20px;
+}
+
+.cv-education {
+    grid-row: 3;
+    box-sizing: border-box;
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 20% 80%;
+    padding: 20px;
+}
+
 
 @media only screen and (max-width: 440px) {
     .display-container {

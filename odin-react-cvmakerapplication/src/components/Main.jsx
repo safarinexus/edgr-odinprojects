@@ -20,9 +20,23 @@ export default function Main() {
         setCV({...CV, [key]: value});
       };
 
+    const clearCV = () => {
+        const temp = { 
+            fullname: "", 
+            email: "", 
+            phone: "", 
+            citizenship: "", 
+            school: "", 
+            degree: "", 
+            educationStartDate: "", 
+            educationEndDate: "", 
+         };
+        setCV(temp);
+    }
+
     return (
         <>
-            <Display cv={CV}/>
+            <Display cv={CV} clearCV = {clearCV}/>
             <PersonalInfo cv={CV} editCV = {editCV}/>
             <Education cv={CV} editCV = {editCV}/>
             <WorkContainer cv={CV} editCV = {editCV}/>
