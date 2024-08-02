@@ -2,7 +2,7 @@
     height: calc(100svh - 150px);
     min-height: 700px; 
     min-width: 300px;
-    max-width: 100svw;
+    max-width: 100%; 
     margin: 20px; 
     display: flex; 
     justify-content: center;
@@ -11,7 +11,8 @@
 
 .display {
     aspect-ratio: 1/1.414;
-    height: 90%;
+    height: 90%; 
+    max-width: 100%;
     border: 1px solid white; 
     background-color: white;
     color: black; 
