@@ -38,7 +38,7 @@ function addProject(name, description, github, link, image=true,) {
 addProject("React CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/", false); 
 
 //homepage project
-addProject("Homepage", "A CV homepage meant to practice advanced HTML & CSS skills.", "https://github.com/safarinexus/odin_projects/tree/main/odin-homepage", "./index.html");
+addProject("Homepage", "A CV homepage meant to practice advanced HTML & CSS skills.", "https://github.com/safarinexus/odin_projects/tree/main/odin-homepage", "./odin-homepage/index.html");
 
 //battleship project
 addProject("Battleship", "The final project for the JavaScript Section of TOP, the game of Battleship.", "https://github.com/safarinexus/odin_projects/tree/main/odin-js-battleship", "./odin-js-battleship/dist/index.html"); 
