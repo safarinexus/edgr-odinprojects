@@ -11,8 +11,9 @@
 
 .display {
     aspect-ratio: 1/1.414;
-    height: 90%; 
-    max-width: 100%;
+    width: calc(100svw - 700px); 
+    min-width: 300px;
+    max-width: 500px; 
     border: 1px solid white; 
     background-color: white;
     color: black; 
