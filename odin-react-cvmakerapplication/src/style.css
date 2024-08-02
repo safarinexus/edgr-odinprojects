@@ -42,10 +42,7 @@ a:hover {
   margin: 20px;
 }
 
-/*=================MEDIA QUERY FOR MOBILE=====================*/
-@media only screen and (max-width: 800px) {
-  #root {
-    
-  }
+label {
+  font-size: 0.8rem;
 }
 
