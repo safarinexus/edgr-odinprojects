@@ -1,6 +1,5 @@
 .display-container {
     height: calc(100svh - 150px);
-    min-width: 400px; 
     min-height: 700px; 
     margin: 20px; 
     display: flex; 
