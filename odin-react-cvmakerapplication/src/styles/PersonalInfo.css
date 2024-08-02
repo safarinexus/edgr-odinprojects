@@ -1,0 +1,20 @@
+.personal-info-fieldset {
+    border-radius: 6px;
+    border: white 2px solid;  
+    min-width: 400px; 
+    height: fit-content; 
+    display: grid; 
+    grid-template-columns: 24% auto;
+    grid-gap: 20px; 
+    padding-bottom: 20px;
+}
+
+.personal-info-fieldset label {
+    text-align: end;
+    height: min-content; 
+    align-self: center;
+}
+
+.personal-info legend {
+    font-size: 1.5rem;
+}
