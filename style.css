@@ -202,6 +202,8 @@ a:visited {
     font-family: Helvetica, sans-serif;
     font-weight: 300;   
     font-size: 0.9rem;
+    position: relative; 
+    top: -2px;
 }
 
 .project-name-wip span {
