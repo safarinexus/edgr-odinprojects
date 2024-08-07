@@ -39,7 +39,7 @@ function addProject(name, description, github, link, image=true, wip=false) {
 }
 
 //react memory card project 
-addProject("React Memory Card", "The game of memory cards, made with React, right in the browser. ", )
+//addProject("React Memory Card", "The game of memory cards, made with React, right in the browser. ", )
 
 //react cv maker application project 
 addProject("React CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/"); 
