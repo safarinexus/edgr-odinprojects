@@ -90,7 +90,14 @@ export default function App() {
 
     if (!nextRound) {
         alert("Game over! Your score: " + round.length);
-        setBest(round.length);
+        if (best < round.length) { 
+            setBest(round.length);
+        }
+        setRound([]); 
+        setNextRound(true);
+    } else if (round.length == 12) {
+        alert("You win! Your score: " + round.length);
+        setBest(12);
         setRound([]); 
         setNextRound(true);
     }
