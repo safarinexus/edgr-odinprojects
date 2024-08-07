@@ -1,17 +1,21 @@
 .work-container {
     display: flex; 
+    flex-direction: column;
     align-items: center;
+    border-radius: 6px;
+    border: white 2px solid;  
     min-width: 300px; 
     box-sizing: border-box;
 }
 
 .work-fieldset {
-    margin: 10px; 
+    width: 90%;
     border-radius: 6px;
     border: white 2px solid;  
     height: fit-content; 
     display: grid; 
     grid-template-columns: 24% auto;
+    grid-template-rows: repeat(2, 53px) auto repeat(2, 53px);
     grid-gap: 20px; 
     padding-bottom: 40px;
     box-sizing: border-box;
@@ -25,14 +29,6 @@
 
 .work legend {
     font-size: 1.5rem;
-}
-
-.work-container {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    border-radius: 6px;
-    border: white 2px solid;  
 }
 
 .workButtons {

@@ -1,28 +1,40 @@
-import { useState } from "react";
-import Work from './Work';
+import { useState,  useEffect, useRef } from "react";
+import FirstWork from './FirstWork.jsx';
+import ExtraWork from './ExtraWork.jsx';
 import '../styles/WorkContainer.css';
 
 
-export default function WorkContainer({ editCV }) {
-    const [works, setWorks] = useState([<Work key={1} number={1} first={true} editCV = {editCV}/>])    
+export default function WorkContainer({ cv, editCV }) {
+    const [works, setWorks] = useState([])    
 
-    const addWork = (e) => {
-        if (works.length < 5) {
-            setWorks([...works, <Work key={works.length + 1} number={works.length + 1} first={false} editCV = {editCV}/>])
+    const addExperience = (e) => {
+        if (works.length < 4) {
+            editCV("workExperience", [...cv.workExperience, {
+                company: "", 
+                position: "", 
+                description: "", 
+                workStartDate: "", 
+                workEndDate: "",
+            }])
         } else {
             e.preventDefault(); 
         }
+    }
+
+    const addWork = () => {
+        setWorks([...works, <ExtraWork key={works.length} number={works.length} cv={cv} editCV = {editCV}/>])
     }
 
     const deleteWork = (e) => {
-        if (works.length > 1) {
+        if (works.length !== 0) {
             setWorks(works.slice(0, -1));
+            editCV("workExperience", cv.workExperience.slice(0, -1));
         } else {
             e.preventDefault(); 
         }
     }
 
-    function Button({  name, handleClick }) {
+    function Button({ name, handleClick }) {
         return (
           <button className={name} onClick={handleClick}></button>
         );
@@ -33,10 +45,13 @@ export default function WorkContainer({ editCV }) {
             <form className="work-form">
                 <fieldset className="work-container"> 
                     <legend>Work Experience</legend>
+                        <FirstWork cv={cv} editCV={editCV}/>
                         {works}
                         <div className="workButtons"> 
-                        <Button name="add" handleClick={addWork}/>
+                        {/*
+                        <Button name="add" handleClick={addExperience}/>
                         <Button name="delete" handleClick={deleteWork}/>
+                        */}
                     </div> 
                 </fieldset>
             </form>

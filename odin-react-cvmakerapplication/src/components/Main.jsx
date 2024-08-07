@@ -5,6 +5,7 @@ import Education from './Education.jsx'
 import WorkContainer from './WorkContainer.jsx'
 
 export default function Main() {
+
     const [ CV, setCV ] = useState({ 
         fullname: "", 
         email: "", 
@@ -14,11 +15,17 @@ export default function Main() {
         degree: "", 
         educationStartDate: "", 
         educationEndDate: "", 
+        company: "", 
+        position: "", 
+        description: "", 
+        workStartDate: "", 
+        workEndDate: "",
+        workExperience: [],
      });
 
     const editCV = (key, value) => {
         setCV({...CV, [key]: value});
-      };
+    };
 
     const clearCV = () => {
         const temp = { 
@@ -30,6 +37,12 @@ export default function Main() {
             degree: "", 
             educationStartDate: "", 
             educationEndDate: "", 
+            company: "", 
+            position: "", 
+            description: "", 
+            workStartDate: "", 
+            workEndDate: "",
+            workExperience: [],
          };
         setCV(temp);
     }

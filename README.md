@@ -77,3 +77,8 @@ React Project
 Project: CV Application  
 My first ever React project, an application that helps build a CV/Resume  
   
+16. Odin React Memory Card  
+React Project  
+Project: Memory Card  
+The game of memory cards, made with React, right in the browser.  
+  

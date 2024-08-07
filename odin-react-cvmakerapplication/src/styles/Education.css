@@ -5,6 +5,7 @@
     height: fit-content; 
     display: grid; 
     grid-template-columns: 24% auto;
+    grid-template-rows: repeat(4, 53px);
     grid-gap: 20px; 
     padding-bottom: 20px;
     box-sizing: border-box;

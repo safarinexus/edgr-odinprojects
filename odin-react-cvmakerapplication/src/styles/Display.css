@@ -3,7 +3,6 @@
     min-height: 700px; 
     min-width: 300px;
     max-width: 100%; 
-    margin: 20px; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -15,7 +14,7 @@
     background-color: white;
     color: black; 
     display: grid; 
-    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 3fr 1.5fr;
 }
 
 .display-buttons {
@@ -53,19 +52,69 @@
 .cv-workexperience {
     grid-row: 2;
     box-sizing: border-box;
-    display: grid; 
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 20% 80%;
     padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .cv-education {
     grid-row: 3;
     box-sizing: border-box;
-    display: grid; 
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 20% 80%;
     padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.workexperience-entry {
+    width: 100%; 
+    height: 20%; 
+    display: grid; 
+    grid-template-columns: 1fr 4fr; 
+    grid-template-rows: 1fr 1fr 3fr; 
+    align-items: center;
+}
+
+.education-entry {
+    width: 100%;
+    height: 100%; 
+    display: grid; 
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
+    align-items: center;
+}
+
+.education-entry * , .workexperience-entry *{ 
+    margin: 0;
+}
+
+.edu-entry-school, .workExp-entry-company {
+    font-size: 0.8em;
+}
+
+.edu-entry-degree, .workExp-entry-position {
+    font-size: 0.8em;
+    align-self: start;
+}
+
+.edu-entry-date, .workExp-entry-date, .workExp-entry-description { 
+    font-size: 0.5em;
+} 
+
+.cvsection-header {
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.cvsection-header * {
+    margin: 0; 
 }
 
 

@@ -21,7 +21,7 @@ export default function Education({ cv, editCV }) {
     return(
         <div className="container" id="education">
             <form className="education-form">
-                <fieldset className="education-fieldset" style={{gridTemplateRows: "repeat(4, 53px)"}}> 
+                <fieldset className="education-fieldset"> 
                     <legend>Education</legend>
                     <label htmlFor="school">School:</label>
                     <input 
@@ -41,7 +41,7 @@ export default function Education({ cv, editCV }) {
                     />
                     <label htmlFor="educationStartDate">Start Date:</label>
                     <input 
-                        type="date" 
+                        type="month" 
                         id="educationStartDate" 
                         name="educationStartDate"
                         value={cv.educationStartDate}
@@ -49,7 +49,7 @@ export default function Education({ cv, editCV }) {
                     />
                     <label htmlFor="educationEndDate">End Date:</label>
                     <input 
-                        type="date" 
+                        type="month" 
                         id="educationEndDate" 
                         name="educationEndDate"
                         value={cv.educationEndDate}
