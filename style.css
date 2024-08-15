@@ -221,7 +221,7 @@ a:visited {
     font-weight: 200;
 }
 
-#Signup-Page-Template  .project-name {
+#Signup-Page-Template  .project-name, #React-Shopping-Page .project-name {
     font-size: 0.9rem;
 }
 
