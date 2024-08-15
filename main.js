@@ -37,6 +37,9 @@ function addProject(name, description, github, link, image=true, wip=false) {
 
     CONTAINER.appendChild(PROJCARD);
 }
+//react shopping page project 
+addProject("React Shopping Site", "A frontend UI for a shopping page, built with React.", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-shoppingcart", "https://odin-shopping-page.vercel.app/");
+
 
 //react memory card project 
 addProject("React Memory Card", "The game of memory cards, made with React, right in the browser. ", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-memorycard", "https://odin-projects-nine.vercel.app/");

@@ -82,3 +82,9 @@ React Project
 Project: Memory Card  
 The game of memory cards, made with React, right in the browser.  
   
+17. Odin React Shop Site  
+React Project  
+Project: Shopping Cart  
+A frontend UI for a shopping page, built with React.  
+
+  
