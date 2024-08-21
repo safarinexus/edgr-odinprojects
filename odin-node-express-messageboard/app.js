@@ -4,6 +4,7 @@ const path = require("node:path");
 const newMsgsRouter = require("./routes/newMsgsRouter"); 
 const indexRouter = require("./routes/indexRouter");
 const messagesRouter = require("./routes/messagesRouter");
+const port = process.env.PORT || 3000
 
 const messages = [
     {
@@ -42,6 +43,4 @@ app.use("/new", newMsgsRouter);
 app.use("/messages", messagesRouter);
 app.use("/", indexRouter);
 
-
-const PORT = 3000; 
-app.listen(PORT, () => console.log(`Server initiated. Listening on Port ${PORT}`));
+app.listen(port, () => console.log(`Server initiated. Listening on Port ${port}`));
