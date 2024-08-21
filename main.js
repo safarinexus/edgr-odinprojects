@@ -37,15 +37,19 @@ function addProject(name, description, github, link, image=true, wip=false) {
 
     CONTAINER.appendChild(PROJCARD);
 }
+
+//node express message board project
+addProject("Mini Message Board", "A simple mini message board website with a backend using MVC Pattern and Express", "https://github.com/safarinexus/odin_projects/tree/main/odin-node-express-messageboard", "https://overseas-phoebe-safarinexus-e4f74908.koyeb.app/");
+
 //react shopping page project 
-addProject("React Shopping Page", "A frontend UI for a shopping page, built with React.", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-shoppingcart", "https://odin-shopping-page.vercel.app/");
+addProject("Shopping Page", "A frontend UI for a shopping page, built with React.", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-shoppingcart", "https://odin-shopping-page.vercel.app/");
 
 
 //react memory card project 
-addProject("React Memory Card", "The game of memory cards, made with React, right in the browser. ", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-memorycard", "https://odin-projects-nine.vercel.app/");
+addProject("Memory Card", "The game of memory cards, made with React, right in the browser. ", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-memorycard", "https://odin-projects-nine.vercel.app/");
 
 //react cv maker application project 
-addProject("React CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/"); 
+addProject("CV Maker", "My first ever React project, an application that helps build a CV/Resume", "https://github.com/safarinexus/odin_projects/tree/main/odin-react-cvmakerapplication", "https://odin-projects-psi.vercel.app/"); 
 
 //homepage project
 addProject("Homepage", "A CV homepage meant to practice advanced HTML & CSS skills.", "https://github.com/safarinexus/odin_projects/tree/main/odin-homepage", "./odin-homepage/index.html");
