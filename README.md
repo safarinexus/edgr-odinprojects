@@ -86,5 +86,15 @@ The game of memory cards, made with React, right in the browser.
 React Project  
 Project: Shopping Cart  
 A frontend UI for a shopping page, built with React.  
-
   
+18. Odin Node Basic Informational Site   
+Node Project   
+Project: Basic Informational Site   
+A simple backend for an informational site.  
+  
+19. Odin Node Express Mini Message Board  
+Node Express Project  
+Project: Mini Message Board  
+A simple mini message board website with a backend using MVC Pattern and Express.js.  
+
+
