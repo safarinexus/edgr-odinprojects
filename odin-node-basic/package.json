@@ -1,0 +1,14 @@
+{
+  "name": "odin-node-basic",
+  "version": "1.0.0",
+  "description": "basic information site using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "safarinexus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

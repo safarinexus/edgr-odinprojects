@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="<%= links[1].href %>" class="logo-container">
+                <img src="/logo.svg" alt="logo">
+                <h1><%= title %></h1>
+            </a>
+            <a href="<%= links[1].href %>" class="home-container">
+                <img src="/home.svg" alt="home image">
+            </a>
+        </header>
+        <div class="full-message" id=<%=message.id%>>
+            <div class="message">
+                <p class="message-text"><%= message.text%></p>
+                <h5 class="message-user"><%= message.user%></h5>
+                <p class="message-added"><%= message.added%></p>
+            </div>
+        </div>
+    </body>
+</html>

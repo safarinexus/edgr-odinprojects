@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="<%= links[1].href %>" class="logo-container">
+                <img src="/logo.svg" alt="logo">
+                <h1><%= title %></h1>
+            </a>
+            <a href="<%= links[0].href %>" class="add-container">
+                <img src="/add.svg" alt="plus image">
+            </a>
+        </header>
+        <div class="message-container">
+            <% for (let i=0; i<messages.length; i++) { %>
+                <a href="/messages/<%= messages[i].id%>" class="message" id=<%= messages[i].id%>>
+                    <p class="message-text"><%= messages[i].text%></p>
+                    <h5 class="message-user"><%= messages[i].user%></h5>
+                    <small class="message-added"><%= messages[i].added%></small>
+                </a>
+            <% } %>
+        </div>
+    </body>
+</html>
