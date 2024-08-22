@@ -48,13 +48,11 @@ header {
 
 .logo-container {
     display: flex; 
-    display: flex; 
+    align-items: center;
     box-sizing: border-box;
     padding: 0; 
     width: 300px; 
-    height: 65px;
-    overflow-y: visible;
-
+    overflow: visible;
 }
 
 .logo-container img {
@@ -68,6 +66,7 @@ header {
     margin-left: 10px; 
     text-align: start;
     line-height: 28px;
+    overflow: visible;
 }
 
 .add-container, .home-container { 
