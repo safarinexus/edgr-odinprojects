@@ -52,6 +52,9 @@ header {
     box-sizing: border-box;
     padding: 0; 
     width: 300px; 
+    height: 60px;
+    overflow-y: visible;
+
 }
 
 .logo-container img {
