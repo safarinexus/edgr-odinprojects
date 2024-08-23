@@ -104,7 +104,7 @@ header {
     margin-bottom: 20px; 
     box-shadow: 3px 3px 0px 1.5px white; 
     display: grid; 
-    grid-template-rows: 7fr 3fr;
+    grid-template-rows: auto 40px;
 }
 
 .message:active { 
