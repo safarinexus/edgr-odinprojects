@@ -1,6 +1,7 @@
 const { Pool } = require("pg"); 
 
 if (process.env.MODE === "dev") {
+    console.log("dev in use");
     module.exports = new Pool({
         host: "localhost", 
         user: "edgr", 
@@ -9,6 +10,7 @@ if (process.env.MODE === "dev") {
         port: 5432,
     });
 } else if (process.env.MODE === "prod") { 
+    console.log("prod in use");
     module.exports = new Pool({
         host: process.env.DATABASE_HOST,
         database: process.env.DATABASE_NAME,

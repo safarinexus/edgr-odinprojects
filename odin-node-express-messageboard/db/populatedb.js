@@ -22,6 +22,7 @@ const main = async () => {
     console.log(argv[2]);
     const client = new Client ({
         connectionString: argv[2], 
+        ssl: true
     });
     await client.connect();
     console.log("connected");
