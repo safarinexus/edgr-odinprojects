@@ -17,9 +17,8 @@
         <div class="message-container">
             <% for (let i=0; i<messages.length; i++) { %>
                 <a href="/messages/<%= messages[i].id%>" class="message" id=<%= messages[i].id%>>
-                    <p class="message-text"><%= messages[i].text%></p>
-                    <h5 class="message-user"><%= messages[i].user%></h5>
-                    <small class="message-added"><%= messages[i].added%></small>
+                    <p class="message-text"><%= messages[i].message%></p>
+                    <p class="message-info"><span class="message-user"><%= messages[i].name%></span> | <%= messages[i].added%></p>
                 </a>
             <% } %>
         </div>

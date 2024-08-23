@@ -92,28 +92,27 @@ header {
     justify-content: center;
 }
 
-.message { 
+.message, .message-full  { 
     box-sizing: border-box;
     padding: 20px; 
     width: 70%; 
+    height: fit-content;
     min-width: 300px; 
     max-width: 800px;
-    height: 160px; 
     border: 1px solid white; 
     border-radius: 10px;
     margin-bottom: 20px; 
     box-shadow: 3px 3px 0px 1.5px white; 
     display: grid; 
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 70px 10px 30px;
+    grid-template-rows: 7fr 3fr;
 }
 
 .message:active { 
     transform: translate(3px, 3px); 
     box-shadow: 0px 0px 0px 0px;
-}
+} 
 
-.message * { 
+.message *, .message-full *{ 
     margin: 0; 
 }
 
@@ -122,16 +121,21 @@ header {
     border-radius: 5px; 
     grid-column: span 2;
     padding: 10px; 
+    min-height: 80px;
+    height: fit-content;
+    overflow-y: visible;
 }
 
-.message-user, .message-added { 
-    grid-row: 3;
+.message-info { 
+    grid-row: 2;
     align-self: end;
+    font-weight: 100;
+    font-size: 0.8rem;
 }
 
-.message-added { 
-    font-weight: 100;
-    justify-self: end;
+.message-user {
+    font-style: bold;
+    font-weight: 700;
 }
 
 legend {
@@ -225,12 +229,5 @@ fieldset {
 
     .message-user {
         font-size: 0.7rem;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .message-added { 
-        font-size: 0.5rem;
-
     }
 }

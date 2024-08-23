@@ -1,13 +1,15 @@
 const { Router } = require("express");
 const messagesRouter = Router(); 
+const db = require("../db/queries");
 
-messagesRouter.get("/:messageid", (req, res) => {
-    const messages = req.messages; 
+messagesRouter.get("/:messageid", async (req, res) => {
+    const rows = await db.getAll();
     const id = Number(req.params.messageid); 
     const links = req.links;
     const title = req.title; 
     let message = null; 
-    messages.forEach(curr => {
+    rows.forEach(curr => {
+        console.log(curr);
         if (curr.id === id) {
             message = curr;
         }

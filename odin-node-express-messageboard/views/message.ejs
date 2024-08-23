@@ -15,10 +15,9 @@
             </a>
         </header>
         <div class="full-message" id=<%=message.id%>>
-            <div class="message">
-                <p class="message-text"><%= message.text%></p>
-                <h5 class="message-user"><%= message.user%></h5>
-                <p class="message-added"><%= message.added%></p>
+            <div class="message-full">
+                <p class="message-text"><%= message.message%></p>
+                <p class="message-info"><span class="message-user"><%= message.name%></span> | <%= message.added%></p>
             </div>
         </div>
     </body>
