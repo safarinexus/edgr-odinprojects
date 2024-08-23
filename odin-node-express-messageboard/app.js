@@ -1,5 +1,4 @@
-require('dotenv').config();
-require('@dotenvx/dotenvx').config();
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const path = require("node:path");
