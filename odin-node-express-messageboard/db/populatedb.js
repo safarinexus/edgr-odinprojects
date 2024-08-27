@@ -13,7 +13,7 @@ const SQL = `
     INSERT INTO messages (message, name, added)
     VALUES 
         ('Hello!', 'John21', '${date}'),
-        ('Top of the mornin!', 'Irishman1992', '${date}');
+        ('Top of the mornin!', 'Irishman1992', '${date}')
     ;
 `
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="../public/logo.svg">
+    <title>Odin Inventory</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/">
+                <img src="/logo.svg" alt="logo">
+                <h1>Odin Inventory</h1>
+            </a>
+        </div>
+        <nav class="links-container">
+            <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%" draggable="false"></a>
+                <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 50%" draggable="false"></a>
+                <a href="/games"><img src="/items.svg" alt="items" style="opacity: 50%" draggable="false"></a>
+                <a href="/add"><img src="/add.svg" alt="add" style="opacity: 100%" draggable="false"></a>
+        </nav>
+    </header>
+    <div class="main-section-add">
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <fieldset class="add-form">
+                <legend>Add a game</legend>
+                <label for="title">Game Title</label>
+                <input type="text" name="title" required>
+                <label for="year">Year Released</label>
+                <input type="text" name="year">
+                <label for="game_desc">Game Description</label>
+                <textarea name="game_desc"></textarea>
+                <label for="developer">Game Developer</label>
+                <input type="text" name="developer" required>
+                <label for="genre">Game Genre</label>
+                <input type="text" name="genre" required>
+                <label for="img">Game Cover</label>
+                <input class="file-submit" type="file" name="img" accept="image/*" required>
+                <button type="submit">Add</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

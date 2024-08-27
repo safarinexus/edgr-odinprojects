@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="../public/logo.svg">
+    <title>Odin Inventory</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/">
+                <img src="/logo.svg" alt="logo">
+                <h1>Odin Inventory</h1>
+            </a>
+        </div>
+        <nav class="links-container">
+            <% if(curr === "/games") {%>
+                <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%" draggable="false"></a>
+                <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 50%" draggable="false"></a>
+                <a href="/games"><img src="/items.svg" alt="items" style="opacity: 100%" draggable="false"></a>
+                <a href="/add"><img src="/add.svg" alt="add" style="opacity: 50%" draggable="false"></a>
+            <% } else { %>
+                <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%" draggable="false"></a>
+                <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 100%" draggable="false"></a>
+                <a href="/games"><img src="/items.svg" alt="items" style="opacity: 50%" draggable="false"></a>
+                <a href="/add"><img src="/add.svg" alt="add" style="opacity: 50%" draggable="false"></a>
+            <% } %>
+        </nav>
+    </header>
+    <div class="main-section-items">
+        <% for (let i=0; i<games.length; i++) { %>
+            <a href="/games/<%= games[i].game_id %>" class="game" id="<%= games[i].game_id %>">
+                <img src="<%= games[i].imgref %>" alt="game photo" class="game-photo">
+                <p class="title"><%= games[i].title %></p>
+                <p class="year">
+                    <% if (games[i].year !== 0) { %>
+                    <%= games[i].year %>
+                    <% } %>
+                </p>
+                <p class="dev"><%= games[i].name %></p>
+                <p class="genre"><%= games[i].genre %></p>
+                <div class="game-buttons">
+                    <form action="/" method="GET">
+                        <button class="edit"></button>
+                    </form>
+                    <form action="<%= curr %>/delete/<%= games[i].game_id %>" method="GET">
+                        <button class="delete"></button>
+                    </form>
+                </div>
+            </a>
+        <% } %>
+    </div>
+</body>
+</html>
