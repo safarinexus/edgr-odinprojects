@@ -1,6 +1,6 @@
 const pool = require("./pool"); 
 
-exports.getGamesSmall = async () => {
+exports.getGames = async () => {
     try {
         const { rows } = await pool.query("SELECT game_id, title, year, name, genre, imgref FROM games LEFT JOIN developers ON games.developer=developers.dev_id;");
         return rows;
@@ -9,9 +9,9 @@ exports.getGamesSmall = async () => {
     }
 }
 
-exports.getGameBig = async () => {
+exports.getGame = async (id) => {
     try {
-        const { rows } = await pool.query("SELECT title, year, name, dev_description, game_description, genre  FROM games JOIN developers ON games.developer=developers.dev_id;");
+        const { rows } = await pool.query("SELECT game_id, title, year, game_description, name, genre, imgref FROM games LEFT JOIN developers ON games.developer=developers.dev_id WHERE game_id = ($1);", [id]);
         return rows;
     } catch (err) {
         console.log(err);
@@ -60,5 +60,23 @@ exports.deleteGame = async (id) => {
         return result;
     } catch (err) { 
         console.log(err);
+    }
+}
+
+exports.updateGame = async (id, title, year, desc, genre, imgref, gotPhoto) => {
+    if (gotPhoto) {
+        try { 
+            const result = await pool.query("UPDATE games SET title=($1), year=($2), game_description=($3), genre=($4), imgref=($5) WHERE game_id=($6)", [title, year, desc, genre, imgref, id]); 
+            return result;
+        } catch (err) { 
+            console.log(err);
+        }
+    } else { 
+        try { 
+            const result = await pool.query("UPDATE games SET title=($1), year=($2), game_description=($3), genre=($4) WHERE game_id=($5)", [title, year, desc, genre, id]); 
+            return result;
+        } catch (err) { 
+            console.log(err);
+        }
     }
 }

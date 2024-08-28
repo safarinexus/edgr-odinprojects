@@ -11,10 +11,12 @@
     if (check.includes(toDelete)) { 
         const result = await db.deleteGame(toDelete);
         if (result) { 
-            if (/\bgames\b/.test(ogUrl)) { 
-                res.redirect("/games");
-            } else if (/\bcategories\b/.test(ogUrl)) { 
+            if (/\bcategories\b/.test(ogUrl)) { 
+                console.log("redirecting to categories...");
                 res.redirect("/categories");
+            } else {
+                console.log("redirecting to games...");
+                res.redirect("/games");
             }
         } else { 
             console.log("delete failed");

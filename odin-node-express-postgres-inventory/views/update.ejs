@@ -14,7 +14,7 @@
             </a>
         </div>
         <nav class="links-container">
-            <% if(curr === "/games") {%>
+            <% if(/\bgames\b/.test(curr)) {%>
                 <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%" draggable="false"></a>
                 <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 50%" draggable="false"></a>
                 <a href="/games"><img src="/items.svg" alt="items" style="opacity: 100%" draggable="false"></a>
@@ -27,28 +27,28 @@
             <% } %>
         </nav>
     </header>
-    <div class="main-section-items">
-        <% for (let i=0; i<games.length; i++) { %>
-            <a href="/games/<%= games[i].game_id %>" class="game" id="<%= games[i].game_id %>">
-                <img src="<%= games[i].imgref %>" alt="game photo" class="game-photo">
-                <p class="title"><%= games[i].title %></p>
-                <p class="year">
-                    <% if (games[i].year !== 0) { %>
-                    <%= games[i].year %>
-                    <% } %>
-                </p>
-                <p class="dev"><%= games[i].name %></p>
-                <p class="genre"><%= games[i].genre %></p>
-                <div class="game-buttons">
-                    <form action="<%= curr %>/update/<%= games[i].game_id %>" method="GET">
-                        <button class="edit"></button>
-                    </form>
-                    <form action="<%= curr %>/delete/<%= games[i].game_id %>" method="GET">
-                        <button class="delete"></button>
-                    </form>
+    <div class="main-section-update">
+        <form action="<%= curr %>" method="POST" enctype="multipart/form-data">
+            <fieldset class="update-form">
+                <legend>Update</legend>
+                <label for="title">Game Title</label>
+                <input type="text" name="title" value="<%= game[0].title %>" required>
+                <label for="year">Year Released</label>
+                <input type="number" min="1900" max="2099" step="1" name="year" value="<%= game[0].year %>">
+                <label for="game_desc">Game Description</label>
+                <textarea name="game_desc"><%= game[0].game_description %></textarea>
+                <label for="developer">Game Developer</label>
+                <input type="text" name="developer" value="<%= game[0].name %>" required />
+                <label for="genre">Game Genre</label>
+                <input type="text" name="genre" value="<%= game[0].genre %>" required />
+                <label for="img">New Game Cover</label>
+                <input class="file-submit" type="file" name="img" accept="image/*">
+                <div class="update-buttons">
+                    <button type="submit">Update</button>
+                    <a href="/">Cancel</a>
                 </div>
-            </a>
-        <% } %>
+            </fieldset>
+        </form>
     </div>
 </body>
 </html>

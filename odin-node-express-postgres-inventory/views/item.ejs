@@ -14,11 +14,23 @@
             </a>
         </div>
         <nav class="links-container">
-            <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%"></a>
-            <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 50%"></a>
-            <a href="/games"><img src="/items.svg" alt="items" style="opacity: 100%"></a>
-            <a href="/add"><img src="/add.svg" alt="add" style="opacity: 50%"></a>
+            <a href="/"><img src="/home.svg" alt="home" style="opacity: 50%" draggable="false"></a>
+            <a href="/categories"><img src="/categories.svg" alt="categories" style="opacity: 50%" draggable="false"></a>
+            <a href="/games"><img src="/items.svg" alt="items" style="opacity: 100%" draggable="false"></a>
+            <a href="/add"><img src="/add.svg" alt="add" style="opacity: 50%" draggable="false"></a>
         </nav>
     </header>
+    <div class="game-full" id="<%= game[0].game_id %>">
+        <img src="<%= game[0].imgref %>" alt="game photo" class="full-photo">
+        <p class="full-title"><%= game[0].title %></p>
+        <p class="full-year">
+            <% if (game.year !== 0) { %>
+            <%= game[0].year %>
+            <% } %>
+        </p>
+        <p class="full-desc"><%= game[0].game_description %></p>
+        <p class="full-dev"><%= game[0].name %></p>
+        <p class="full-genre"><%= game[0].genre %></p>
+    </div>
 </body>
 </html>
