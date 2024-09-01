@@ -1,0 +1,12 @@
+<%- contentFor('body') %>
+
+<div class="upgrade-section">
+    <form action="/upgrade" method="POST"> 
+        <fieldset class="upgrade-form">
+            <legend>Upgrade your membership!</legend>
+            <label for="secret">Enter the secret passcode</label>
+            <input type="password" name="secret">
+            <button type="submit" class="form-button">Upgrade!</button>
+        </fieldset>
+    </form>
+</div>

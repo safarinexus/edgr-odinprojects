@@ -1,0 +1,310 @@
+:root { 
+    font-family: Helvetica, sans-serif; 
+    background-color: #222;
+    color: white; 
+}
+
+a, a:visited {
+    color: white; 
+    text-decoration: none;
+    -webkit-user-drag: none;
+}
+
+a:hover {
+    color: gray;
+}
+
+header { 
+    width: 100%; 
+    max-width: 100svw;
+    min-width: 300px; 
+    height: 120px; 
+    background-color: #111;
+    display: grid; 
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px; 
+    z-index: 1;
+}
+
+.header-title { 
+    width: 140px; 
+    height: 100%; 
+    margin: 0; 
+    line-height: 29px;
+    position: relative; 
+    top: -3px;
+    justify-self: start;
+}
+
+.welcome {
+    justify-self: center;
+    text-align: center;
+    margin: 0; 
+    width: 100%;
+}
+
+nav {
+    display: flex; 
+    align-items: center;
+    justify-self: end;
+    grid-column: 3;
+}
+
+body { 
+    min-height: 500px;
+    min-width: 400px; 
+    width: 100svw; 
+    height: 100svh;
+    max-width: 100svw;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    position: relative; 
+}
+
+footer {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    max-width: 100svw;
+    min-width: 400px; 
+    height: 35px;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+footer>small { 
+    font-weight: 100;
+}
+
+.message { 
+    box-sizing: border-box;
+    padding: 20px; 
+    width: 70%; 
+    height: fit-content;
+    min-width: 300px; 
+    max-width: 800px;
+    border: 1px solid white; 
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    box-shadow: 3px 3px 0px 1.5px white; 
+    display: grid; 
+    grid-template-rows: auto 40px;
+}
+
+.message * { 
+    margin: 0; 
+}
+
+.message-text { 
+    border: 2px solid rgb(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    grid-column: span 2;
+    padding: 10px; 
+    min-height: 80px;
+    height: fit-content;
+    overflow-y: visible;
+}
+
+.message-info { 
+    grid-row: 2;
+    align-self: end;
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+.message-user {
+    font-style: bold;
+    font-weight: 700;
+}
+
+.messages-section>form {
+    width: 35px; 
+}
+
+.delete {
+    width: fit-content;
+    justify-self: end;
+    align-self: end;
+}
+
+.add-button {
+    height: 35px; 
+    width: 35px; 
+    background-image: url("/add.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(0, 0, 0, 0);
+    filter: invert(100%);
+    border: 0;
+    border-radius: 5px;
+    transition: 0.1s ease-in;
+}
+
+.delete-button {
+    background-image: url("/delete.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(0, 0, 0, 0);
+    border: 0;
+    border-radius: 5px;
+    filter: invert(100%);
+    height: 30px; 
+    width: 30px; 
+}
+
+.delete-button:hover {
+    filter: grayscale(20%);
+}
+
+
+.add-button:hover {
+   transform: scale(1.1);
+}
+
+.messages-section {
+    min-height: calc(100svh - 120px); 
+    min-width: 400px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    box-sizing: border-box;
+}
+
+.signup-section, .login-section, .upgrade-section, .add-section {
+    display: flex;
+    width: 100%; 
+    height: calc(100svh - 120px);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signup-form, .login-form, .upgrade-form, .add-form {
+    margin-top: 20px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-form {
+    margin-top: 50px; 
+    grid-template-rows: 1fr 0.5fr;
+    height: 120px;
+}
+
+.upgrade-form {
+    margin-top: 50px; 
+    grid-template-rows: 1fr 0.5fr;
+    height: 120px
+}
+
+.signup-form {
+    grid-template-rows: repeat(4, 1fr) 0.5fr;
+    height: 300px
+}
+
+.login-form {
+    grid-template-rows: repeat(2, 1fr) 0.5fr;
+    height: 200px
+}
+
+label {
+    text-align: end;
+    height: min-content;
+    width: min-content;
+    align-self: center;
+    justify-self: end;
+    margin-right: 5px;
+    font-size: 0.8rem;
+}
+
+input, textarea {
+    width: 90%;
+    background-color: rgb(0, 0, 0, 0);
+    font-size: medium;
+    border-radius: 4px; 
+    border: 1px solid white;
+    color: white; 
+    caret-color: white;
+    transition: ease-in-out 0.1s;
+}
+
+input:focus, textarea:focus {
+    outline: none; 
+    border: 0; 
+    background-color: rgb(255, 255, 255, 0.05);
+}
+
+.form-button {
+    grid-column: span 2; 
+    border: 1px solid white; 
+    border-radius: 7px;
+    box-shadow: 2px 2px 0px 0px white;
+    background-color: rgb(154, 205, 50, 1);
+    height: 40px; 
+    width: 80px;
+    align-self: center;
+    justify-self: center;
+    font-weight: 700;
+}
+
+.form-button:hover { 
+    background-color: rgb(154, 205, 50, 0.4);
+}
+
+.form-button:active {
+    box-shadow: 0px 0px 0px 0px;
+    transform: translate(2px, 2px);
+}
+
+.error-section, .message-section { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; 
+}
+
+.message-section>h1 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    header { 
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        height: 220px;
+    }
+
+    .header-title {
+        top: 0;
+    }
+
+    .welcome {
+        grid-row: 2;
+    }
+
+    nav {
+        grid-row: 3;
+        grid-column: 1;
+        justify-self: center;
+    }
+}

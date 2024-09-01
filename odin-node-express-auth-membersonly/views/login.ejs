@@ -1,0 +1,13 @@
+<%- contentFor('body') %>
+<div class="login-section">
+    <form action="/login" method="POST"> 
+        <fieldset class="login-form">
+            <legend>Log in</legend>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <button type="submit" class="form-button">Log In</button>
+        </fieldset>
+    </form>
+</div>

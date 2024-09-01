@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"> <!-- Your common stylesheet -->
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <a href="/"><h1 class="header-title">Odin Members Only</h1></a>
+            <% if(user === undefined) { %>
+                    <nav>   
+                <% if(curr === "signup") { %>
+                    <a href="/signup" style="color: grey;">Sign Up</a>
+                    <a href="/login" style="margin-left: 30px;">Log In</a>
+                <% } else if(curr === "login") { %>
+                    <a href="/signup">Sign Up</a>
+                    <a href="/login" style="margin-left: 30px; color: grey;">Log In</a>
+                <% } else if (curr === "home") { %>
+                    <a href="/signup">Sign Up</a>
+                    <a href="/login" style="margin-left: 30px;">Log In</a>
+                <% } %>
+            <% } else { %>
+                <h3 class="welcome">Welcome <%= user.name %>!</h3>
+                <nav>
+                <% if(curr === "upgrade") { %>
+                    <a href="/upgrade" style="color: grey;">Upgrade Membership</a>
+                    <a href="/logout" style="margin-left: 30px;">Log Out</a>
+                <% } else if (curr === "home") { %>
+                    <a href="/upgrade">Upgrade Membership</a>
+                    <a href="/logout" style="margin-left: 30px;">Log Out</a>
+                <% } %>
+            <% } %>
+        </nav>
+    </header>
+    <%- body %> <!-- This is where the content of your other views will be inserted -->
+</body>
+</html>

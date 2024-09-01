@@ -1,0 +1,11 @@
+<%- contentFor('body') %>
+<div class="add-section">
+    <form action="/add" method="POST"> 
+        <fieldset class="add-form">
+            <legend>Add your message</legend>
+            <label for="message">Name</label>
+            <textarea name="message" placeholder="Your message here..."></textarea>
+            <button type="submit" class="form-button">Add</button>
+        </fieldset>
+    </form>
+</div>
