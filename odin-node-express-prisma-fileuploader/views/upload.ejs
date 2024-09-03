@@ -1,0 +1,23 @@
+<%- contentFor('header') %>
+        <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
+        <nav>
+            <a href="/upload" style="color: grey">Upload</a>
+            <a href="/folders" style="margin-left: 20px;">Folders</a>
+            <a href="/logout" style="margin-left: 20px;">Log Out</a>
+        </nav>
+<%- contentFor('body') %>
+<div class="upload-section">
+    <h1>Upload your files</h1>
+    <form action="/upload" class="upload-form" method="POST" enctype="multipart/form-data">
+        <label for="img">File to upload</label>
+        <input class="file-submit" type="file" name="img" accept="image/*" required>
+        <label for="filename">Filename</label>
+        <input type="text" name="filename">
+        <p>File Size</p>
+        <p>512MB</p>
+        <p>Date Uploaded</p>
+        <p>today</p>
+        <button type="submit" class="form-button">Add</button>
+    </form>
+</div>
+    

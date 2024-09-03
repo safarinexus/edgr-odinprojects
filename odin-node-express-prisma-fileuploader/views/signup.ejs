@@ -1,0 +1,19 @@
+<%- contentFor('header') %>
+<%- contentFor('body') %>
+<div class="signup-section">
+    <form action="/signup" method="POST"> 
+        <fieldset class="signup-form">
+            <legend>Sign up here</legend>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirmpassword" required>
+            <button type="submit" class="form-button">Sign Up</button>
+        </fieldset>
+    </form>
+</div>
+<footer>
+    <small>Copyright&#169 SafariNexus</small>
+</footer>

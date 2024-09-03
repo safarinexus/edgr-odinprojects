@@ -11,9 +11,6 @@ const expressLayouts = require("express-ejs-layouts");
 const pool = require("./db/pool");
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
-const { body, validationResult } = require("express-validator");
-
-
 
 app.set("views", path.join(__dirname, "views")); 
 app.set("view engine", "ejs");
@@ -79,7 +76,7 @@ app.get("/signup", (req, res) => {
     res.render("signup", { user: req.user, title: "Sign up!", curr: curr });
 })
 
-app.post("/signup", async (req, res) => {
+app.post("/signup", async (req, res, next) => {
     if (req.body.password !== req.body.confirmpassword) {
         res.render("error", { user: req.user, title: "Error!", curr: "signup", error: "Please ensure that your passwords match." });
     } else {
@@ -101,7 +98,7 @@ app.post("/signup", async (req, res) => {
             }
         })
     }
-})
+});
 
 app.get("/login", (req, res) => {
     const curr = "login";
