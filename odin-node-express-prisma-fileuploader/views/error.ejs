@@ -1,23 +1,9 @@
 <%- contentFor('header') %>
-    <% if(user) { %> 
-        <nav>
-            <a href="/upload">Upload</a>
-            <a href="/folders" style="margin-left: 20px;">Folders</a>
-            <a href="/logout" style="margin-left: 20px;">Log Out</a>
-        </nav>
-    <% } else { %> 
-        <nav>
-            <a href="/signup">Sign Up</a>
-            <a href="/login" style="margin-left: 20px;">Log In</a>
-        </nav>
-    <% } %> 
 <%- contentFor('body') %>
     <div class="error-section">
         <h1>Error!</h1>
         <h3><%= error %></h3>
         <a href="/">Click here to head back.</a>
     </div>
-    <footer>
-        <small>Copyright&#169 SafariNexus</small>
-    </footer>
+
 

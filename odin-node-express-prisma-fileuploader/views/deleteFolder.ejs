@@ -1,0 +1,26 @@
+<%- contentFor('header') %>
+    <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
+    <nav>
+        <a href="/files" class="header-files">Files</a>
+        <p class="header-folders" style="background-color: rgb(255, 255, 255, 0.5);">Folders</p>
+        <a href="/logout">Log Out</a>
+    </nav>
+<%- contentFor('body') %>
+    <div class="delete-section">
+        <div class="top-row-delete-form">
+            <a href="<%= pathBack %>" class="close-delete"></a>
+            <h1>ARE YOU SURE?</h1>
+        </div> 
+        <form action="/folders/deletefolder/<%= targetFolder.folder_id %>" method="POST"> 
+            <fieldset class="delete-form">
+                <p>This will delete the folder in question, as well as all subfolders and files within.</p>
+                <p>Are you sure you want to proceed? If so, please type in the name of the file EXACTLY and press delete.</p>
+                <div class="confirmation-field">
+                    <label for="confirmation">File name</label>
+                    <input type="text" name="confirmation" placeholder="<%= targetFolder.folder_name %>" required>
+                </div>
+                <input type="hidden" name="pathBack" value="<%= pathBack %>">
+                <button type="submit" class="form-button">DELETE</button>
+            </fieldset>
+        </form>
+    </div>

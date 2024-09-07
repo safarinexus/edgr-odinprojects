@@ -5,8 +5,12 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
 
-signupRouter.get("/", (req, res) => {
-    res.render("signup", { title: "Sign up!"});
+signupRouter.get("/", (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.render("signup", { title: "Sign up!"});
+    }
 });
 
 signupRouter.post("/", async (req, res, next) => {
@@ -29,7 +33,5 @@ signupRouter.post("/", async (req, res, next) => {
     }
 }, passport.authenticate("local", { failureRedirect: "/", successRedirect: "/"})
 );
-
-signupRouter.get("/signup/intermediate")
 
 module.exports = signupRouter;

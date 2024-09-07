@@ -1,30 +1,15 @@
 <%- contentFor('header') %>
-    <% if(user) { %> 
-        <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
-        <nav>
-            <a href="/folders" style="margin-left: 20px;">Folders</a>
-            <a href="/logout" style="margin-left: 20px;">Log Out</a>
-        </nav>
-    <% } %>
 <%- contentFor('body') %>
-    <% if(user) { %> 
-        
-    <% } else { %> 
-        <div class="login-section">
-            <form action="/" method="POST"> 
-                <fieldset class="login-form">
-                    <legend>Log in</legend>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" required>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" required>
-                    <button type="submit" class="form-button">Log In</button>
-                </fieldset>
-            </form>
-            <p>Don't have an account? Sign up <a class="here" href="/signup">here</a>.</p>
-        </div>
-    <% } %> 
-    <footer>
-        <small>Copyright&#169 SafariNexus</small>
-    </footer>
-
+    <div class="login-section">
+        <form action="/" method="POST"> 
+            <fieldset class="login-form">
+                <legend>Log in</legend>
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+                <button type="submit" class="form-button">Log In</button>
+            </fieldset>
+        </form>
+        <p>Don't have an account? Sign up <a class="here" href="/signup">here</a>.</p>
+    </div>

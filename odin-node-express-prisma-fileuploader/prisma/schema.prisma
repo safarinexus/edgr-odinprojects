@@ -14,31 +14,39 @@ datasource db {
 }
 
 model Session {
-  id        String   @id
-  sid       String   @unique
-  data      String   
+  id          String        @id
+  sid         String        @unique
+  data        String   
   expiresAt   DateTime
 }
 
 model User {
-  email   String   @id @unique
-  password String
-  files   File[]
+  email         String      @id @unique
+  password      String
+  files         File[]
+  folders       Folder[]
 }
 
 model Folder {
-  folder_id     Int      @id @default(autoincrement())
+  folder_id     Int         @id @default(autoincrement())
   folder_name   String
+  parent_id     Int?
+  parent        Folder?     @relation("Subfolders", fields: [parent_id], references: [folder_id])
   files         File[]
+  folders       Folder[]    @relation("Subfolders")
+  owner         User        @relation(fields: [owner_email], references: [email])
+  owner_email   String    
 }
 
 model File {
-  file_id     Int      @id @default(autoincrement())
-  file_name   String
-  file_size   Int
-  date_added  DateTime
-  owner       User @relation(fields: [owner_email], references: [email])
-  owner_email String
-  folder      Folder @relation(fields: [folder_id], references: [folder_id])
-  folder_id   Int
+  file_id       Int         @id @default(autoincrement())
+  file_name     String
+  file_size     String
+  file_type     String
+  path          String
+  date_added    String
+  owner         User        @relation(fields: [owner_email], references: [email])
+  owner_email   String
+  folder        Folder?      @relation(fields: [folder_id], references: [folder_id]) 
+  folder_id     Int?
 }

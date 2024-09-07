@@ -1,0 +1,24 @@
+<%- contentFor('header') %>
+    <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
+    <nav>
+        <a href="/files" class="header-files">Files</a>
+        <p class="header-folders" style="background-color: rgb(255, 255, 255, 0.5);">Folders</p>
+        <a href="/logout">Log Out</a>
+    </nav>
+<%- contentFor('body') %>
+<div class="update-section">
+    <div class="top-row-delete-form">
+        <a href="<%= pathBack %>" class="close-delete"></a>
+        <h1>Change Folder Name</h1>
+    </div>
+    <form action="/folders/update/<%= targetFolder.folder_id %>" method="POST"> 
+        <fieldset class="update-form">
+            <div class="confirmation-field">
+                <label for="newname">New Name</label>
+                <input type="text" name="newname" required>
+            </div>
+            <input type="hidden" name="pathBack" value="<%= pathBack %>">
+            <button type="submit" class="form-button">Save</button>
+        </fieldset>
+    </form>
+</div> 

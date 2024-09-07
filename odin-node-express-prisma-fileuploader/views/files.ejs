@@ -1,0 +1,30 @@
+<%- contentFor('header') %>
+    <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
+    <nav>
+        <p class="header-files" style="background-color: rgb(255, 255, 255, 0.5);">Files</p>
+        <a href="/folders" class="header-folders">Folders</a>
+        <a href="/logout">Log Out</a>
+    </nav>
+<%- contentFor('body') %>
+    <div class="files-section">
+        <form action="/files/upload" class="upload-form" method="POST" enctype="multipart/form-data">
+            <h1>Upload Here</h1>
+            <input class="file-submit" type="file" name="files" multiple required>
+            <button type="submit" class="file-button"></button>
+        </form>
+        <% if(files) { %>
+            <h1 class="files-title">Your Files</h1>
+            <div class="files-container">
+            <% files.forEach(file => { %> 
+                <div class="file">
+                    <h3 class="file-name"><%= file.file_name %></h3>
+                    <p class="file-description"><%= file.file_type %> | <%= file.file_size %> | <%= file.date_added %></p>
+                    <div class="file-buttons">
+                        <a href="<%= file.path %>" class="download" download></a>
+                        <a href="files/delete/<%= file.file_id %>" class="delete"></a>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        <% } %> 
+    </div>

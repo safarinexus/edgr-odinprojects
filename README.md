@@ -96,5 +96,19 @@ A simple backend for an informational site.
 Node Express Project  
 Project: Mini Message Board  
 A simple mini message board website with a backend using MVC Pattern and Express.js.  
+  
+20. Odin Node Express PostgreSQL Inventory Application   
+Node Express PostgreSQL Project   
+Project: Inventory Application   
+A website showcasing a collection of games implemented with PostgreSQL database.  
 
-
+21. Odin Node Express PassportJS Members Only  
+Node Express PassportJS Project  
+Project: Members Only  
+Members only website with differing privileges for different user levels, authenticated using Passport.js.  
+  
+22. Odin Node Express Prisma File Uploader  
+Node Express Prisma Project  
+Project: File Uploader  
+A Google Drive clone where authenticated users can CRUD files and folders for those files.  
+  

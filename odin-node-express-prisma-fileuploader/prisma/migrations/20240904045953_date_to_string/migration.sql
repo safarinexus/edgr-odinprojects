@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "File" ALTER COLUMN "date_added" DROP DEFAULT,
+ALTER COLUMN "date_added" SET DATA TYPE TEXT;

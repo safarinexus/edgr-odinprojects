@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require("express"); 
 const app = express();
-const path = require("node:path");
 const port = process.env.PORT || 3000;
+const path = require("node:path");
 const expressLayouts = require("express-ejs-layouts");
 const expressSession = require('express-session');
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
@@ -34,7 +34,7 @@ app.use(
 app.set("views", path.join(__dirname, "views")); 
 app.set("view engine", "ejs");
 
-const assetsPath = path.join(__dirname, "public");
+const assetsPath = path.join(__dirname, "public/assets");
 app.use(express.static(assetsPath));
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
@@ -75,22 +75,30 @@ passport.deserializeUser(async (email, done) => {
 //routes
 const signupRouter = require("./routes/signupRouter");
 const logoutRouter = require("./routes/logoutRouter");
-const uploadRouter = require("./routes/uploadRouter");
+const filesRouter = require("./routes/filesRouter");
+const foldersRouter = require("./routes/foldersRouter");
 
-app.get("/", (req, res) => {
-    res.render("index.ejs", { title: "Odin File Uploader", user: req.user });
+app.get("/", async (req, res) => {
+    if (req.user) { 
+        res.redirect("/files");
+    } else {
+        res.render("index.ejs", { title: "Odin File Uploader" });    
+    }
 }); 
+
 app.post('/',
     passport.authenticate('local', { 
         failureRedirect: '/', 
-        successRedirect: "/",
-    }));
+        successRedirect: "/files",
+    })
+);
+
+app.use("/files", filesRouter);
+app.use("/folders", foldersRouter); 
 app.use("/signup", signupRouter); 
 app.use("/logout", logoutRouter);
-app.use("/upload", uploadRouter); 
-app.use("/folders", () => console.log("folders!"), () => res.redirect("/")); 
 app.use("*", (req, res) => {
-    res.render("error", { title: "Uh oh!", error: "404: Resource not found!", user: req.user });
+    res.render("error", { title: "Uh oh!", error: "404: Resource not found!" });
 })
 
 

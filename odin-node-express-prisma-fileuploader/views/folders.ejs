@@ -1,0 +1,69 @@
+<%- contentFor('header') %>
+    <h3 class="welcome">Welcome, @&#40<%= user.email %>&#41</h3>
+    <nav>
+        <a href="/files" class="header-files">Files</a>
+        <p class="header-folders" style="background-color: rgb(255, 255, 255, 0.5);">Folders</p>
+        <a href="/logout">Log Out</a>
+    </nav>
+<%- contentFor('body') %>
+        <div class="folders-section">
+            <div class="folders-forms">
+                <form action="<% if(currFolder === null) { %>/folders/upload <% } else { %>/folders/upload/<%= currFolder.folder_id %> <% } %>" class="upload-form" method="POST" enctype="multipart/form-data">
+                    <h2>Upload To This Folder</h2>
+                    <input class="file-submit" type="file" name="files" multiple required>
+                    <button type="submit" class="file-button"></button>
+                </form>
+                <form action="<% if(currFolder === null) { %>/folders/add <% } else { %>/folders/<%= currFolder.folder_id %>/add <% } %>" class="addfolder-form" method="POST">
+                    <h2>Create New Folder Here</h2>
+                    <div>
+                        <label for="foldername">Folder Name:</label>
+                        <input type="text" name="foldername" required>
+                    </div>
+                    <button type="submit" class="addfolder-button"></button>
+                </form>
+            </div>
+            <div class="folder-header">
+                <h1 class="folder-title">Folder: <span style="font-style: italic">
+                    <% if (currFolder === null) {%>
+                        Root</span>
+                </h1>
+                    <% } else { %>
+                        <%= currFolder.folder_name %> </span>
+                </h1>
+                <a href="<% if(currFolder.parent_id === null) { %> /folders <% } else { %>/folders/<%= currFolder.parent_id %><% } %>" class="folder-prev"></a>
+                    <% } %> 
+            </div>
+            <% if(files.length !== 0 || folders.length !== 0) { %>
+                <div class="files-container">
+                <% if(folders) { %>
+                    <% folders.forEach(folder => { %> 
+                        <div class="folder" id=<%= folder.folder_id %>>
+                            <a href="/folders/<%= folder.folder_id %>">
+                                <div class="folder-icon"></div>
+                                <form action="" method="POST"></form>
+                                <h1 style="margin: 0; color: black"><%= folder.folder_name %></h1>
+                            </a>
+                            <div class="folder-buttons">
+                                <a href="/folders/update/<%= folder.folder_id %>" class="edit"></a>
+                                <a href="/folders/deletefolder/<%= folder.folder_id %>" class="delete"></a>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+                <% if(files) { %>
+                    <% files.forEach(file => { %> 
+                        <div class="file">
+                            <h3 class="file-name"><%= file.file_name %></h3>
+                            <p class="file-description"><%= file.file_type %> | <%= file.file_size %> | <%= file.date_added %></p>
+                            <div class="file-buttons">
+                                <a href="<%= file.path %>" class="download" download></a>
+                                <a href="<% if (currFolder !== null) { %> /folders/deletefile/<%= currFolder.folder_id %>/<%= file.file_id %> <% } else { %> /folders/deletefile/<%= file.file_id %> <% } %>" class="delete"></a>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+                <% } %>
+            <% } else { %>
+                    <h1 style="width: 100%; text-align: center;">Oops! Nothing here yet...</h1>
+            <% } %>
+        </div>
