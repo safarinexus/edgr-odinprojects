@@ -13,7 +13,6 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage: storage });
-
 filesRouter.get("/", async (req, res, next) => {
     if (req.user) {
         const files = await db.getFiles(req.user.email);
