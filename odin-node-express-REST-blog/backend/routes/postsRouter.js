@@ -30,7 +30,29 @@ postsRouter.post("/", auth.authenticate, async (req, res) => {
 });
 
 postsRouter.post("/:id/comments", auth.authenticate, async (req, res) => {
-    //create comments here
+    const pid = Number(req.params.id); 
+    const post = await Posts.getPostById(pid); 
+    if (!post) {
+        res.status(404).json({
+            status: 404, 
+            message: "Resource not found.", 
+            origin: "posts",
+        })
+    } else {
+        const uid = Number(req.user.uid);
+        const date = new Date().toLocaleString();
+        const { content } = req.body; 
+        await Comments.createCommentForPost(content, date, uid, pid); 
+        res.status(200).json({
+            status: 200, 
+            message: "User Authenticated, Comment Added.", 
+            comment: {
+                content: content, 
+                timestamp: date, 
+                from: req.user,
+            }
+        });
+    } 
 });
 
 postsRouter.get("/", auth.authenticate, async (req, res) => {
@@ -52,13 +74,13 @@ postsRouter.get("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id);
     const post = await Posts.getPostById(pid); 
     if (post && ((req.user.utype_id !== 1)  || (post.ptype_id !== 1 && req.user.utype_id === 1))) {
-        //const comments = await Comments.getCommentsForPost(pid);
+        const comments = await Comments.getCommentsForPost(pid);
         res.status(200).json({ 
             status: 200,
             message: `User Authenticated. Receiving Post ID#${pid}`, 
             user: req.user, 
             post: post,
-            //postComments: comments,
+            postComments: comments,
         });
     } else {
         res.status(404).json({
@@ -119,10 +141,6 @@ postsRouter.put("/:id", auth.authenticate, async (req, res) => {
     }
 });
 
-postsRouter.put("/:pid/comments/:cid/", auth.authenticate, async(req, res) => {
-    //edit comments here
-})
-
 postsRouter.delete("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id);
     const postInQuestion = await Posts.getPostById(pid);
@@ -142,6 +160,9 @@ postsRouter.delete("/:id", auth.authenticate, async (req, res) => {
     }
 });
 
+postsRouter.delete("/:pid/comments/:cid", auth.authenticate, async (req, res) => {
+    
+});
 
 
 postsRouter.use("*", (req, res, next) => {

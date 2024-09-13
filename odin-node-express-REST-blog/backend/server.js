@@ -5,11 +5,13 @@ const port = process.env.PORT;
 const postsRouter = require("./routes/postsRouter"); 
 const usersRouter = require("./routes/usersRouter");
 const passport = require("passport");
+const cors = require("cors");
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
+app.use(cors());
 
 app.use("/api/users", usersRouter);
 app.use("/api/posts", postsRouter);
