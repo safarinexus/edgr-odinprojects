@@ -75,28 +75,49 @@ usersRouter.post("/login", async (req, res) => {
     });
 });
 
-usersRouter.patch("/upgrade", auth.authenticate, async (req, res) => {
+usersRouter.post("/login/admin", async (req, res) => {
+    const { username, password } = req.body; 
+    const retrievedUser = await Users.getUserByUsername(username); 
+    const validatePassword = await bcrypt.compare(password, retrievedUser.password);
+    if (!retrievedUser || retrievedUser.utype_id === 1 || !validatePassword) {
+        res.status(400).json({
+            status: 400,  
+            message: "Bad Request.",
+            origin: "users",
+        });
+    } 
+    jwt.sign({retrievedUser}, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
+        res.status(200).json({
+            status: 200, 
+            message: "Successful Login.", 
+            token,
+        });
+    });
+})
+
+usersRouter.patch("/upgrade", async (req, res) => {
     const secretKey = process.env.SECRET_KEY; 
-    const { userKey } = req.body;
-    if (userKey !== secretKey) { 
+    const { username, userKey } = req.body;
+    const userInQuestion = await Users.getUserByUsername(username);
+    if (userKey !== secretKey || userInQuestion === null) { 
         res.status(400).json({
             status: 400, 
             message: "Bad Request. Invalid Key", 
             origin: "users",
         })
     } else {
-        if (req.user.utype_id === 2 || req.user.utype_id === 3) {
+        if (userInQuestion.utype_id === 2 || userInQuestion.utype_id === 3) {
             res.status(400).json({
                 status: 400,  
                 message: "Bad Request. User already has privileges.",
-                user: req.user,
+                user: userInQuestion,
             });
         } else {
-            await Users.upgradeUserById(req.user.uid); 
+            await Users.upgradeUserById(userInQuestion.uid); 
             res.status(200).json({
                 status: 200, 
                 message: "Successful. Privileges granted.",
-                user: req.user,
+                user: userInQuestion,
             });
         }   
     }

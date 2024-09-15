@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply overscroll-none;
+  }
+  
+  #root {
+    @apply bg-gradient-to-br from-gray-500 to-rose-700 text-black 
+    dark:from-gray-950 dark:to-rose-950 dark:text-gray-50  
+          font-helv h-max w-full min-h-svh p-0 m-0 box-border; 
+  }
+  
+  a {
+    @apply text-black dark:text-gray-50 hover:dark:text-gray-400 hover:text-gray-600
+  }
+}

@@ -28,3 +28,17 @@ exports.getCommentsForPost = async (pid) => {
         console.error(err);
     }
 };
+
+exports.deletePostComments = async (pid) => {
+    try {
+        await prisma.comment.deleteMany({
+            where: {
+              pid: {
+                equals: pid,
+              },
+            },
+          })
+    } catch (err) { 
+        console.error(err);
+    }
+}

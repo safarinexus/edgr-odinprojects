@@ -1,3 +1,3 @@
-require('dotenv').config()
+const test = { elem: 1 }; 
 
-console.log(process.env);
+console.log({ ...test })

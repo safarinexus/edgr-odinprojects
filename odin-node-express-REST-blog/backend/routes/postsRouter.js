@@ -4,7 +4,9 @@ const Posts = require("../models/Posts");
 const Comments = require("../models/Comments");
 const auth = require("../controllers/passportController");
 
+//create a new unpublished post
 postsRouter.post("/", auth.authenticate, async (req, res) => {
+    //this doesnt contain anyth 
     const uid = req.user.uid;
     if (req.user.utype_id === 1) { 
         res.status(403).json({
@@ -29,6 +31,8 @@ postsRouter.post("/", auth.authenticate, async (req, res) => {
     }  
 });
 
+
+//Add a comment
 postsRouter.post("/:id/comments", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id); 
     const post = await Posts.getPostById(pid); 
@@ -55,13 +59,9 @@ postsRouter.post("/:id/comments", auth.authenticate, async (req, res) => {
     } 
 });
 
+//get posts(published or all based on user)
 postsRouter.get("/", auth.authenticate, async (req, res) => {
-    let posts = null;
-    if (req.user.utype_id === 1) {
-        posts = await Posts.getPosts();  
-    } else { 
-        posts = await Posts.getPosts(true);
-    }
+    const posts = await Posts.getPublishedPosts();  
     res.status(200).json({ 
         status: 200,
         message: 'User Authenticated. Receiving Posts.', 
@@ -70,6 +70,25 @@ postsRouter.get("/", auth.authenticate, async (req, res) => {
     });
 });
 
+postsRouter.get("/admin", auth.authenticate, async (req, res) => {
+    if (req.user.utype_id !== 1) {
+        const posts = await Posts.getAdminPostsByAuthor(req.user.uid);
+        res.status(200).json({ 
+            status: 200,
+            message: 'User Authenticated. Receiving Posts.', 
+            user: req.user, 
+            posts: posts,
+        });
+    } else {
+        res.status(404).json({
+            status: 404, 
+            message: "Resource not found.", 
+            origin: "posts",
+        })
+    }
+})
+
+//get a specific post
 postsRouter.get("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id);
     const post = await Posts.getPostById(pid); 
@@ -91,6 +110,23 @@ postsRouter.get("/:id", auth.authenticate, async (req, res) => {
     }
 });
 
+//get comments for post
+postsRouter.get("/:id/comments", auth.authenticate, async (req, res) => {
+    const pid = Number(req.params.id); 
+    const postInQuestion = await Posts.getPostById(pid); 
+    if (postInQuestion !== null) {
+        const comments = await Comments.getCommentsForPost(pid);
+        res.status(200).json({
+            status: 200, 
+            message: `User Authenticated. Comments for Post #${pid}`, 
+            user: req.user, 
+            comments: comments
+        })
+    }
+});
+
+
+//publish/unpublish post
 postsRouter.patch("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id); 
     const postInQuestion = await Posts.getPostById(pid); 
@@ -101,9 +137,10 @@ postsRouter.patch("/:id", auth.authenticate, async (req, res) => {
             origin: "posts",
         });
     } else if (postInQuestion.ptype_id === 2) {
-        res.status(400).json({
-            status: 400, 
-            message: `Error. Post #${pid} has already been published.`, 
+        await Posts.unpublishedPostById(pid);
+        res.status(200).json({
+            status: 200, 
+            message: `User Authenticated. Post #${pid} has been unpublished.`, 
             postInQuestion,
         })
     } else {
@@ -116,6 +153,7 @@ postsRouter.patch("/:id", auth.authenticate, async (req, res) => {
     }
 });
 
+//update a post
 postsRouter.put("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id);
     const postInQuestion = await Posts.getPostById(pid); 
@@ -126,21 +164,22 @@ postsRouter.put("/:id", auth.authenticate, async (req, res) => {
             origin: "posts",
         });
     } else {
-        const { newTitle, newContent } = req.body; 
-        await Posts.updatePostById(pid, newTitle, newContent); 
+        const { title, content } = req.body; 
+        await Posts.updatePostById(pid, title, content); 
         res.status(200).json({
             status: 200, 
             message: `User Authenticated. Post #${pid} has been updated.`, 
             post: {
                 pid: pid,
-                updatedTitle: newTitle, 
-                updatedContent: newContent
+                updatedTitle: title,  
+                updatedContent: content, 
             },
             author: req.user.username
         });
     }
 });
 
+//delete a post
 postsRouter.delete("/:id", auth.authenticate, async (req, res) => {
     const pid = Number(req.params.id);
     const postInQuestion = await Posts.getPostById(pid);
@@ -151,6 +190,7 @@ postsRouter.delete("/:id", auth.authenticate, async (req, res) => {
             origin: "posts" 
         });
     } else {
+        await Comments.deletePostComments(pid);
         await Posts.deletePostById(pid); 
         res.status(200).json({
             status: 200, 
@@ -158,10 +198,6 @@ postsRouter.delete("/:id", auth.authenticate, async (req, res) => {
             author: req.user.username
         });
     }
-});
-
-postsRouter.delete("/:pid/comments/:cid", auth.authenticate, async (req, res) => {
-    
 });
 
 

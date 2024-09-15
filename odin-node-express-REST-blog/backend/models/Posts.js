@@ -9,6 +9,7 @@ exports.createPost = async (uid, title, content, timestamp) => {
                 content: content, 
                 timestamp: timestamp,
                 uid: uid,
+                ptype_id: 1, 
             }
         })
     } catch (err) {
@@ -16,23 +17,31 @@ exports.createPost = async (uid, title, content, timestamp) => {
     }
 };
 
-exports.getPosts = async (unpublished=false) => {
+exports.getPublishedPosts = async () => {
     try {
-        if (unpublished) { 
-            const publishedPosts = prisma.post.findMany(); 
-            return publishedPosts;
-        } else { 
-            const posts = prisma.post.findMany({
-                where: {
-                    ptype_id: 2, 
-                }
-            });
-            return posts;
-        }
+        const posts = prisma.post.findMany({
+            where: {
+                ptype_id: 2, 
+            }
+        });
+        return posts;
     } catch (err) {
         console.error(err);
     }
 };
+
+exports.getAdminPostsByAuthor = async (uid) => {
+    try {
+        const AdminPosts = await prisma.post.findMany({
+            where: {
+                uid: uid, 
+            }   
+        }); 
+        return AdminPosts;
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 exports.getPostById = async (pid) => {
     try {
@@ -71,6 +80,21 @@ exports.publishPostById = async (pid) => {
             }
         })
     } catch (err) { 
+        console.error(err);
+    }
+}
+
+exports.unpublishedPostById = async (pid) => {
+    try {
+        await prisma.post.update({
+            where: {
+                pid: pid,
+            }, 
+            data: {
+                ptype_id: 1,
+            }
+        })
+    } catch (err) {
         console.error(err);
     }
 }

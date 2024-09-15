@@ -112,3 +112,8 @@ Node Express Prisma Project
 Project: File Uploader  
 A Google Drive clone where authenticated users can CRUD files and folders for those files.  
   
+23. Odin Node Express RESTful API Blog API  
+Node Express REST API Project  
+Project: Blog API  
+A RESTful API Backend for a Blog with endpoints connected to two frontends, one to author blogs and one to view them.  
+  

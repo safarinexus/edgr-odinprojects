@@ -1,30 +1,44 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Header from "./components/Header";
-import Signup from "./components/Signup"; 
+import Upgrade from "./components/Upgrade"; 
 import Login from "./components/Login";
-import Posts from "./components/Posts";
-import Post from "./components/Post";
 import Error from "./components/Error";
+import AdminPosts from './components/AdminPosts';
+import IndivPost from "./components/IndivPost";
+import CreatePost from "./components/CreatePost";
 
 function App() {
   const { where, id } = useParams();
-  const [ userToken, setUserToken ] = useState(localStorage.getItem("jwttoken"));
+  const [ userToken, setUserToken ] = useState(localStorage.getItem("adminjwttoken"));
   const [ posts, setPosts ] = useState([]);
   const [ error, setError ] = useState(false); 
   const [ loading, setLoading ] = useState(true);
+  const navigate = useNavigate(); 
   //console.log("token: " + userToken);
   //console.log(typeof localStorage.getItem("jwttoken"));
   //console.log("where: " + where);
+  //useEffect(() => {
+  //  console.log(posts)
+  //}, [posts]);
 
   const updateToken = (newToken) => {
     setUserToken(newToken);
-    localStorage.setItem("jwttoken", newToken);
+    localStorage.setItem("adminjwttoken", newToken);
   }
 
   const logOut = () => {
-    localStorage.setItem("jwttoken", null);
+    localStorage.setItem("adminjwttoken", null);
     setUserToken(null);
+    navigate("/");
+  }
+
+  const updatePosts = (newPosts) => {
+    setPosts(newPosts);
+  }
+
+  const addPost = (anotherPost) => {
+    setPosts([...posts, anotherPost]);
   }
 
   useEffect(() => {
@@ -35,10 +49,10 @@ function App() {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + userToken
-          },
+          }
         }
         try { 
-          const res = await fetch(import.meta.env.VITE_BACKEND + "/posts", options);
+          const res = await fetch(import.meta.env.VITE_BACKEND + "/posts/admin", options);
           if (!res.ok) { 
             throw new Error("response error");
           }
@@ -65,7 +79,9 @@ function App() {
     </> 
   )} 
 
-  if (error) {return (
+  if (error) {
+    console.log(error);
+    return (
     <>
       <Header />
       <Error />
@@ -76,7 +92,7 @@ function App() {
   const Body = ({ userToken, where, posts }) => {
     if (userToken === null || userToken === "null") {
       if (where === "signup") {
-        return <Signup updateToken={updateToken} />
+        return <Upgrade updateToken={updateToken} />
       }
       if (typeof where === "undefined") {
         return <Login updateToken={updateToken}  />
@@ -84,17 +100,27 @@ function App() {
     } 
 
     if (typeof where === "undefined" && (userToken !== null || userToken === "null")) {
-      return <Posts posts={posts} userToken={userToken}/>
+      return <AdminPosts userToken={userToken} posts={posts} updatePosts={updatePosts} addPost={addPost} />
     }
 
     return <Error />
   }
 
 
-
+  //route for individual posts
   if (userToken !== null && userToken !== "null" && where === "posts" && typeof id !== "undefined") {
+    if (id === "create") { 
+      return (
+        <>
+          <Header userToken={userToken} logOut={logOut}/>
+          <CreatePost userToken={userToken}/>
+        </>
+      )
+    }
+
     let flag = false;
     let retrievedPost = null;
+
     posts.forEach(post => {
       if (post.pid === Number(id)) {
         flag = true;
@@ -106,7 +132,7 @@ function App() {
       return (
         <>
           <Header userToken={userToken} logOut={logOut}/>
-          <Post post={retrievedPost} userToken={userToken}/>
+          <IndivPost post={retrievedPost} userToken={userToken}/>
         </>
       )
     } else {
