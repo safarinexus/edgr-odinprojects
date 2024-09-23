@@ -1,5 +1,5 @@
 # odin_projects
-The Odin Project projects  
+"The Odin Project" projects  
 by Edgar @safarinexus  
   
 1. Odin Recipes  
