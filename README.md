@@ -26,19 +26,19 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 
 *Projects are presented in reverse-order of syllabus.*
 
-### Odin Node Express RESTful API Blog API Website
+### [Odin Node Express RESTful API Blog API Website](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-REST-blog)
 Node Express REST API Project  
 Project: Blog API  
 
-### Odin Node Express Prisma File Uploader  
+### [Odin Node Express Prisma File Uploader](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-prisma-fileuploader)  
 Node Express Prisma Project  
 Project: File Uploader
   
-### Odin Node Express PassportJS Members Only  
+### [Odin Node Express PassportJS Members Only](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-auth-membersonly) 
 Node Express PassportJS Project  
 Project: Members Only
   
-### Odin Node Express PostgreSQL Inventory Application   
+### [Odin Node Express PostgreSQL Inventory Application](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-postgres-inventory) 
 Node Express PostgreSQL Project   
 Project: Inventory Application
 
