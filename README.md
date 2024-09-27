@@ -21,82 +21,33 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 
 ## Projects (& Links to Projects)
 
-### Odin Node Express Mini Message Board
+*Projects are presented in order of syllabus.*
+ 
+### Odin Recipes  
 
-<img src="./assets/Mini-Message-Board.png" height="250px"/><br/>
-Node Express MVC Project<br/>
-Project: Mini Message Board  
+HTML Foundations Project  
+Project: Recipes    
 
-### Odin React Shopping Site
+### Odin Landing Page  
 
-<img src="./assets/Shopping-Page.png" height="250px"/><br/> 
-React Project<br/>
-Project: Shopping Cart   
+CSS & Flexbox Foundations Project  
+Project: Landing Page   
 
-### Odin Homepage  
+### Odin Rock Paper Scissors  
 
-<img src="./assets/Homepage.png" height="250px"/><br/> 
-Advanced HTML & CSS Project<br/>
-Project: Homepage  
+JavaScript Basics Project  
+Project: Rock Paper Scissors  
 
-### Odin Weather App  
+### Odin Etch-a-Sketch  
 
-<img src="./assets/Weather-App.png" height="250px"/><br/> 
-Intermediate JavaScript API Project<br/> 
-Project: Weather App  
-
-### Odin Todo List  
-
-<img src="./assets/Todo-List.png" height="250px"/><br/> 
-Intermediate JavaScript Project<br/> 
-Project: Todo List 
-
-### Odin React Memory Card  
-
-<img src="./assets/Memory-Card.png" height="250px"/><br/> 
-React Project<br/> 
-Project: Memory Card  
-
-### Odin Battleship   
-
-<img src="./assets/Battleship.png" height="250px"/><br/>
-Intermediate JavaScript Project<br/> 
-Project: Battleship   
-
-### Odin React CV Maker Application  
-
-<img src="./assets/CV-Maker.png" height="250px"/><br/>
-React Project<br/>
-Project: CV Application  
-  
-### Odin Restaurant Page  
-
-<img src="./assets/Restaurant-Page.png" height="250px"/><br/> 
-Intermediate JavaScript Webpack Project<br/>
-Project: Restaurant Page  
-
-### Odin Tic-Tac-Toe  
-
-<img src="./assets/Tic-Tac-Toe.png" height="250px"/><br/> 
-Intermediate JavaScript IIFE & Factory Functions Project<br/>
-Project: Tic-Tac-Toe  
+JavaScript Basics DOM Manipulation Project  
+Project: Etch-a-Sketch  
 
 ### Odin Calculator  
 
 <img src="./assets/Calculator.png" height="250px"/><br/> 
 JavaScript Basics Final Project<br/>
 Project: Calculator
-
-### Odin Library  
-
-<img src="./assets/Library-App.png" height="250px"/><br/> 
-Intermediate JavaScript & JS Objects Project<br/>
-Project: Library  
-
-### Odin Node Basic Informational Site   
-
-Node Project   
-Project: Basic Informational Site   
 
 ### Odin Dashboard  
 
@@ -108,45 +59,100 @@ Project: Admin Dashboard
 Intermediate HTML & CSS Form Project<br/>
 Project: Sign-up Form  
 
-### Odin Etch-a-Sketch  
+### Odin Library  
 
-JavaScript Basics DOM Manipulation Project  
-Project: Etch-a-Sketch  
+<img src="./assets/Library-App.png" height="250px"/><br/> 
+Intermediate JavaScript & JS Objects Project<br/>
+Project: Library  
 
-### Odin Rock Paper Scissors  
+### Odin Tic-Tac-Toe  
 
-JavaScript Basics Project  
-Project: Rock Paper Scissors  
+<img src="./assets/Tic-Tac-Toe.png" height="250px"/><br/> 
+Intermediate JavaScript IIFE & Factory Functions Project<br/>
+Project: Tic-Tac-Toe  
 
-### Odin Landing Page  
-
-CSS & Flexbox Foundations Project  
-Project: Landing Page   
-
-### Odin Recipes  
-
-HTML Foundations Project  
-Project: Recipes    
   
-20. Odin Node Express PostgreSQL Inventory Application   
+### Odin Restaurant Page  
+
+<img src="./assets/Restaurant-Page.png" height="250px"/><br/> 
+Intermediate JavaScript Webpack Project<br/>
+Project: Restaurant Page  
+
+### Odin Todo List  
+
+<img src="./assets/Todo-List.png" height="250px"/><br/> 
+Intermediate JavaScript Project<br/> 
+Project: Todo List 
+
+### Odin Weather App  
+
+<img src="./assets/Weather-App.png" height="250px"/><br/> 
+Intermediate JavaScript API Project<br/> 
+Project: Weather App  
+
+### Odin Battleship   
+
+<img src="./assets/Battleship.png" height="250px"/><br/>
+Intermediate JavaScript Project<br/> 
+Project: Battleship   
+
+### Odin Homepage  
+
+<img src="./assets/Homepage.png" height="250px"/><br/> 
+Advanced HTML & CSS Project<br/>
+Project: Homepage  
+
+
+### Odin React CV Maker Application  
+
+<img src="./assets/CV-Maker.png" height="250px"/><br/>
+React Project<br/>
+Project: CV Application  
+
+### Odin React Memory Card  
+
+<img src="./assets/Memory-Card.png" height="250px"/><br/> 
+React Project<br/> 
+Project: Memory Card  
+
+### Odin React Shopping Site
+
+<img src="./assets/Shopping-Page.png" height="250px"/><br/> 
+React Project<br/>
+Project: Shopping Cart   
+
+### Odin Databases SQLZoo 
+
+<img src="./odin-databases-sqlzoo/completion_ss.png" height="250px"/><br/> 
+Databases Project<br/>
+Project: SQLZoo
+
+### Odin Node Basic Informational Site   
+
+Node Project   
+Project: Basic Informational Site   
+
+### Odin Node Express Mini Message Board
+
+<img src="./assets/Mini-Message-Board.png" height="250px"/><br/>
+Node Express MVC Project<br/>
+Project: Mini Message Board  
+
+### Odin Node Express PostgreSQL Inventory Application   
 Node Express PostgreSQL Project   
-Project: Inventory Application   
-A website showcasing a collection of games implemented with PostgreSQL database.  
+Project: Inventory Application
 
-21. Odin Node Express PassportJS Members Only  
+### Odin Node Express PassportJS Members Only  
 Node Express PassportJS Project  
-Project: Members Only  
-Members only website with differing privileges for different user levels, authenticated using Passport.js.  
+Project: Members Only
   
-22. Odin Node Express Prisma File Uploader  
+### Odin Node Express Prisma File Uploader  
 Node Express Prisma Project  
-Project: File Uploader  
-A Google Drive clone where authenticated users can CRUD files and folders for those files.  
+Project: File Uploader
   
-23. Odin Node Express RESTful API Blog API  
+### Odin Node Express RESTful API Blog API  
 Node Express REST API Project  
 Project: Blog API  
-A RESTful API Backend for a Blog with endpoints connected to two frontends, one to author blogs and one to view them.  
 
 ## Technologies Learnt & Used
 
