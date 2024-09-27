@@ -1,3 +1,4 @@
+![The Odin Project Banner](./assets/top_banner.png)
 # odin_projects
 
 "The Odin Project" projects by me, Edgar @safarinexus. Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
@@ -153,6 +154,8 @@ A RESTful API Backend for a Blog with endpoints connected to two frontends, one 
 * [Jest](https://jestjs.io/)
 * [A11y](https://www.a11yproject.com/)
 * [Vite](https://vitejs.dev/)
+* [Vercel](https://vercel.com/)
+* [Koyeb](https://app.koyeb.com/)
 
 ## Contributing
 
