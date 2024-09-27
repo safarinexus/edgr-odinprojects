@@ -1,7 +1,7 @@
 [![The Odin Project Banner](./assets/top_banner.png)](https://www.theodinproject.com/)
 # edgr_odin_projects
 
-"The Odin Project" projects by me, Edgar @safarinexus. Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
+"The Odin Project" projects by me, Edgar (@safarinexus). Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
 
 ## Getting Started
 
@@ -21,10 +21,22 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 
 ## Projects (& Links to Projects)
 
+### Odin Node Express Mini Message Board
+
+<img src="./assets/Mini-Message-Board.png" height="250px"/><br/>
+Node Express MVC Project<br/>
+Project: Mini Message Board  
+
+### Odin React Shopping Site
+
+<img src="./assets/Shopping-Page.png" height="250px"/><br/> 
+React Project<br/>
+Project: Shopping Cart   
+
 ### Odin Homepage  
 
 <img src="./assets/Homepage.png" height="250px"/><br/> 
-Advanced HTML & CSS Project<br/> 
+Advanced HTML & CSS Project<br/>
 Project: Homepage  
 
 ### Odin Weather App  
@@ -39,13 +51,23 @@ Project: Weather App
 Intermediate JavaScript Project<br/> 
 Project: Todo List 
 
+### Odin React Memory Card  
+
+<img src="./assets/Memory-Card.png" height="250px"/><br/> 
+React Project<br/> 
+Project: Memory Card  
 
 ### Odin Battleship   
 
 <img src="./assets/Battleship.png" height="250px"/><br/>
 Intermediate JavaScript Project<br/> 
 Project: Battleship   
-  
+
+### Odin React CV Maker Application  
+
+<img src="./assets/CV-Maker.png" height="250px"/><br/>
+React Project<br/>
+Project: CV Application  
   
 ### Odin Restaurant Page  
 
@@ -70,6 +92,11 @@ Project: Calculator
 <img src="./assets/Library-App.png" height="250px"/><br/> 
 Intermediate JavaScript & JS Objects Project<br/>
 Project: Library  
+
+### Odin Node Basic Informational Site   
+
+Node Project   
+Project: Basic Informational Site   
 
 ### Odin Dashboard  
 
@@ -100,31 +127,6 @@ Project: Landing Page
 
 HTML Foundations Project  
 Project: Recipes    
-  
-15. Odin React CV Maker Application  
-React Project  
-Project: CV Application  
-My first ever React project, an application that helps build a CV/Resume  
-  
-16. Odin React Memory Card  
-React Project  
-Project: Memory Card  
-The game of memory cards, made with React, right in the browser.  
-  
-17. Odin React Shop Site  
-React Project  
-Project: Shopping Cart  
-A frontend UI for a shopping page, built with React.  
-  
-18. Odin Node Basic Informational Site   
-Node Project   
-Project: Basic Informational Site   
-A simple backend for an informational site.  
-  
-19. Odin Node Express Mini Message Board  
-Node Express Project  
-Project: Mini Message Board  
-A simple mini message board website with a backend using MVC Pattern and Express.js.  
   
 20. Odin Node Express PostgreSQL Inventory Application   
 Node Express PostgreSQL Project   
