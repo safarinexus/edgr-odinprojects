@@ -19,43 +19,55 @@ No installation needed. Just click on links provided and open them up in a brows
 
 The Odin Project provides two paths for aspiring developers to go down, Full Stack Ruby on Rails path or Full Stack JavaScript (Node.js) Path. I chose the Node.js path, for more relevancy and interest.
 
-## Projects (& Links to projects)
+## Projects (& Links to Projects)
+
+### Odin Homepage  
+
+<img src="./assets/Homepage.png" height="250px"/><br/> 
+Advanced HTML & CSS Project<br/> 
+Project: Homepage  
 
 ### Odin Weather App  
 
-<img src="./assets/Weather-App.png" height="250px"/>
+<img src="./assets/Weather-App.png" height="250px"/><br/> 
 Intermediate JavaScript API Project<br/> 
 Project: Weather App  
 
-
 ### Odin Todo List  
 
-<img src="./assets/Todo-List.png" height="250px"/>
+<img src="./assets/Todo-List.png" height="250px"/><br/> 
 Intermediate JavaScript Project<br/> 
 Project: Todo List 
+
+
+### Odin Battleship   
+
+<img src="./assets/Battleship.png" height="250px"/><br/>
+Intermediate JavaScript Project<br/> 
+Project: Battleship   
   
   
 ### Odin Restaurant Page  
 
-<img src="./assets/Restaurant-Page.png" height="250px"/>
+<img src="./assets/Restaurant-Page.png" height="250px"/><br/> 
 Intermediate JavaScript Webpack Project<br/>
 Project: Restaurant Page  
 
 ### Odin Tic-Tac-Toe  
 
-<img src="./assets/Tic-Tac-Toe.png" height="250px"/>
+<img src="./assets/Tic-Tac-Toe.png" height="250px"/><br/> 
 Intermediate JavaScript IIFE & Factory Functions Project<br/>
 Project: Tic-Tac-Toe  
 
 ### Odin Calculator  
 
-<img src="./assets/Calculator.png" height="250px"/>
+<img src="./assets/Calculator.png" height="250px"/><br/> 
 JavaScript Basics Final Project<br/>
 Project: Calculator
 
 ### Odin Library  
 
-<img src="./assets/Library-App.png" height="250px"/>
+<img src="./assets/Library-App.png" height="250px"/><br/> 
 Intermediate JavaScript & JS Objects Project<br/>
 Project: Library  
 
@@ -87,19 +99,7 @@ Project: Landing Page
 ### Odin Recipes  
 
 HTML Foundations Project  
-Project: Recipes  
-
-<h1></h1>
-  
-13. Odin Battleship   
-Intermediate JavaScript Project  
-Project: Battleship  
-The final project for JavaScript, the game of Battleship.   
-  
-14. Odin Homepage  
-Advanced HTML & CSS Project  
-Project: Homepage  
-A CV homepage meant to practice advanced HTML & CSS skills.  
+Project: Recipes    
   
 15. Odin React CV Maker Application  
 React Project  
