@@ -150,7 +150,7 @@ Project: Members Only
 Node Express Prisma Project  
 Project: File Uploader
   
-### Odin Node Express RESTful API Blog API  
+### Odin Node Express RESTful API Blog API Website
 Node Express REST API Project  
 Project: Blog API  
 
