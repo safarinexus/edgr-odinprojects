@@ -1,5 +1,5 @@
 [![The Odin Project Banner](./assets/top_banner.png)](https://www.theodinproject.com/)
-# edgr_odin_projects
+# [edgr_odin_projects](https://safarinexus.github.io/edgr_odin_projects)
 
 "The Odin Project" projects by me, Edgar (@safarinexus). Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
 
