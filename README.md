@@ -1,7 +1,25 @@
 # odin_projects
-"The Odin Project" projects  
-by Edgar @safarinexus  
-  
+
+"The Odin Project" projects by me, Edgar @safarinexus. Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
+
+## Getting Started
+
+These instructions will get you into my projects, understand their context and how to enjoy and admire them.
+
+### Prerequisites
+
+No substantial software required, just a modern-browser will suffice.
+
+### Installing
+
+No installation needed. Just click on links provided and open them up in a browser of your choice.
+
+### Path 
+
+The Odin Project provides two paths for aspiring developers to go down, Full Stack Ruby on Rails path or Full Stack JavaScript (Node.js) Path. I chose the Node.js path, for more relevancy and interest.
+
+## Projects (& Links to projects)
+
 1. Odin Recipes  
 HTML Foundations Project  
 Project: Recipes  
@@ -116,4 +134,39 @@ A Google Drive clone where authenticated users can CRUD files and folders for th
 Node Express REST API Project  
 Project: Blog API  
 A RESTful API Backend for a Blog with endpoints connected to two frontends, one to author blogs and one to view them.  
+
+## Technologies Learnt & Used
+
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [React](https://react.dev/)
+* [Node.js](https://nodejs.org/en)
+* [Express.js](https://expressjs.com/)
+* [RESTful API](https://en.wikipedia.org/wiki/REST)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Prisma](https://www.prisma.io/)
+* [Git](https://git-scm.com/)
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Webpack](https://webpack.js.org/)
+* [npm](https://www.npmjs.com/)
+* [JSON](https://www.json.org/)
+* [Jest](https://jestjs.io/)
+* [A11y](https://www.a11yproject.com/)
+* [Vite](https://vitejs.dev/)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+* **Edgar Teong**(me!) - [SafariNexus](https://github.com/safarinexus)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Authors, Contributors & Maintainers of [The Odin Project](https://github.com/TheOdinProject)
   
