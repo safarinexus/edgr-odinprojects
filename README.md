@@ -156,6 +156,8 @@ A RESTful API Backend for a Blog with endpoints connected to two frontends, one 
 * [Vite](https://vitejs.dev/)
 * [Vercel](https://vercel.com/)
 * [Koyeb](https://app.koyeb.com/)
+* [TailwindCSS](https://tailwindcss.com/) - Outside Syllabus, Self-learnt
+* [TypeScript](https://www.typescriptlang.org/) - Outside Syllabus, Self-learnt 
 
 ## Contributing
 
