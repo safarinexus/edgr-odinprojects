@@ -74,7 +74,7 @@ function App() {
 
   if (loading) {return (
     <>
-      <Header />
+      <Header userToken={userToken} logOut={logOut}/>
       <h1 className="w-full text-center text-5xl mt-20">Loading...</h1>
     </> 
   )} 
@@ -83,7 +83,7 @@ function App() {
     console.log(error);
     return (
     <>
-      <Header />
+      <Header userToken={userToken} logOut={logOut}/>
       <Error />
     </> 
   )} 
