@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node --watch server.js"
+    "serve": "node --watch server.js", 
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
