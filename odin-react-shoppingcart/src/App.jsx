@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Shop from './components/Shop';
-import Cart from './components/Cart';
 
 export default function App() {
   const { where } = useParams();
@@ -77,9 +76,7 @@ export default function App() {
   return (
     <>
       <Header cartComplex={cartComplex} editCart={editCart} cartCount={cartCount} />
-      {where === "cart" ? (
-        <Cart />
-      ) : where === "shop" ?  ( 
+      { where === "shop" ?  ( 
         <Shop items={items} editCart={editCart} /> 
       ) : (
         <Home />
