@@ -29,7 +29,6 @@ async function main() {
   return;
 }
 
-console.log("test");
 main()
   .then(async () => {
     await prisma.$disconnect()
