@@ -31,8 +31,9 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 Node Express REST API Project<br/>
 Project: Blog API  
 
-### [Odin Node Express Prisma File Uploader](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-prisma-fileuploader)  
-Node Express Prisma Project  
+### [Odin Node Express Prisma File Uploader](https://odin-file-uploader-production-11ed.up.railway.app/) 
+<a href="https://odin-file-uploader-production-11ed.up.railway.app/"><img src="./assets/File-Uploader.png" height="250px"/></a><br/>
+Node Express Prisma Project<br/>  
 Project: File Uploader
   
 ### [Odin Node Express PassportJS Members Only](https://odin-membersonly-production.up.railway.app/)
