@@ -35,8 +35,9 @@ Project: Blog API
 Node Express Prisma Project  
 Project: File Uploader
   
-### [Odin Node Express PassportJS Members Only](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-auth-membersonly) 
-Node Express PassportJS Project  
+### [Odin Node Express PassportJS Members Only](https://odin-membersonly-production.up.railway.app/)
+<a href="https://odin-membersonly-production.up.railway.app/"><img src="./assets/Members-Only.png" height="250px"/></a><br/> 
+Node Express PassportJS Project<br/>
 Project: Members Only
   
 ### [Odin Node Express PostgreSQL Inventory Application](https://edgrodinprojects-production.up.railway.app/)
