@@ -33,7 +33,7 @@ Project: Blog API
 
 ### [Odin Node Express Prisma File Uploader](https://odin-file-uploader-production-11ed.up.railway.app/) 
 <a href="https://odin-file-uploader-production-11ed.up.railway.app/"><img src="./assets/File-Uploader.png" height="250px"/></a><br/>
-Node Express Prisma Project<br/>  
+Node Express Prisma Project<br/>
 Project: File Uploader
   
 ### [Odin Node Express PassportJS Members Only](https://odin-membersonly-production.up.railway.app/)
