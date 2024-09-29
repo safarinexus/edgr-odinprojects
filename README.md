@@ -26,7 +26,7 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 
 *Projects are presented in reverse-order of syllabus.*
 
-### [Odin Node Express RESTful API Blog API Website](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-REST-blog)
+### [Odin Node Express RESTful API Blog API Website](https://edgr-odin-blog-edit.vercel.app/)
 Node Express REST API Project  
 Project: Blog API  
 
