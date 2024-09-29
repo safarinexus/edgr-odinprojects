@@ -27,9 +27,27 @@ const SQL = `
         "expire" timestamp(6) NOT NULL
     ) WITH (OIDS=FALSE);
 
-    ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+    DO $$ 
+    BEGIN
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM pg_constraint 
+            WHERE conname = 'session_pkey'
+        ) THEN
+            ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+        END IF;
+    END $$;
 
-    CREATE INDEX "IDX_session_expire" ON "session" ("expire");
+    DO $$
+    BEGIN
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM pg_indexes 
+            WHERE indexname = 'IDX_session_expire'
+        ) THEN
+            CREATE INDEX "IDX_session_expire" ON "session" ("expire");
+        END IF;
+    END $$;
 `
 
 const main = async () => {
