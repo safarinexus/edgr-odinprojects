@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node --watch server.js", 
-    "start": "node server.js & npx prisma db seed"
+    "start": "node server.js & npx prisma migrate deploy & npx prisma db seed"
   },
   "keywords": [],
   "author": "",
