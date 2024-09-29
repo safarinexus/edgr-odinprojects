@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Comments({ pid, userToken }) {
     const [ comments, setComments ] = useState([]); 
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(false);
-    const navigate = useNavigate();
     const [ commentData, setCommentData ] = useState({
         content: "",
     })
@@ -34,7 +32,7 @@ export default function Comments({ pid, userToken }) {
                 }
                 const response = res.json();
                 console.log(response);
-                navigate(0);
+                setComments([...comments]);
             } catch (error) { 
                 setError(error);
             }
@@ -145,6 +143,7 @@ export default function Comments({ pid, userToken }) {
                             focus:bg-opacity-50
                             rounded-md resize-none focus:text-white
                     "
+                    required
                 />
                 <button
                     type="button"
