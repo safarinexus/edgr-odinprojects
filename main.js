@@ -41,6 +41,11 @@ function addProject(name, description, github, link, image=true, wip=false) {
 //node express blog api project 
 addProject("Blog API", "A full REST API for a blog, including two frontends, one for viewing posts and one for editing.", "https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-REST-blog", "https://edgr-odin-blog-access.vercel.app/");
 
+//node express members only project 
+
+//node express inventory application project 
+addProject("Inventory Application", "An inventory application using Node.js and PostgreSQL, for video games.", "https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-postgres-inventory", "https://edgrodinprojects-production.up.railway.app/"); 
+
 //node express message board project
 addProject("Mini Message Board", "A simple mini message board website with a backend using MVC Pattern and Express", "https://github.com/safarinexus/odin_projects/tree/main/odin-node-express-messageboard", "https://overseas-phoebe-safarinexus-e4f74908.koyeb.app/");
 

@@ -39,8 +39,9 @@ Project: File Uploader
 Node Express PassportJS Project  
 Project: Members Only
   
-### [Odin Node Express PostgreSQL Inventory Application](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-postgres-inventory) 
-Node Express PostgreSQL Project   
+### [Odin Node Express PostgreSQL Inventory Application](https://edgrodinprojects-production.up.railway.app/)
+<a href="https://edgrodinprojects-production.up.railway.app/"><img src="./assets/Inventory-Application.png" height="250px"/></a><br/>
+Node Express PostgreSQL Project<br/>
 Project: Inventory Application
 
 ### [Odin Node Express Mini Message Board](https://overseas-phoebe-safarinexus-e4f74908.koyeb.app/)
