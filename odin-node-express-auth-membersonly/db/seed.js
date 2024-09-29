@@ -30,15 +30,13 @@ const SQL = `
     ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
     CREATE INDEX "IDX_session_expire" ON "session" ("expire");
-
-    INSERT INTO membership (membership_status)  
-    VALUES ('standard'), ('premium'), ('admin');
 `
 
 const main = async () => {
     console.log("seeding..."); 
     const client = new Client ({
-        connectionString: process.argv[2]
+        connectionString: process.env.CONNECTION_STRING,
+        ssl: true, 
     });
     await client.connect();
     console.log("connected");
