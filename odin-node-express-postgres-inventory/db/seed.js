@@ -22,6 +22,7 @@ const main = async () => {
     console.log("seeding..."); 
     const client = new Client ({
         connectionString: process.env.CONNECTION_STRING,
+        ssl: true,
     });
     await client.connect();
     console.log("connected");
