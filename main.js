@@ -41,6 +41,8 @@ function addProject(name, description, github, link, image=true, wip=false) {
 //node express blog api project 
 addProject("Blog API", "A full REST API for a blog, including two frontends, one for viewing posts and one for editing.", "https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-REST-blog", "https://edgr-odin-blog-access.vercel.app/");
 
+//node express file uploader project
+
 //node express members only project 
 addProject("Members Only", "A members only website with a privilege hierarchy.", "https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-express-auth-membersonly", "https://odin-membersonly-production.up.railway.app/")
 
