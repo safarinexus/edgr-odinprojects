@@ -3,7 +3,9 @@ const prisma = new PrismaClient();
 
 async function main() {
   console.log("attempting to seed...");
-  try {
+  const utypeCheck = await prisma.uType.findFirst();
+  const ptypeCheck = await prisma.pType.findFirst();
+  if (!utypeCheck) {
     await prisma.uType.createMany({
       data: [
           { type_name: 'Basic' }, 
@@ -11,28 +13,28 @@ async function main() {
           { type_name: 'Admin'}
       ],
     });
-  
+  } else {
+    console.log("uType already seeded.");
+  }
+  if (!ptypeCheck) {
     await prisma.pType.createMany({
       data: [
         { type_name: 'Unpublished'}, 
         { type_name: 'Published' }
       ]
     })
-    console.log("seed success!");
-  } catch (err) { 
-    console.log("seed failed..."); 
-    console.error(err);
-  } finally {
-    console.log("exiting...");
+  } else {
+    console.log("pType already seeded.");
   }
-  
+  return;
 }
 
 main()
-  .catch(e => {
-    console.error(e);
-    process.exit(1);
+  .then(async () => {
+    await prisma.$disconnect()
   })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })
