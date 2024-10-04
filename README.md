@@ -1,5 +1,5 @@
 [![The Odin Project Banner](./assets/top_banner.png)](https://www.theodinproject.com/)
-# [edgr_odin_projects](https://safarinexus.github.io/edgr_odin_projects)
+# [edgr-odinprojects](https://safarinexus.github.io/edgr-odinprojects/)
 
 "The Odin Project" projects by me, Edgar (@safarinexus). Meant to demonstrating undergoing and completion of "The Odin Project" in full, as well as display fullstack web development skills learnt. 
 
@@ -16,7 +16,7 @@ No substantial software required, just a modern-browser will suffice.
 No installation needed. Just click on links provided and open them up in a browser of your choice.
 
 ### Navigation 
-Click any of the project titles below. Or navigate through the homepage [here](https://safarinexus.github.io/edgr_odin_projects).
+Click any of the project titles below. Or navigate through the homepage [here](https://safarinexus.github.io/edgr-odinprojects).
 
 ### Path 
 
