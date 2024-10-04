@@ -52,12 +52,12 @@ Project: Inventory Application
 Node Express MVC Project<br/>
 Project: Mini Message Board  
 
-### [Odin Node Basic Informational Site](https://github.com/safarinexus/edgr_odin_projects/tree/main/odin-node-basic)   
+### [Odin Node Basic Informational Site](https://github.com/safarinexus/edgr-odinprojects/tree/main/odin-node-basic)   
 
 Node Project   
 Project: Basic Informational Site   
 
-### [Odin Databases SQLZoo](https://github.com/safarinexus/edgr_odin_projects/blob/main/odin-databases-sqlzoo/completion_ss.png)
+### [Odin Databases SQLZoo](https://github.com/safarinexus/edgr-odinprojects/blob/main/odin-databases-sqlzoo/completion_ss.png)
 
 <img src="./odin-databases-sqlzoo/completion_ss.png" height="250px"/><br/> 
 Databases Project<br/>
@@ -81,80 +81,80 @@ Project: Memory Card
 React Project<br/>
 Project: CV Application  
 
-### [Odin Homepage](https://safarinexus.github.io/edgr_odin_projects/odin-homepage/index.html)
+### [Odin Homepage](https://safarinexus.github.io/edgr-odinprojects/odin-homepage/index.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-homepage/index.html"><img src="./assets/Homepage.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-homepage/index.html"><img src="./assets/Homepage.png" height="250px"/></a><br/> 
 Advanced HTML & CSS Project<br/>
 Project: Homepage  
 
-### [Odin Battleship](https://safarinexus.github.io/edgr_odin_projects/odin-js-battleship/dist/index.html)
+### [Odin Battleship](https://safarinexus.github.io/edgr-odinprojects/odin-js-battleship/dist/index.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-battleship/dist/index.html"><img src="./assets/Battleship.png" height="250px"/></a><br/>
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-battleship/dist/index.html"><img src="./assets/Battleship.png" height="250px"/></a><br/>
 Intermediate JavaScript Project<br/> 
 Project: Battleship   
 
-### [Odin Weather App](https://safarinexus.github.io/edgr_odin_projects/odin-js-weatherapp/index.html) 
+### [Odin Weather App](https://safarinexus.github.io/edgr-odinprojects/odin-js-weatherapp/index.html) 
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-weatherapp/index.html"><img src="./assets/Weather-App.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-weatherapp/index.html"><img src="./assets/Weather-App.png" height="250px"/></a><br/> 
 Intermediate JavaScript API Project<br/> 
 Project: Weather App  
 
-### [Odin Todo List](https://safarinexus.github.io/edgr_odin_projects/odin-js-todo/dist/index.html)
+### [Odin Todo List](https://safarinexus.github.io/edgr-odinprojects/odin-js-todo/dist/index.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-todo/dist/index.html"><img src="./assets/Todo-List.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-todo/dist/index.html"><img src="./assets/Todo-List.png" height="250px"/></a><br/> 
 Intermediate JavaScript Project<br/> 
 Project: Todo List 
 
-### [Odin Restaurant Page](https://safarinexus.github.io/edgr_odin_projects/odin-js-restaurantpage/dist/index.html)
+### [Odin Restaurant Page](https://safarinexus.github.io/edgr-odinprojects/odin-js-restaurantpage/dist/index.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-restaurantpage/dist/index.html"><img src="./assets/Restaurant-Page.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-restaurantpage/dist/index.html"><img src="./assets/Restaurant-Page.png" height="250px"/></a><br/> 
 Intermediate JavaScript Webpack Project<br/>
 Project: Restaurant Page  
 
-### [Odin Tic-Tac-Toe](https://safarinexus.github.io/edgr_odin_projects/odin-js-tictactoe/jstictactoe.html)
+### [Odin Tic-Tac-Toe](https://safarinexus.github.io/edgr-odinprojects/odin-js-tictactoe/jstictactoe.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-tictactoe/jstictactoe.html"><img src="./assets/Tic-Tac-Toe.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-tictactoe/jstictactoe.html"><img src="./assets/Tic-Tac-Toe.png" height="250px"/></a><br/> 
 Intermediate JavaScript IIFE & Factory Functions Project<br/>
 Project: Tic-Tac-Toe  
 
-### [Odin Library](https://safarinexus.github.io/edgr_odin_projects/odin-js-library/jslibrary.html)
+### [Odin Library](https://safarinexus.github.io/edgr-odinprojects/odin-js-library/jslibrary.html)
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-js-library/jslibrary.html"><img src="./assets/Library-App.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-js-library/jslibrary.html"><img src="./assets/Library-App.png" height="250px"/></a><br/> 
 Intermediate JavaScript & JS Objects Project<br/>
 Project: Library  
 
-### [Odin Dashboard](https://safarinexus.github.io/edgr_odin_projects/odin-dashboard/dashboard.html)  
+### [Odin Dashboard](https://safarinexus.github.io/edgr-odinprojects/odin-dashboard/dashboard.html)  
 
 Intermediate HTML & CSS Grid Project  
 Project: Admin Dashboard  
 
-### [Odin Sign-up Form](https://safarinexus.github.io/edgr_odin_projects/odin-signup/signup.html)
+### [Odin Sign-up Form](https://safarinexus.github.io/edgr-odinprojects/odin-signup/signup.html)
 
 Intermediate HTML & CSS Form Project<br/>
 Project: Sign-up Form  
 
-### [Odin Calculator](https://safarinexus.github.io/edgr_odin_projects/odin-calculator/calculator.html)  
+### [Odin Calculator](https://safarinexus.github.io/edgr-odinprojects/odin-calculator/calculator.html)  
 
-<a href="https://safarinexus.github.io/edgr_odin_projects/odin-calculator/calculator.html"><img src="./assets/Calculator.png" height="250px"/></a><br/> 
+<a href="https://safarinexus.github.io/edgr-odinprojects/odin-calculator/calculator.html"><img src="./assets/Calculator.png" height="250px"/></a><br/> 
 JavaScript Basics Final Project<br/>
 Project: Calculator
 
-### [Odin Etch-a-Sketch](https://safarinexus.github.io/edgr_odin_projects/odin-etch-a-sketch/etch-a-sketch.html)
+### [Odin Etch-a-Sketch](https://safarinexus.github.io/edgr-odinprojects/odin-etch-a-sketch/etch-a-sketch.html)
 
 JavaScript Basics DOM Manipulation Project  
 Project: Etch-a-Sketch  
 
-### [Odin Rock Paper Scissors](https://safarinexus.github.io/edgr_odin_projects/odin-rockpaperscissors/rockpaperscissors.html)
+### [Odin Rock Paper Scissors](https://safarinexus.github.io/edgr-odinprojects/odin-rockpaperscissors/rockpaperscissors.html)
 
 JavaScript Basics Project  
 Project: Rock Paper Scissors  
 
-### [Odin Landing Page](https://safarinexus.github.io/edgr_odin_projects/odin-landing-page/landing-page.html)
+### [Odin Landing Page](https://safarinexus.github.io/edgr-odinprojects/odin-landing-page/landing-page.html)
 
 CSS & Flexbox Foundations Project  
 Project: Landing Page   
 
-### [Odin Recipes](https://safarinexus.github.io/edgr_odin_projects/odin-recipes/recipes.html)
+### [Odin Recipes](https://safarinexus.github.io/edgr-odinprojects/odin-recipes/recipes.html)
 
 HTML Foundations Project  
 Project: Recipes    
