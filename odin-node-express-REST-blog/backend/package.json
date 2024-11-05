@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node --watch server.js", 
+    "serve": "node --watch server.js",
     "start": "npx prisma migrate deploy && npx prisma db seed && node server.js"
   },
   "keywords": [],
@@ -12,17 +12,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@prisma/client": "^5.19.1",
+    "@prisma/client": "^5.22.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1",
-    "prisma": "^5.19.1"
-  }, 
+    "passport-jwt": "^4.0.1"
+  },
   "prisma": {
     "seed": "node prisma/seed.js"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
   }
 }

@@ -60,14 +60,14 @@ function App() {
 
   if (loading) {return (
     <>
-      <Header />
+      <Header logOut={logOut}/>
       <h1 className="w-full text-center text-5xl mt-20">Loading...</h1>
     </> 
   )} 
 
   if (error) {return (
     <>
-      <Header />
+      <Header logOut={logOut}/>
       <Error />
     </> 
   )} 
