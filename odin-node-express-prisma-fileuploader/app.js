@@ -86,9 +86,13 @@ app.get("/", async (req, res) => {
     }
 }); 
 
+app.get("/invalidlogin", async(req , res) => {
+    res.render("loginError.ejs", { title: "Oops!"})
+});
+
 app.post('/',
     passport.authenticate('local', { 
-        failureRedirect: '/', 
+        failureRedirect: '/invalidLogin', 
         successRedirect: "/files",
     })
 );

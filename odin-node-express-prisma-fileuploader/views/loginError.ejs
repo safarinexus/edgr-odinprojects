@@ -1,0 +1,16 @@
+<%- contentFor('header') %>
+<%- contentFor('body') %>
+    <div class="login-section">
+        <p style="color: red; display: inline">Invalid Login</p>
+        <form action="/" method="POST"> 
+            <fieldset class="login-form">
+                <legend>Log in</legend>
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+                <button type="submit" class="form-button">Log In</button>
+            </fieldset>
+        </form>
+        <p>Don't have an account? Sign up <a class="here" href="/signup">here</a>.</p>
+    </div>

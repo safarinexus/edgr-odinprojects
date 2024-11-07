@@ -1,9 +1,12 @@
 const { Router } = require("express"); 
 const foldersRouter = Router(); 
-const path = require("node:path");
+const path = require("path");
+const sb = require("../supabase/client");
 const db = require("../controllers/prismaController"); 
 const multer = require("multer");
-const fs = require("fs");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+/*
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/');
@@ -12,7 +15,7 @@ const storage = multer.diskStorage({
         cb(null, file.originalname);
     }
 });
-const upload = multer({ storage: storage });
+*/
 
 foldersRouter.get("/", async (req, res, next) => {
     if (req.user) {
@@ -56,16 +59,14 @@ foldersRouter.post("/:folderid/add", async (req, res) => {
 foldersRouter.post("/upload", upload.array('files'), async (req, res) => {
     const files = req.files;
     for (const file of files) {
-        const filepath = `/${file.filename}`;
         const name = file.originalname;
         const size = String(Math.floor(file.size/1024)) + "KB";
         const type = file.mimetype;
         const date = new Date().toLocaleString();
         const email = req.user.email;
-        try { 
-            await db.addFile(filepath, name, date, size, type, email);
-        } catch (err) {
-            console.log(err);
+        const sbResponse = await sb.uploadFile(file, email);
+        if (sbResponse !== null) {
+            await db.addFile(sbResponse, name, date, size, type, email);
         }
     }
     res.redirect("/folders");
@@ -75,16 +76,14 @@ foldersRouter.post("/upload/:folderid", upload.array('files'), async (req, res) 
     const containingId = Number(req.params.folderid);
     const files = req.files;
     for (const file of files) {
-        const filepath = `/${file.filename}`;
         const name = file.originalname;
         const size = String(Math.floor(file.size/1024)) + "KB";
         const type = file.mimetype;
         const date = new Date().toLocaleString();
         const email = req.user.email;
-        try { 
-            await db.addFile(filepath, name, date, size, type, email, containingId);
-        } catch (err) {
-            console.log(err);
+        const sbResponse = await sb.uploadFile(file, email);
+        if (sbResponse !== null) {
+            await db.addFile(sbResponse, name, date, size, type, email, containingId);
         }
     }
     res.redirect(path.normalize(req.originalUrl + "/../../" + containingId));
@@ -118,7 +117,7 @@ foldersRouter.post("/update/:folderid", async (req, res) => {
     res.redirect(pathBack); 
 })
 
-
+//currently not in use
 foldersRouter.get("/deletefolder/:folderid", async (req, res, next) => {
     if (req.user) {  
         const id = Number(req.params.folderid);
@@ -139,6 +138,7 @@ foldersRouter.get("/deletefolder/:folderid", async (req, res, next) => {
     } 
 });
 
+//not implemented yet 
 foldersRouter.post("/deletefolder/:folderid", async(req, res) => {
     // fml this has to be a recursive function
     const id = Number(req.params.folderid);
@@ -167,19 +167,10 @@ foldersRouter.get("/deletefile/(:folderid/)?:id", async (req, res, next) => {
         if (fileInQuestion === undefined) {
             next();
         } else {
-            await db.deleteFile(fileId, email); 
-            const filepath = path.resolve(__dirname + "/.." + "/public" + fileInQuestion.path);
-            fs.unlink(filepath, (err) => {
-                if (err) {
-                    if (err.code === 'ENOENT') {
-                        console.error('File does not exist.');
-                    } else {
-                        throw err;
-                    }
-                } else {
-                    console.log('File deleted!');
-                }
-            });
+            const response = await sb.deleteFile(fileInQuestion.path);
+            if (response) {
+                await db.deleteFile(fileId, email);
+            }   
             res.redirect(pathBack); 
         } 
     } 

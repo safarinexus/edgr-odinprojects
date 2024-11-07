@@ -20,7 +20,7 @@
                     <h3 class="file-name"><%= file.file_name %></h3>
                     <p class="file-description"><%= file.file_type %> | <%= file.file_size %> | <%= file.date_added %></p>
                     <div class="file-buttons">
-                        <a href="<%= file.path %>" class="download" download></a>
+                        <a href="files/download/<%= file.file_id %>" class="download"></a>
                         <a href="files/delete/<%= file.file_id %>" class="delete"></a>
                     </div>
                 </div>
