@@ -7,6 +7,7 @@ export default function Signup({ updateToken }) {
         username: "", 
         password: "",
     });
+    const [ error, setError ] = useState("");
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -31,27 +32,32 @@ export default function Signup({ updateToken }) {
         try {
             response = await fetch(import.meta.env.VITE_BACKEND + "/users/register", options);
             response = await response.json();
+            if (response === null || response.status !== 201) {
+                if (response !== null) {
+                    setError(response.message); 
+                }
+                return; 
+            } else {
+                try {
+                    loginResponse = await fetch(import.meta.env.VITE_BACKEND + "/users/login", options);
+                    loginResponse = await loginResponse.json();
+                    if (loginResponse !== null && loginResponse.status === 200) {
+                        updateToken(loginResponse.token);
+                        navigate("/");
+                    } else if (loginResponse !== null && loginResponse.status !== 200) {
+                        setError("Account created but login failed because " + response.message);
+                    }
+                    return;
+                } catch (err) {
+                    setError(err);
+                    console.error(err);
+                }
+                
+            }
         } catch (err) {
+            setError(err);
             console.error(err);
         }
-
-        if (response === null || response.status !== 201) {
-            return;
-        }
-
-        try {
-            loginResponse = await fetch(import.meta.env.VITE_BACKEND + "/users/login", options);
-            loginResponse = await loginResponse.json();
-        } catch (err) {
-            console.error(err);
-        }
-
-        if (loginResponse !== null && loginResponse.status === 200) {
-            updateToken(loginResponse.token);
-        }
-
-        navigate("/");
-
     };
 
     return (
@@ -59,6 +65,7 @@ export default function Signup({ updateToken }) {
             <div id="signup-container" className="mt-20 h-96 w-[300px] sm:w-[600px] rounded-md shadow shadow-black dark:shadow-white bg-white">
                 <form onSubmit={handleSubmit} id="signup-form" className="w-full h-full p-10 flex flex-col justify-start items-start">
                     <legend className="text-lg w-max font-bold mb-7">Create your blog account</legend>
+                    <p className="text-red-500">{error}</p>
                     <label htmlFor="username" className="mb-1">Username</label>
                     <input 
                         type="text" 

@@ -29,7 +29,7 @@ usersRouter.post("/register", (req, res, next) => {
     let password = req.body.password; 
     if (typeof username === "undefined" || typeof password === "undefined") { 
         res.status(400).json({
-            message: "Bad Request! Failed Registration"
+            message: "Please enter a valid username and password."
         });
     } else { 
         bcrypt.hash(password, 10, async (err, hashedPassword) => {
@@ -54,25 +54,28 @@ usersRouter.post("/login", async (req, res) => {
     if (!retrievedUser) {
         res.status(400).json({
             status: 400,  
-            message: "Bad Request.",
+            message: "No such user.",
             origin: "users",
         });
+    } else {
+        const validatePassword = await bcrypt.compare(password, retrievedUser.password);
+        if (!validatePassword) {
+            res.status(400).json({
+                status: 400,  
+                message: "Incorrect password.",
+                origin: "users", 
+            });
+        } else {
+            jwt.sign({retrievedUser}, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
+                res.status(200).json({
+                    status: 200, 
+                    message: "Successful Login.", 
+                    token,
+                });
+            });
+        }   
     }
-    const validatePassword = await bcrypt.compare(password, retrievedUser.password);
-    if (!validatePassword) {
-        res.status(400).json({
-            status: 400,  
-            message: "Bad Request.",
-            origin: "users", 
-        });
-    }
-    jwt.sign({retrievedUser}, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
-        res.status(200).json({
-            status: 200, 
-            message: "Successful Login.", 
-            token,
-        });
-    });
+    
 });
 
 usersRouter.post("/login/admin", async (req, res) => {
@@ -85,14 +88,15 @@ usersRouter.post("/login/admin", async (req, res) => {
             message: "Bad Request.",
             origin: "users",
         });
-    } 
-    jwt.sign({retrievedUser}, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
-        res.status(200).json({
-            status: 200, 
-            message: "Successful Login.", 
-            token,
+    } else {
+        jwt.sign({retrievedUser}, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
+            res.status(200).json({
+                status: 200, 
+                message: "Successful Login.", 
+                token,
+            });
         });
-    });
+    }
 })
 
 usersRouter.patch("/upgrade", async (req, res) => {

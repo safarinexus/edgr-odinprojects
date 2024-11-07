@@ -79,7 +79,7 @@ function App() {
         return <Signup updateToken={updateToken} />
       }
       if (typeof where === "undefined") {
-        return <Login updateToken={updateToken}  />
+        return <Login updateToken={updateToken} />
       }
     } 
 

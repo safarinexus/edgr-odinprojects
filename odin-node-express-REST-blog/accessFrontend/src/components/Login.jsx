@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Login({ updateToken }) {
 
@@ -8,6 +8,12 @@ export default function Login({ updateToken }) {
         username: "", 
         password: "",
     });
+    const [ loginError, setLoginError ] = useState("");  
+
+
+    useEffect(() => {
+        console.log(loginError); 
+    }, [loginError]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -32,16 +38,15 @@ export default function Login({ updateToken }) {
         try {
             response = await fetch(import.meta.env.VITE_BACKEND + "/users/login", options);
             response = await response.json();
+            if (response !== null && response.status !== 200) {
+                setLoginError(String(response.message));
+            } else if (response !== null && response.status === 200) {
+                updateToken(response.token);
+                navigate("/");
+            }
         } catch (err) {
             console.error(err);
         }
-
-        if (response !== null && response.status === 200) {
-            updateToken(response.token);
-        }
-
-        navigate("/");
-
     };
 
     return (
@@ -49,6 +54,7 @@ export default function Login({ updateToken }) {
             <div id="login-container" className="mt-20 h-96 w-[300px] sm:w-[600px] rounded-md shadow shadow-black dark:shadow-white bg-white">
                 <form onSubmit={handleSubmit} id="login-form" className="w-full h-full p-10 flex flex-col justify-start items-start">
                     <legend className="text-lg w-max font-bold mb-7">Log in to your account</legend>
+                    <p className="text-red-700">{loginError}</p>
                     <label htmlFor="username" className="mb-1">Username</label>
                     <input 
                         type="text" 
