@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "serve": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node db/seed.js && node app.js"
   },
