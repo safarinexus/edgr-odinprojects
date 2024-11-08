@@ -26,12 +26,12 @@ The Odin Project provides two paths for aspiring developers to go down, Full Sta
 
 *Projects are presented in reverse-order of syllabus.*
 
-### [Odin Node Express RESTful API Blog & Website](https://edgr-odin-blog-access.vercel.app/)
+### [Odin Node Express RESTful Blog API](https://edgr-odin-blog-access.vercel.app/)
 <a href="https://edgr-odin-blog-access.vercel.app/"><img src="./assets/Blog-API.png" height="250px"/></a><br/>
 Node Express REST API Project<br/>
 Project: Blog API  
 
-### [Odin Node Express Prisma File Uploader](https://odin-file-uploader-production-11ed.up.railway.app/) 
+### [Odin Node Express Prisma File Uploader](https://odin-fileuploader-production.up.railway.app/) 
 <a href="https://odin-file-uploader-production-11ed.up.railway.app/"><img src="./assets/File-Uploader.png" height="250px"/></a><br/>
 Node Express Prisma Project<br/>
 Project: File Uploader
